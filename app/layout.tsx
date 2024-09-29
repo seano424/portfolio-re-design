@@ -32,7 +32,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col antialiased dark:bg-gray-900`}
+				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col antialiased bg-gray-50 dark:bg-gray-900`}
 			>
 				<Header />
 				<DynamicCursor />

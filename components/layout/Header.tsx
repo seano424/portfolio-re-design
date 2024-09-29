@@ -11,7 +11,7 @@ const NavLink = ({ name, href }: { name: string; href: string }) => {
 
 const Header = () => {
 	return (
-		<header className="p-4 font-mono text-white">
+		<header className="p-4 font-mono text-gray-900 dark:text-white">
 			<div className="container flex items-center justify-between space-x-6">
 				<Link href="/" className="text-2xl font-bold">
 					SEANOREILLY
