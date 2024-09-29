@@ -11,11 +11,11 @@ const HeroSection = () => {
 		<section className="relative py-24 pb-32 lg:pt-40">
 			<div className="container">
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
-					<p className="font-mono text-sm uppercase tracking-widest text-blue-300 dark:text-gray-700">
+					<p className="font-mono text-sm uppercase tracking-widest text-blue-300 dark:text-white/80">
 						Sean O&apos;Reilly
 					</p>
 					<h1
-						className={`${inter.className} flex flex-col text-4xl font-black text-white md:text-6xl md:text-gray-900`}
+						className={`${inter.className} flex flex-col text-4xl font-black text-white md:text-6xl md:text-gray-900 dark:text-white`}
 					>
 						<span className="block md:text-blue-500">Hi! 👋</span>
 						<span className="block">My name is Sean.</span>
@@ -25,7 +25,7 @@ const HeroSection = () => {
 						</span>
 					</h1>
 
-					<p className="text-lg text-white md:text-gray-400">
+					<p className="text-lg text-white md:text-gray-400 dark:text-white">
 						Come and see what I&apos;m currently{' '}
 						<a href="#" className="underline">
 							working on
