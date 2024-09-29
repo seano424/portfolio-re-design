@@ -7,20 +7,18 @@ const inter = Inter({ subsets: ['latin'] })
 
 const NavLink = ({ name, href }: { name: string; href: string }) => {
 	return (
-		<li>
-			<Link
-				className={`${inter.className} dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`}
-				href={href}
-			>
-				{name}
-			</Link>
-		</li>
+		<Link
+			className={`${inter.className} dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`}
+			href={href}
+		>
+			{name}
+		</Link>
 	)
 }
 
 const Header = () => {
 	return (
-		<header className="container fixed left-0 right-0 top-0 z-50 flex items-center justify-between py-4 text-gray-900 dark:text-white h-20">
+		<header className="container fixed left-0 right-0 top-0 z-50 flex h-20 items-center justify-between py-4 text-gray-900 dark:text-white">
 			<Link href="/" className="relative h-10 w-40">
 				<Image
 					fill
