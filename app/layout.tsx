@@ -36,7 +36,7 @@ export default function RootLayout({
 			>
 				<Header />
 				<DynamicCursor />
-				<main className="flex-1 pt-20">{children}</main>
+				<main className="flex-1 py-20">{children}</main>
 			</body>
 		</html>
 	)

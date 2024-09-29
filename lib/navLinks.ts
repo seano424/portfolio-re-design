@@ -17,8 +17,8 @@ export const navLinks: NavLinkProps[] = [
 		href: '/blog',
 	},
 	{
-		name: 'Projects',
-		href: '/projects',
+		name: 'Media',
+		href: '/media',
 	},
 	{
 		name: 'Contact',

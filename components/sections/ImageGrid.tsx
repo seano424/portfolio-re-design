@@ -9,7 +9,7 @@ const images = [
 
 const ImageGrid = () => {
 	return (
-		<section className="container pb-24">
+		<section className="container md:py-10">
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				{images.map((image, index) => (
 					<div
