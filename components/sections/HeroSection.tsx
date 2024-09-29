@@ -1,5 +1,6 @@
-import SocialLinks from '../common/SocialLinks'
 import { Inter } from 'next/font/google'
+import SocialLinks from '../common/SocialLinks'
+import ColorChangingText from '@/components/ui/ColorChangingText'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,9 +16,11 @@ const HeroSection = () => {
 				<span className="block text-blue-500">Hi! 👋</span>
 				<span className="block">My name is Sean.</span>
 				<span className="block">
-					I build websites with modern tools & technologies!
+					I build <ColorChangingText text="websites" /> with modern
+					tools & technologies!
 				</span>
 			</h1>
+
 			<p className="text-lg text-gray-400">
 				Come and see what I&apos;m currently{' '}
 				<a href="#" className="underline">
