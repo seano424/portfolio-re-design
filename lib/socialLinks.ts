@@ -12,7 +12,7 @@ export const socialLinks: SocialLinkProps[] = [
 	{
 		name: 'Twitter',
 		className:
-			'text-blue-500 hover:text-blue-500 dark:text-blue-500 dark:hover:text-white duration-200',
+			'text-white md:text-blue-500 hover:text-blue-200  md:hover:text-blue-500 dark:text-blue-500 dark:hover:text-white duration-200',
 		href: 'https://twitter.com/sea_oreilly',
 		Icon: Twitter,
 	},
@@ -26,7 +26,7 @@ export const socialLinks: SocialLinkProps[] = [
 	{
 		name: 'LinkedIn',
 		className:
-			'text-fuchsia-700-100 hover:text-blue-500 dark:text-blue-200 dark:hover:text-white duration-700',
+			'text-white md:text-black hover:text-blue-200  md:hover:text-blue-500 dark:text-blue-200 dark:hover:text-white duration-700',
 		href: 'https://www.linkedin.com/in/sea-oreilly/',
 		Icon: LinkedIn,
 	},
