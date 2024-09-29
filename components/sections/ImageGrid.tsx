@@ -12,12 +12,15 @@ const ImageGrid = () => {
 		<section className="container pb-24">
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				{images.map((image, index) => (
-					<div key={index} className="relative aspect-square">
+					<div
+						key={index}
+						className="relative h-[400px] w-full lg:aspect-square"
+					>
 						<Image
 							fill
 							src={image}
 							alt="Image"
-							className="rounded-lg object-cover object-center"
+							className="rounded-2xl object-cover object-center"
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						/>
 					</div>
