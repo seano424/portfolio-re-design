@@ -3,7 +3,7 @@ import navLinks from '@/lib/navLinks'
 
 const NavLink = ({ name, href }: { name: string; href: string }) => {
 	return (
-		<li>
+		<li key={name}>
 			<Link href={href} className="hover:text-blue-400">
 				{name}
 			</Link>
@@ -21,16 +21,12 @@ const Header = () => {
 				<nav className="hidden w-full flex-1 lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-6">
 					<ul className="flex space-x-6">
 						{navLinks.slice(0, 3).map(({ name, href }) => (
-							<li key={name}>
-								<NavLink name={name} href={href} />
-							</li>
+							<NavLink name={name} href={href} />
 						))}
 					</ul>
 					<ul className="flex space-x-6">
 						{navLinks.slice(3).map(({ name, href }) => (
-							<li key={name}>
-								<NavLink name={name} href={href} />
-							</li>
+							<NavLink name={name} href={href} />
 						))}
 					</ul>
 				</nav>

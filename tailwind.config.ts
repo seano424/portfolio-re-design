@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 const config: Config = {
 	content: [
@@ -30,6 +31,10 @@ const config: Config = {
 				},
 				secondary: {
 					100: '#e81cff',
+				},
+				gray: {
+					...colors.gray,
+					700: '#333333',
 				},
 			},
 		},
