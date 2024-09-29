@@ -11,7 +11,6 @@ interface CursorProps {
 export default function Cursor({ enabled = true }: CursorProps) {
 	const [position, setPosition] = useState({ x: 0, y: 0 })
 	const [hidden, setHidden] = useState(false)
-	const [clicked, setClicked] = useState(false)
 	const [linkHovered, setLinkHovered] = useState(false)
 	const [mounted, setMounted] = useState(false)
 
@@ -21,8 +20,6 @@ export default function Cursor({ enabled = true }: CursorProps) {
 		})
 	}, [])
 
-	const mDown = useCallback(() => setClicked(true), [])
-	const mUp = useCallback(() => setClicked(false), [])
 	const mEnter = useCallback(() => setHidden(false), [])
 	const mLeave = useCallback(() => setHidden(true), [])
 
@@ -53,8 +50,6 @@ export default function Cursor({ enabled = true }: CursorProps) {
 		document.addEventListener('mousemove', mMove)
 		document.addEventListener('mouseenter', mEnter)
 		document.addEventListener('mouseleave', mLeave)
-		document.addEventListener('mousedown', mDown)
-		document.addEventListener('mouseup', mUp)
 
 		const cleanup = handleLinkHoverEvents()
 
@@ -62,11 +57,10 @@ export default function Cursor({ enabled = true }: CursorProps) {
 			document.removeEventListener('mousemove', mMove)
 			document.removeEventListener('mouseenter', mEnter)
 			document.removeEventListener('mouseleave', mLeave)
-			document.removeEventListener('mousedown', mDown)
-			document.removeEventListener('mouseup', mUp)
+
 			cleanup()
 		}
-	}, [enabled, mMove, mEnter, mLeave, mDown, mUp, handleLinkHoverEvents])
+	}, [enabled, mMove, mEnter, mLeave, handleLinkHoverEvents])
 
 	const isMobile = (): boolean => {
 		return (
@@ -87,7 +81,6 @@ export default function Cursor({ enabled = true }: CursorProps) {
 					exit={{ opacity: 0 }}
 					className={clsx(
 						'mix-blend-overlay',
-						// 'mix-blend-screen',
 						'-translate-x-1/2 -translate-y-1/2',
 						'pointer-events-none fixed z-50 h-10 w-10 rounded-full',
 						'transition-opacity duration-300 ease-in-out',

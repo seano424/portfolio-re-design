@@ -4,12 +4,9 @@ import './globals.css'
 import Header from '@/components/layout/Header'
 import dynamic from 'next/dynamic'
 
-const DynamicCursor = dynamic(
-	() => import('@/components/common/CursorController'),
-	{
-		ssr: false,
-	}
-)
+const DynamicCursor = dynamic(() => import('@/components/common/Cursor'), {
+	ssr: false,
+})
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',

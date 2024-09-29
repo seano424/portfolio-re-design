@@ -4,9 +4,7 @@ import navLinks from '@/lib/navLinks'
 const NavLink = ({ name, href }: { name: string; href: string }) => {
 	return (
 		<li>
-			<Link href={href} className="hover:text-blue-400">
-				{name}
-			</Link>
+			<Link href={href}>{name}</Link>
 		</li>
 	)
 }
@@ -32,7 +30,7 @@ const Header = () => {
 				</nav>
 				<Link
 					href="/hire-me"
-					className="bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-purple-500 px-4 py-2 font-bold text-white transition-all duration-500 ease-linear"
+					className="rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-purple-500 bg-size-200 bg-pos-0 px-4 py-2 font-bold text-white transition-all duration-500 ease-linear hover:bg-pos-100"
 				>
 					HIRE ME
 				</Link>
