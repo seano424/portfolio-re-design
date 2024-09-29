@@ -11,7 +11,7 @@ const DynamicCursor = dynamic(() => import('@/components/common/Cursor'), {
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
 	variable: '--font-geist-sans',
-	weight: '100 900',
+	weight: '100 400 500 600 700 800 900',
 })
 const geistMono = localFont({
 	src: './fonts/GeistMonoVF.woff',
@@ -32,11 +32,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col antialiased bg-gray-50 dark:bg-gray-900`}
+				className={`${geistSans.variable} ${geistMono.variable} container debug-screens flex min-h-screen flex-col bg-gray-50 antialiased dark:bg-gray-900`}
 			>
 				<Header />
 				<DynamicCursor />
-				<main className="container flex-1">{children}</main>
+				<main className="flex-1">{children}</main>
 			</body>
 		</html>
 	)
