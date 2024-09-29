@@ -20,7 +20,7 @@ const NavLink = ({ name, href }: { name: string; href: string }) => {
 
 const Header = () => {
 	return (
-		<header className="flex items-center justify-between py-4 text-gray-900 dark:text-white">
+		<header className="container fixed left-0 right-0 top-0 z-50 flex items-center justify-between py-4 text-gray-900 dark:text-white h-20">
 			<Link href="/" className="relative h-10 w-40">
 				<Image
 					fill
