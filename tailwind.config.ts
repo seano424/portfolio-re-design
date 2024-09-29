@@ -12,6 +12,32 @@ const config: Config = {
 		container: {
 			center: true,
 		},
+		colors: {
+			blue: {
+				100: '#caf0f8',
+				200: '#90e0ef',
+				300: '#40c9ff',
+				400: '#0077b6',
+				500: '#0070f3',
+				600: '#03045e',
+			},
+			fuchsia: {
+				...colors.fuchsia,
+				700: '#e81cff',
+			},
+			gray: {
+				...colors.gray,
+				300: '#F9FAFB',
+				700: '#333333',
+				800: '#0b101e',
+				900: '#0E1217',
+			},
+			white: '#fff',
+			black: '#000',
+			purple: {
+				...colors.purple,
+			},
+		},
 		extend: {
 			backgroundSize: {
 				'size-200': '200% 200%',
@@ -19,23 +45,6 @@ const config: Config = {
 			backgroundPosition: {
 				'pos-0': '0% 0%',
 				'pos-100': '100% 100%',
-			},
-			colors: {
-				primary: {
-					100: '#caf0f8',
-					200: '#90e0ef',
-					300: '#40c9ff',
-					400: '#0077b6',
-					500: '#0070f3',
-					600: '#03045e',
-				},
-				secondary: {
-					100: '#e81cff',
-				},
-				gray: {
-					...colors.gray,
-					700: '#333333',
-				},
 			},
 		},
 		debugScreens: {

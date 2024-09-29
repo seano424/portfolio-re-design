@@ -1,5 +1,6 @@
 'use client'
 
+import clsx from 'clsx'
 import React, { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -27,7 +28,7 @@ export default function Cursor({ enabled = true }: CursorProps) {
 
 	const handleLinkHoverEvents = useCallback(() => {
 		const elements = document.querySelectorAll(
-			'a, #hamburger, #themeButton, button, .button, .primary-button'
+			'a, #hamburger, #themeButton, button, .button, .blue-button'
 		)
 		const mOver = () => setLinkHovered(true)
 		const mOut = () => setLinkHovered(false)
@@ -84,20 +85,19 @@ export default function Cursor({ enabled = true }: CursorProps) {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
-					className={`pointer-events-none fixed z-50 h-10 w-10 -translate-x-1/2 -translate-y-1/2 transform rounded-full border-[1px] transition-opacity duration-300 ease-in-out ${hidden ? 'opacity-0' : 'opacity-100'} ${clicked ? 'scale-90' : 'scale-100'} ${linkHovered ? 'scale-150' : 'scale-100'} `}
+					className={clsx(
+						'mix-blend-overlay',
+						// 'mix-blend-screen',
+						'-translate-x-1/2 -translate-y-1/2',
+						'pointer-events-none fixed z-50 h-10 w-10 rounded-full',
+						'transition-opacity duration-300 ease-in-out',
+						hidden ? 'opacity-0' : 'opacity-100',
+						linkHovered &&
+							'scale-150 transform border-2 border-white bg-white transition-transform duration-300 ease-linear dark:bg-gray-800'
+					)}
 					style={{
 						left: `${position.x}px`,
 						top: `${position.y}px`,
-						borderColor: 'var(--cursor-border-color, #e11515)',
-						backgroundColor:
-							clicked || linkHovered
-								? 'var(--cursor-active-color, #b32b2b)'
-								: 'transparent',
-						mixBlendMode:
-							'var(--cursor-blend-mode, normal)' as React.CSSProperties['mixBlendMode'],
-						transition: linkHovered
-							? 'transform 300ms ease-linear'
-							: 'transform 150ms ease-out',
 					}}
 				></motion.div>
 			)}
