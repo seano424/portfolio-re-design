@@ -1,11 +1,12 @@
+import SocialLinks from '../common/SocialLinks'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const HeroSection = () => {
 	return (
-		<div className="flex max-w-4xl flex-col gap-6 py-10">
-			<p className="font-mono text-sm uppercase tracking-widest text-gray-700">
+		<div className="flex max-w-4xl flex-col gap-6 pb-32 pt-24 lg:pt-40">
+			<p className="font-mono text-sm uppercase tracking-widest text-gray-200 dark:text-gray-700">
 				Sean O&apos;Reilly
 			</p>
 			<h1
@@ -24,6 +25,7 @@ const HeroSection = () => {
 				</a>{' '}
 				—
 			</p>
+			<SocialLinks />
 		</div>
 	)
 }
