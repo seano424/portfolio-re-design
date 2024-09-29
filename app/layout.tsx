@@ -2,6 +2,14 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import Header from '@/components/layout/Header'
+import dynamic from 'next/dynamic'
+
+const DynamicCursor = dynamic(
+	() => import('@/components/common/CursorController'),
+	{
+		ssr: false,
+	}
+)
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -30,6 +38,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col antialiased`}
 			>
 				<Header />
+				<DynamicCursor />
 				<main className="container flex-1">{children}</main>
 			</body>
 		</html>

@@ -18,7 +18,7 @@ const HeroSection = () => {
 				</span>
 			</h1>
 			<p className="text-lg text-gray-400">
-				Come and see what I'm currently{' '}
+				Come and see what I&apos;m currently{' '}
 				<a href="#" className="underline">
 					working on
 				</a>{' '}
