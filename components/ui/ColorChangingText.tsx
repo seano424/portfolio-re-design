@@ -16,12 +16,12 @@ const GradientText = ({
 	className,
 }: GradientTextProps) => {
 	const colorPairs = [
-		['#ff6b6b', '#4ecdc4'],
 		['#a3a1ff', '#3a86ff'],
-		['#ffd166', '#06d6a0'],
 		['#ff9a8b', '#ff6a88'],
 		['#8ed1fc', '#7d5fff'],
-		['#ff9966', '#ff5e62'],
+		['#40c9ff', '#90e0ef'],
+		['#e81cff', '#12fdc3cf'],
+		['#03045e', '#4ecdc4'],
 	]
 
 	const [currentPairIndex, setCurrentPairIndex] = useState(0)
