@@ -1,0 +1,30 @@
+import { div } from 'framer-motion/client'
+import Image from 'next/image'
+
+const images = [
+	'/images/dummy-1.jpg',
+	'/images/dummy-2.jpg',
+	'/images/dummy-3.jpg',
+]
+
+const ImageGrid = () => {
+	return (
+		<section className="container pb-24">
+			<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+				{images.map((image, index) => (
+					<div key={index} className="relative aspect-square">
+						<Image
+							fill
+							src={image}
+							alt="Image"
+							className="rounded-lg object-cover object-center"
+							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+						/>
+					</div>
+				))}
+			</div>
+		</section>
+	)
+}
+
+export default ImageGrid

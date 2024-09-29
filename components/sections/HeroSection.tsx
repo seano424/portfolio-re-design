@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 const HeroSection = () => {
 	return (
-		<div className="relative py-24 pb-32 lg:pt-40">
+		<section className="relative py-24 pb-32 lg:pt-40">
 			<div className="container">
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
 					<p className="font-mono text-sm uppercase tracking-widest text-blue-300 dark:text-gray-700">
@@ -52,7 +52,7 @@ const HeroSection = () => {
 				/>
 				<div className="absolute inset-0 bg-black opacity-20 md:opacity-0" />
 			</div>
-		</div>
+		</section>
 	)
 }
 
