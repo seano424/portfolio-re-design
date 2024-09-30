@@ -24,9 +24,7 @@ export default function Cursor({ enabled = true }: CursorProps) {
 	const mLeave = useCallback(() => setHidden(true), [])
 
 	const handleLinkHoverEvents = useCallback(() => {
-		const elements = document.querySelectorAll(
-			'a, #hamburger, #themeButton, button, .button, .blue-button'
-		)
+		const elements = document.querySelectorAll('a, button, .cursor-hover')
 		const mOver = () => setLinkHovered(true)
 		const mOut = () => setLinkHovered(false)
 
