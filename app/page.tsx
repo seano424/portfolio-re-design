@@ -4,10 +4,12 @@ import AboutSection from '@/components/sections/AboutSection'
 
 export default function Home() {
 	return (
-		<div className="flex flex-col gap-20">
+		<>
 			<HeroSection />
-			<ImageGrid />
-			<AboutSection />
-		</div>
+			<div className="flex flex-col gap-20 lg:gap-40">
+				<ImageGrid />
+				<AboutSection />
+			</div>
+		</>
 	)
 }

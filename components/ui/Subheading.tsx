@@ -5,11 +5,11 @@ type SubheadingProps = {
 
 const Subheading = ({
 	text = 'Sean O&apos;Reilly',
-	className,
+	className = 'text-blue-300 dark:text-white/80',
 }: SubheadingProps) => {
 	return (
 		<p
-			className={`font-mono text-sm uppercase tracking-widest text-blue-300 dark:text-white/80 ${className}`}
+			className={`font-mono text-sm uppercase tracking-widest ${className}`}
 		>
 			{text}
 		</p>
