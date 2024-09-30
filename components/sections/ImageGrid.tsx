@@ -1,4 +1,3 @@
-import { div } from 'framer-motion/client'
 import Image from 'next/image'
 
 const images = [
@@ -9,7 +8,7 @@ const images = [
 
 const ImageGrid = () => {
 	return (
-		<section className="container md:py-10">
+		<section className="container">
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				{images.map((image, index) => (
 					<div

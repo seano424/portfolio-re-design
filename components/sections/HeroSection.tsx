@@ -1,19 +1,18 @@
 import clsx from 'clsx'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import SocialLinks from '../common/SocialLinks'
+import Subheading from '@/components/ui/Subheading'
+import SocialLinks from '@/components/common/SocialLinks'
 import ColorChangingText from '@/components/ui/ColorChangingText'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const HeroSection = () => {
 	return (
-		<section className="relative py-20 pb-32 lg:pt-40">
+		<section className="relative mb-40 pt-20 lg:pt-40">
 			<div className="container">
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
-					<p className="font-mono text-sm uppercase tracking-widest text-blue-300 dark:text-white/80">
-						Sean O&apos;Reilly
-					</p>
+					<Subheading text="Sean O'Reilly" />
 					<h1
 						className={`${inter.className} flex flex-col text-5xl font-black text-white md:text-6xl md:text-gray-900 dark:text-white`}
 					>
@@ -39,13 +38,19 @@ const HeroSection = () => {
 
 			<div
 				className={clsx(
-					`absolute inset-0 -z-10 hidden overflow-hidden md:-right-[170%] md:block lg:-right-[160%] 2xl:-right-[141%]`
+					`absolute inset-0 -z-10 hidden overflow-hidden md:block`
+					// 'md:-right-[170%] lg:-right-[160%] 2xl:-right-[110%]'
 				)}
 			>
 				<Image
 					fill
 					src="/images/bg-water.png"
-					className="transform object-cover contrast-50 hue-rotate-60 saturate-150 filter md:rotate-[40deg] md:contrast-100 md:grayscale-0 md:hue-rotate-15 xl:rotate-[25deg]"
+					className={clsx(
+						'transform object-cover filter',
+						'origin-bottom-right',
+						'md:rotate-[50deg] lg:rotate-[40deg] 2xl:rotate-[30deg]',
+						'contrast-50 hue-rotate-60 saturate-150 md:contrast-100 md:grayscale-0 md:hue-rotate-15'
+					)}
 					alt="Decorative background image of water"
 					sizes="100vw"
 					priority
