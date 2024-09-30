@@ -5,14 +5,33 @@ import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const NavLink = ({ name, href }: { name: string; href: string }) => {
+const NavLink = ({
+	name,
+	href,
+	id,
+}: {
+	name: string
+	href?: string
+	id?: string
+}) => {
 	return (
-		<Link
-			className={`${inter.className} dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`}
-			href={href}
-		>
-			{name}
-		</Link>
+		<>
+			{href ? (
+				<Link
+					className={`${inter.className} dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`}
+					href={href}
+				>
+					{name}
+				</Link>
+			) : (
+				<a
+					href={`#${id}`}
+					className={`${inter.className} dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`}
+				>
+					{name}
+				</a>
+			)}
+		</>
 	)
 }
 
@@ -40,8 +59,13 @@ const Header = () => {
 				</Link>
 				<nav className="hidden lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-6">
 					<ul className="flex space-x-6">
-						{navLinks.map(({ name, href }) => (
-							<NavLink key={name} name={name} href={href} />
+						{navLinks.map(({ name, href, id }) => (
+							<NavLink
+								key={name}
+								name={name}
+								href={href}
+								id={id}
+							/>
 						))}
 					</ul>
 				</nav>
