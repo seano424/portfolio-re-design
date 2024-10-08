@@ -58,7 +58,7 @@ export default function Cursor({ enabled = true }: CursorProps) {
 
 			cleanup()
 		}
-	}, [enabled, mMove, mEnter, mLeave, handleLinkHoverEvents])
+	}, [])
 
 	const isMobile = (): boolean => {
 		return (
