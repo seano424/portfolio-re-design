@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface CursorProps {
@@ -14,60 +14,56 @@ export default function Cursor({ enabled = true }: CursorProps) {
 	const [linkHovered, setLinkHovered] = useState(false)
 	const [mounted, setMounted] = useState(false)
 
-	const mMove = useCallback((el: MouseEvent) => {
-		requestAnimationFrame(() => {
-			setPosition({ x: el.clientX, y: el.clientY })
-		})
-	}, [])
-
-	const mEnter = useCallback(() => setHidden(false), [])
-	const mLeave = useCallback(() => setHidden(true), [])
-
-	const handleLinkHoverEvents = useCallback(() => {
-		const elements = document.querySelectorAll('a, button, .cursor-hover')
-		const mOver = () => setLinkHovered(true)
-		const mOut = () => setLinkHovered(false)
-
-		elements.forEach((el) => {
-			el.addEventListener('mouseover', mOver)
-			el.addEventListener('mouseout', mOut)
-		})
-
-		return () => {
-			elements.forEach((el) => {
-				el.removeEventListener('mouseover', mOver)
-				el.removeEventListener('mouseout', mOut)
-			})
-		}
-	}, [])
-
 	useEffect(() => {
-		if (typeof window === 'undefined' || !enabled || isMobile()) return
+		if (typeof window === 'undefined' || !enabled) return
+
+		const isMobile = /Android|Mobi/i.test(navigator.userAgent)
+		if (isMobile) return
 
 		setMounted(true)
+
+		const mMove = (el: MouseEvent) => {
+			requestAnimationFrame(() => {
+				setPosition({ x: el.clientX, y: el.clientY })
+			})
+		}
+
+		const mEnter = () => setHidden(false)
+		const mLeave = () => setHidden(true)
+
+		const handleLinkHoverEvents = () => {
+			const elements = document.querySelectorAll(
+				'a, button, .cursor-hover'
+			)
+			const mOver = () => setLinkHovered(true)
+			const mOut = () => setLinkHovered(false)
+
+			elements.forEach((el) => {
+				el.addEventListener('mouseover', mOver)
+				el.addEventListener('mouseout', mOut)
+			})
+
+			return () => {
+				elements.forEach((el) => {
+					el.removeEventListener('mouseover', mOver)
+					el.removeEventListener('mouseout', mOut)
+				})
+			}
+		}
+
 		document.addEventListener('mousemove', mMove)
 		document.addEventListener('mouseenter', mEnter)
 		document.addEventListener('mouseleave', mLeave)
 
-		const cleanup = handleLinkHoverEvents()
+		const cleanupLinkHover = handleLinkHoverEvents()
 
 		return () => {
 			document.removeEventListener('mousemove', mMove)
 			document.removeEventListener('mouseenter', mEnter)
 			document.removeEventListener('mouseleave', mLeave)
-
-			cleanup()
+			cleanupLinkHover()
 		}
-	}, [])
-
-	const isMobile = (): boolean => {
-		return (
-			typeof navigator !== 'undefined' &&
-			/Android|Mobi/i.test(navigator.userAgent)
-		)
-	}
-
-	if (!enabled || isMobile()) return null
+	}, [enabled])
 
 	return (
 		<AnimatePresence>
