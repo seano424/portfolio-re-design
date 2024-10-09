@@ -4,15 +4,12 @@ export default function useCursor() {
 	const [position, setPosition] = useState({ x: 0, y: 0 })
 	const [hidden, setHidden] = useState(false)
 	const [linkHovered, setLinkHovered] = useState(false)
-	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return
 
 		const isMobile = /Android|Mobi/i.test(navigator.userAgent)
 		if (isMobile) return
-
-		setMounted(true)
 
 		const mMove = (el: MouseEvent) => {
 			requestAnimationFrame(() => {
@@ -61,6 +58,5 @@ export default function useCursor() {
 		position,
 		hidden,
 		linkHovered,
-		mounted,
 	}
 }
