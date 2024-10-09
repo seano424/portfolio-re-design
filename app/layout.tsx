@@ -35,7 +35,7 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900`}
 			>
 				<Header />
-				<DynamicCursor />
+				<DynamicCursor enabled />
 				<main className="flex-1 py-20">{children}</main>
 			</body>
 		</html>
