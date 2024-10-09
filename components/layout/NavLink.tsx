@@ -12,10 +12,9 @@ interface NavLinkProps {
 	name: string
 	href?: string
 	id?: string
-	offset?: number
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ name, href, id, offset = 0 }) => {
+const NavLink: React.FC<NavLinkProps> = ({ name, href, id }) => {
 	const smoothScroll = useSmoothScroll()
 
 	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

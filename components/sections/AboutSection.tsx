@@ -12,21 +12,21 @@ const AboutSection = () => {
 						text="About Me / My Story"
 					/>
 					<p>
-						Hey there! I'm Sean, a passionate front-end developer
+						Hey there! I&apos;m Sean, a passionate front-end developer
 						with a knack for React, JavaScript, and TypeScript. My
 						mission? Turning user-focused designs into smooth,
 						blazing-fast websites that just work.
 					</p>
 					<p>
-						When it comes to coding, I'm all about creating
+						When it comes to coding, I&apos;m all about creating
 						intuitive designs with powerful functionality. I love
-						diving deep into React (Next.js), and I'm equally
+						diving deep into React (Next.js), and I&apos;m equally
 						comfortable crafting custom CSS/Sass solutions or
 						whipping up rapid designs with Tailwind CSS. I really
 						enjoy learning about accessibility and making sure
-						everyone can use the websites I build. And I'm always
+						everyone can use the websites I build. And I&apos;m always
 						trying to keep up with the latest tech trends, but I
-						like to stay focused on what's important and have a
+						like to stay focused on what&apos;s important and have a
 						strong foundation in the basics.
 					</p>
 					<p>
@@ -39,7 +39,7 @@ const AboutSection = () => {
 						Want to connect? You can find me on Instagram, Twitter
 						(or X) or check out my latest projects on GitHub. Always
 						happy to chat about code, diving, or the best sci-fi
-						books you've never heard of!
+						books you&apos;ve never heard of!
 					</p>
 				</div>
 

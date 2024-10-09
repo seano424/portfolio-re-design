@@ -63,5 +63,3 @@ const HeroSection = () => {
 }
 
 export default HeroSection
-
-// Hi! 👋 My name is Sean. I build websites with modern tools & technologies!
