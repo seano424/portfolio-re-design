@@ -4,12 +4,8 @@ import clsx from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
 import useCursor from '@/hooks/useCursor'
 
-interface CursorProps {
-	enabled?: boolean
-}
-
-export default function Cursor({ enabled = true }: CursorProps) {
-	const { position, hidden, linkHovered, mounted } = useCursor({ enabled })
+export default function Cursor() {
+	const { position, hidden, linkHovered, mounted } = useCursor()
 
 	return (
 		<AnimatePresence>

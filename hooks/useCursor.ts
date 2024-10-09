@@ -1,17 +1,13 @@
 import { useState, useEffect } from 'react'
 
-interface Props {
-	enabled?: boolean
-}
-
-export default function useCursor({ enabled = true }: Props) {
+export default function useCursor() {
 	const [position, setPosition] = useState({ x: 0, y: 0 })
 	const [hidden, setHidden] = useState(false)
 	const [linkHovered, setLinkHovered] = useState(false)
 	const [mounted, setMounted] = useState(false)
 
 	useEffect(() => {
-		if (typeof window === 'undefined' || !enabled) return
+		if (typeof window === 'undefined') return
 
 		const isMobile = /Android|Mobi/i.test(navigator.userAgent)
 		if (isMobile) return
@@ -59,7 +55,8 @@ export default function useCursor({ enabled = true }: Props) {
 			document.removeEventListener('mouseleave', mLeave)
 			cleanupLinkHover()
 		}
-	}, [enabled])
+	}, [])
+
 	return {
 		position,
 		hidden,
