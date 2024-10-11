@@ -28,6 +28,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
+			cz-shortcut-listen="true"
 				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900`}
 			>
 				<Header />
