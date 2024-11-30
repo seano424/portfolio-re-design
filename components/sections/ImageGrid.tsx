@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 const links = [
 	{
@@ -31,7 +32,7 @@ const ImageGrid = () => {
 			</h2>
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				{links.map(({ image, title, link, isPage }, index) => (
-					<>
+					<Fragment key={index}>
 						{isPage ? (
 							<Link
 								key={index}
@@ -65,7 +66,7 @@ const ImageGrid = () => {
 								/>
 							</a>
 						)}
-					</>
+					</Fragment>
 				))}
 			</div>
 		</section>
