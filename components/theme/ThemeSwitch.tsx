@@ -28,18 +28,25 @@ const ThemeSwitch = () => {
 		<div ref={divRef} className="relative">
 			<button
 				{...(mounted && { onClick: () => setIsOpen(!isOpen) })}
-				className="flex items-center justify-between gap-1 rounded-lg border bg-gray-200 p-2 dark:border-gray-700 dark:bg-gray-800"
+				className="group flex items-center justify-between gap-1 rounded-lg border border-gray-50/0 bg-gray-200 p-2 dark:border-gray-700 dark:bg-gray-800"
 				disabled={!mounted}
 				aria-label={mounted ? 'Theme switch' : 'Loading theme switch'}
 			>
 				{!mounted ? (
 					<Loader2 className="h-6 w-6 animate-spin" />
 				) : theme === 'dark' ? (
-					<Moon className="h-6 w-6" />
+					<Moon className="h-6 w-6 transition-all duration-200 ease-linear group-hover:text-blue-500" />
 				) : (
-					<Sun className="h-6 w-6" />
+					<Sun className="h-6 w-6 transition-all duration-200 ease-linear group-hover:text-orange-500" />
 				)}
-				<ChevronDown className="h-5 w-5" />
+				<ChevronDown
+					className={clsx(
+						'h-5 w-5 transition-all duration-200 ease-linear',
+						theme !== 'dark'
+							? 'group-hover:text-orange-500'
+							: 'group-hover:text-blue-500'
+					)}
+				/>
 			</button>
 
 			{mounted && isOpen && (
@@ -53,7 +60,8 @@ const ThemeSwitch = () => {
 						<button
 							onClick={() => handleThemeChange('system')}
 							className={clsx(
-								'flex items-center gap-2',
+								'flex items-center gap-2 hover:text-blue-500',
+								'transition-all duration-200 ease-linear',
 								theme === 'system' && 'text-blue-500'
 							)}
 						>
@@ -62,8 +70,9 @@ const ThemeSwitch = () => {
 						<button
 							onClick={() => handleThemeChange('dark')}
 							className={clsx(
-								'flex items-center gap-2',
-								theme === 'dark' && 'text-blue-300'
+								'flex items-center gap-2 hover:text-blue-500',
+								'transition-all duration-200 ease-linear',
+								theme === 'dark' && 'text-blue-500'
 							)}
 						>
 							Dark Mode
@@ -71,7 +80,8 @@ const ThemeSwitch = () => {
 						<button
 							onClick={() => handleThemeChange('light')}
 							className={clsx(
-								'flex items-center gap-2',
+								'flex items-center gap-2 hover:text-blue-500',
+								'transition-all duration-200 ease-linear',
 								theme === 'light' && 'text-blue-500'
 							)}
 						>

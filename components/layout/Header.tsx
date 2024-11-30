@@ -2,6 +2,7 @@ import Nav from './Nav'
 import Link from 'next/link'
 import Image from 'next/image'
 import ThemeSwitch from '@/components/theme/ThemeSwitch'
+import MobileMenuButton from '../mobile/MobileMenuButton'
 
 const Header = () => {
 	return (
@@ -34,6 +35,7 @@ const Header = () => {
 						HIRE ME
 					</Link>
 					<ThemeSwitch />
+					<MobileMenuButton />
 				</ul>
 			</div>
 		</header>
