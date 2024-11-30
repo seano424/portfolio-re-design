@@ -1,7 +1,6 @@
 'use client'
 
 import clsx from 'clsx'
-import { Menu, X } from 'lucide-react'
 import { useState, useRef } from 'react'
 import useOutsideClick from '@/hooks/useOutsideClick'
 import { motion } from 'framer-motion'
@@ -18,7 +17,11 @@ export default function MobileMenuButton() {
 		<div ref={menuRef} className="relative flex items-center xl:hidden">
 			<button
 				onClick={() => setIsOpen(!isOpen)}
-				className={`relative -left-2.5 -mr-2.5 bg-transparent p-0 ${isOpen ? 'active' : ''}`}
+				className={clsx(
+					'relative -left-2.5 -mr-2.5 bg-transparent p-0',
+					'transition-all duration-500 ease-linear hover:scale-105',
+					isOpen && 'active'
+				)}
 				aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
 			>
 				<span className="sr-only">
