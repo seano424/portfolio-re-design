@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Header from '@/components/layout/Header'
 import Cursor from '@/components/common/Cursor'
+import { ThemeProvider } from 'next-themes'
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -28,12 +29,14 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-			cz-shortcut-listen="true"
+				cz-shortcut-listen="true"
 				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900`}
 			>
-				<Header />
-				<Cursor />
-				<main className="flex-1 py-20">{children}</main>
+				<ThemeProvider attribute="class" defaultTheme="dark">
+					<Header />
+					<Cursor />
+					<main className="flex-1 py-20">{children}</main>
+				</ThemeProvider>
 			</body>
 		</html>
 	)
