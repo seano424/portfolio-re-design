@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { Sun, Moon, ChevronDown, Loader2 } from 'lucide-react'
 import { motion } from 'framer-motion'
+import useOutsideClick from '@/hooks/useOutsideClick'
 
 const ThemeSwitch = () => {
 	const [mounted, setMounted] = useState(false)
@@ -12,22 +13,10 @@ const ThemeSwitch = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const divRef = useRef<HTMLDivElement>(null)
 
-	useEffect(() => {
-		setMounted(true)
-	}, [])
+	useOutsideClick(divRef, () => setIsOpen(false))
 
 	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (
-				divRef.current &&
-				!divRef.current.contains(event.target as Node)
-			) {
-				setIsOpen(false)
-			}
-		}
-		document.addEventListener('mousedown', handleClickOutside)
-		return () =>
-			document.removeEventListener('mousedown', handleClickOutside)
+		setMounted(true)
 	}, [])
 
 	const handleThemeChange = (theme: string) => {
