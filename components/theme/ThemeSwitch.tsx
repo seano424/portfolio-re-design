@@ -42,7 +42,7 @@ const ThemeSwitch = () => {
 				<ChevronDown
 					className={clsx(
 						'h-5 w-5 transition-all duration-200 ease-linear',
-						theme !== 'dark'
+						theme !== 'dark' && mounted
 							? 'group-hover:text-orange-500 dark:group-hover:text-orange-500'
 							: 'group-hover:text-blue-500 dark:group-hover:text-blue-500'
 					)}
