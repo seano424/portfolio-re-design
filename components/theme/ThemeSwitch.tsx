@@ -43,8 +43,8 @@ const ThemeSwitch = () => {
 					className={clsx(
 						'h-5 w-5 transition-all duration-200 ease-linear',
 						theme !== 'dark'
-							? 'group-hover:text-orange-500'
-							: 'group-hover:text-blue-500'
+							? 'group-hover:text-orange-500 dark:group-hover:text-orange-500'
+							: 'group-hover:text-blue-500 dark:group-hover:text-blue-500'
 					)}
 				/>
 			</button>
@@ -54,6 +54,7 @@ const ThemeSwitch = () => {
 					initial={{ opacity: 0, y: 10 }}
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 10 }}
+					transition={{ duration: 0.2 }}
 					className="absolute right-0 top-12"
 				>
 					<div className="flex flex-col items-start gap-2 text-nowrap rounded-lg bg-gray-200 p-5 dark:bg-gray-800">
@@ -62,6 +63,7 @@ const ThemeSwitch = () => {
 							className={clsx(
 								'flex items-center gap-2 hover:text-blue-500',
 								'transition-all duration-200 ease-linear',
+								'w-full',
 								theme === 'system' && 'text-blue-500'
 							)}
 						>
@@ -72,6 +74,7 @@ const ThemeSwitch = () => {
 							className={clsx(
 								'flex items-center gap-2 hover:text-blue-500',
 								'transition-all duration-200 ease-linear',
+								'w-full',
 								theme === 'dark' && 'text-blue-500'
 							)}
 						>
@@ -82,6 +85,7 @@ const ThemeSwitch = () => {
 							className={clsx(
 								'flex items-center gap-2 hover:text-blue-500',
 								'transition-all duration-200 ease-linear',
+								'w-full',
 								theme === 'light' && 'text-blue-500'
 							)}
 						>

@@ -1,11 +1,8 @@
 import clsx from 'clsx'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import Subheading from '@/components/ui/Subheading'
 import SocialLinks from '@/components/common/SocialLinks'
 import ColorChangingText from '@/components/ui/ColorChangingText'
-
-const inter = Inter({ subsets: ['latin'] })
 
 const HeroSection = () => {
 	return (
@@ -14,7 +11,7 @@ const HeroSection = () => {
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
 					<Subheading text="Sean O'Reilly" />
 					<h1
-						className={`${inter.className} flex flex-col text-5xl font-black text-white md:text-6xl md:text-gray-900 dark:text-white`}
+						className={`flex flex-col text-5xl font-black text-white md:text-6xl md:text-gray-900 dark:text-white`}
 					>
 						<span className="block">Front-end developer.</span>
 

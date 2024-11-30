@@ -1,12 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { Inter } from 'next/font/google'
+
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 
-const inter = Inter({ subsets: ['latin'] })
-
-const commonClasses = `${inter.className} dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`
+const commonClasses = `dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`
 
 interface NavLinkProps {
 	name: string

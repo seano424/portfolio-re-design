@@ -1,9 +1,14 @@
 import './globals.css'
+
+import clsx from 'clsx'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Header from '@/components/layout/Header'
 import Cursor from '@/components/common/Cursor'
 import { ThemeProvider } from 'next-themes'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -30,7 +35,11 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				cz-shortcut-listen="true"
-				className={`${geistSans.variable} ${geistMono.variable} debug-screens flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900`}
+				className={clsx(
+					geistMono.variable,
+					inter.className,
+					'debug-screens flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900'
+				)}
 			>
 				<ThemeProvider attribute="class" defaultTheme="dark">
 					<Header />

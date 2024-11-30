@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+
 import Subheading from '@/components/ui/Subheading'
-const inter = Inter({ subsets: ['latin'] })
+
 const AboutSection = () => {
 	return (
-		<section id="about" className={`${inter.className} container`}>
+		<section id="about" className="container">
 			<div className="flex flex-col-reverse gap-10 lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-2 lg:gap-6">
 				<div className="flex flex-col items-center justify-center gap-6 leading-relaxed text-gray-900 lg:items-start dark:text-white">
 					<Subheading
@@ -12,10 +12,10 @@ const AboutSection = () => {
 						text="About Me / My Story"
 					/>
 					<p>
-						Hey there! I&apos;m Sean, a passionate front-end developer
-						with a knack for React, JavaScript, and TypeScript. My
-						mission? Turning user-focused designs into smooth,
-						blazing-fast websites that just work.
+						Hey there! I&apos;m Sean, a passionate front-end
+						developer with a knack for React, JavaScript, and
+						TypeScript. My mission? Turning user-focused designs
+						into smooth, blazing-fast websites that just work.
 					</p>
 					<p>
 						When it comes to coding, I&apos;m all about creating
@@ -24,10 +24,10 @@ const AboutSection = () => {
 						comfortable crafting custom CSS/Sass solutions or
 						whipping up rapid designs with Tailwind CSS. I really
 						enjoy learning about accessibility and making sure
-						everyone can use the websites I build. And I&apos;m always
-						trying to keep up with the latest tech trends, but I
-						like to stay focused on what&apos;s important and have a
-						strong foundation in the basics.
+						everyone can use the websites I build. And I&apos;m
+						always trying to keep up with the latest tech trends,
+						but I like to stay focused on what&apos;s important and
+						have a strong foundation in the basics.
 					</p>
 					<p>
 						I am a graduate of the University of Kansas, where I was
