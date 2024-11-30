@@ -1,4 +1,4 @@
-import './globals.css'
+import '../globals.css'
 
 import clsx from 'clsx'
 import type { Metadata } from 'next'
@@ -10,11 +10,6 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const geistSans = localFont({
-	src: './fonts/GeistVF.woff',
-	variable: '--font-geist-sans',
-	weight: '100 400 500 600 700 800 900',
-})
 const geistMono = localFont({
 	src: './fonts/GeistMonoVF.woff',
 	variable: '--font-geist-mono',
@@ -32,7 +27,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body
 				cz-shortcut-listen="true"
 				className={clsx(

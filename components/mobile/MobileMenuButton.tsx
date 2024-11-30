@@ -82,14 +82,15 @@ export default function MobileMenuButton() {
 
 			{isOpen && (
 				<motion.ul
+					key="mobile-menu"
 					className="absolute -right-4 top-16 flex flex-col items-end gap-4 text-nowrap rounded-lg bg-gray-50 px-10 py-4 shadow-lg dark:bg-gray-900"
 					initial={{ opacity: 0, y: 10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.2 }}
 					exit={{ opacity: 0, y: 10 }}
 				>
-					{navLinks.map(({ name, href, id }) => (
-						<li key={id}>
+					{navLinks.map(({ name, href, id }, index) => (
+						<li key={index}>
 							{href ? (
 								<Link
 									className="hover:text-blue-500 dark:hover:text-blue-400"
