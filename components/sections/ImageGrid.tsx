@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Project } from '@/sanity.types'
+import { urlFor } from '@/sanity/lib/image'
 
 interface Props {
 	projects: Project[]
@@ -23,14 +24,16 @@ const ImageGrid = ({ projects }: Props) => {
 							href={`/project-gallery/${slug?.current}`}
 							className="relative h-[400px] w-full lg:aspect-square"
 						>
-							{/* <Image
-							fill
-							priority
-							src={featuredImage?.asset?.url ?? ''}
-							alt={title ?? ''}
-							className="rounded-2xl object-cover object-top"
-							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-						/> */}
+							{featuredImage && (
+								<Image
+									fill
+									priority
+									src={urlFor(featuredImage).url()}
+									alt={title ?? ''}
+									className="rounded-2xl object-cover object-top"
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+								/>
+							)}
 						</Link>
 					))}
 			</div>
