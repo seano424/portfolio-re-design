@@ -1,34 +1,33 @@
 import { groq } from 'next-sanity'
 
-export const basicProjectFields = groq`
-_id,
-title,
-slug
-`
-
-export const imageFields = groq`
-asset-> {
-  url,
-  metadata {
-    dimensions {
-      width,
-      height
-    }
-  }
-}
-`
-
-export const getProjectsQuery = groq`
-*[_type == "project"] {
-  ${basicProjectFields}
+export const getProjectsQuery = groq`*[_type == "project"]{
+  _id,
+  _type,
+  title,
+  slug,
   featuredImage {
-    ${imageFields}
+    asset->{
+      url,
+      metadata {
+        dimensions {
+          width,
+          height
+        }
+      }
+    }
   },
-  images[] {
-    ${imageFields}
+  images[]{
+    asset->{
+      url,
+      metadata {
+        dimensions {
+          width,
+          height
+        }
+      }
+    }
   },
   liveUrl,
   githubUrl,
   description
-}
-`
+}`
