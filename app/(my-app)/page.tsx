@@ -2,13 +2,18 @@ import HeroSection from '@/components/sections/HeroSection'
 import ImageGrid from '@/components/sections/ImageGrid'
 import AboutSection from '@/components/sections/AboutSection'
 import ShowcaseSection from '@/components/sections/ShowcaseSection'
+import type { Project } from '@/sanity.types'
+import { getProjectsQuery } from '@/sanity/lib/queries'
+import { client } from '@/sanity/lib/client'
 
-export default function Home() {
+export default async function Home() {
+	const projects = await client.fetch<Project[]>(getProjectsQuery)
+
 	return (
 		<>
 			<HeroSection />
 			<div className="flex flex-col gap-20 lg:gap-40">
-				<ImageGrid />
+				<ImageGrid projects={projects} />
 				<AboutSection />
 				<ShowcaseSection />
 			</div>
