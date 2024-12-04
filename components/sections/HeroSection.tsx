@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Subheading from '@/components/ui/Subheading'
 import SocialLinks from '@/components/common/SocialLinks'
 import ColorChangingText from '@/components/ui/ColorChangingText'
+import { MoveRight } from 'lucide-react'
 
 const HeroSection = () => {
 	return (
@@ -22,12 +23,15 @@ const HeroSection = () => {
 						</span>
 					</h1>
 
-					<p className="text-xl text-white md:text-gray-400 dark:text-white">
+					<p className="flex items-center gap-1 text-xl text-white md:text-gray-400 dark:text-white">
 						Come and see what I&apos;m currently{' '}
-						<a href="#" className="underline underline-offset-8">
+						<a
+							href="#showcase"
+							className="cursor-hover group flex items-center gap-1 underline underline-offset-8"
+						>
 							working on
-						</a>{' '}
-						—
+							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out hover:text-blue-100 group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500" />
+						</a>
 					</p>
 					<SocialLinks />
 				</div>
