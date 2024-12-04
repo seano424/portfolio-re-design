@@ -22,7 +22,7 @@ export default function Cursor() {
 					'dark:border-[1px] dark:border-opacity-0 dark:bg-opacity-100',
 					hidden ? 'opacity-0' : 'opacity-100',
 					linkHovered &&
-						'dark:bg-light scale-150 transform bg-gray-900 transition-transform duration-300 ease-linear dark:border-white dark:border-opacity-100'
+						'dark:bg-light scale-150 transform bg-gray-900 transition-transform duration-300 border-white ease-linear dark:border-white dark:border-opacity-100'
 				)}
 				style={{
 					left: `${position.x}px`,
