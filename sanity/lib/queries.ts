@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity'
 
-export const getProjectsQuery = groq`*[_type == "project"]{
+export const getMostRecentProjectsQuery = groq`*[_type == "project"]| order(_updatedAt desc)[0...3]{
   _id,
   _type,
   title,

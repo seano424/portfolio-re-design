@@ -3,11 +3,11 @@ import ImageGrid from '@/components/sections/ImageGrid'
 import AboutSection from '@/components/sections/AboutSection'
 import ShowcaseSection from '@/components/sections/ShowcaseSection'
 import type { Project } from '@/sanity.types'
-import { getProjectsQuery } from '@/sanity/lib/queries'
+import { getMostRecentProjectsQuery } from '@/sanity/lib/queries'
 import { client } from '@/sanity/lib/client'
 
 export default async function Home() {
-	const projects = await client.fetch<Project[]>(getProjectsQuery)
+	const projects = await client.fetch<Project[]>(getMostRecentProjectsQuery)
 
 	return (
 		<>

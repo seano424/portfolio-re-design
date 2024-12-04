@@ -26,6 +26,7 @@ export const project = {
 			options: {
 				hotspot: true, // Enables UI for selecting what areas of an image should be cropped
 			},
+			validation: (Rule: any) => Rule.required(),
 		},
 		{
 			name: 'images',

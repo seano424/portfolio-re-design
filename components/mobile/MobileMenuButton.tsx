@@ -89,7 +89,7 @@ export default function MobileMenuButton() {
 					transition={{ duration: 0.2 }}
 					exit={{ opacity: 0, y: 10 }}
 				>
-					{navLinks.map(({ name, href, id }, index) => (
+					{navLinks.map(({ name, href }, index) => (
 						<li key={index}>
 							{href ? (
 								<Link
