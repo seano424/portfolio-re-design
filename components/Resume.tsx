@@ -14,7 +14,7 @@ const Resume = () => {
 	})
 
 	return (
-		<div className="container mx-auto flex max-w-4xl flex-col items-center justify-center bg-white p-8 dark:bg-gray-900 dark:text-white">
+		<div className="container mx-auto flex max-w-4xl flex-col items-center justify-center p-8 dark:bg-gray-900 dark:text-white">
 			<button
 				className="cursor-hover mb-5 rounded-md bg-gradient-to-br from-purple-500 to-blue-500 bg-size-200 bg-pos-0 px-4 py-2 font-mono font-bold uppercase text-white transition-all duration-500 ease-linear hover:bg-pos-100"
 				onClick={() => reactToPrintFn()}
@@ -39,17 +39,17 @@ const Resume = () => {
 				</header>
 
 				{/* Contact Info */}
-				<div className="mb-8 flex justify-center gap-6 text-gray-600 dark:text-gray-400">
+				<div className="mb-8 flex justify-center gap-6">
 					<a
 						href="mailto:soreilly424@gmail.com"
-						className="cursor-hover flex items-center gap-1 text-white duration-200 hover:text-blue-200 md:text-blue-500 md:hover:text-blue-500 dark:text-blue-300 dark:hover:text-white"
+						className="cursor-hover flex items-center justify-center gap-1 text-lg transition-colors duration-200 ease-linear hover:text-blue-200 md:text-blue-500 md:hover:text-blue-500 dark:text-blue-300 dark:hover:text-white"
 					>
 						<Mail className="h-6 w-6" />
 						soreilly424@gmail.com
 					</a>
 					<a
 						href="https://github.com/seano424"
-						className="cursor-hover hover:text-fuchsia-700-100 flex items-center gap-1 text-[#06d6a0] duration-300 dark:text-emerald-200 dark:hover:text-blue-300"
+						className="hover:text-fuchsia-700-100 flex items-center gap-1 text-[#06d6a0] duration-300 dark:text-emerald-200 dark:hover:text-blue-300"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ const Resume = () => {
 					</a>
 					<a
 						href="https://linkedin.com/in/sea-oreilly"
-						className="cursor-hover flex items-center gap-1 text-white duration-700 hover:text-blue-200 md:text-black md:hover:text-blue-500 dark:text-blue-200 dark:hover:text-white"
+						className="flex items-center gap-1 text-white duration-700 hover:text-blue-200 md:text-black md:hover:text-blue-500 dark:text-blue-200 dark:hover:text-white"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
