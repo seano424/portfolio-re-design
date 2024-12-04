@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { Mail, Phone } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { useReactToPrint } from 'react-to-print'
 
 const Resume = () => {
