@@ -24,7 +24,7 @@ const HeroSection = () => {
 
 					<p className="text-xl text-white md:text-gray-400 dark:text-white">
 						Come and see what I&apos;m currently{' '}
-						<a href="#" className="underline">
+						<a href="#" className="underline underline-offset-8">
 							working on
 						</a>{' '}
 						—
