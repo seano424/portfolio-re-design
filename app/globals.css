@@ -33,3 +33,8 @@ body {
 		text-wrap: balance;
 	}
 }
+
+@page {
+	/* margin: 20mm; */
+	margin: 10px 40px;
+}
