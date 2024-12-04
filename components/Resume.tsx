@@ -42,14 +42,14 @@ const Resume = () => {
 				<div className="mb-8 flex justify-center gap-6">
 					<a
 						href="mailto:soreilly424@gmail.com"
-						className="cursor-hover flex items-center justify-center gap-1 text-lg transition-colors duration-200 ease-linear hover:text-blue-200 md:text-blue-500 md:hover:text-blue-500 dark:text-blue-300 dark:hover:text-white"
+						className="cursor-hover flex items-center justify-center gap-1 text-lg text-blue-500 transition-colors duration-200 ease-linear hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200"
 					>
 						<Mail className="h-6 w-6" />
 						soreilly424@gmail.com
 					</a>
 					<a
 						href="https://github.com/seano424"
-						className="hover:text-fuchsia-700-100 flex items-center gap-1 text-[#06d6a0] duration-300 dark:text-emerald-200 dark:hover:text-blue-300"
+						className="hover:text-fuchsia-700-100 group flex items-center gap-1 text-emerald-500 duration-300 hover:text-purple-500 dark:text-emerald-300 dark:hover:text-emerald-200"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ const Resume = () => {
 							strokeWidth="2"
 							strokeLinecap="round"
 							strokeLinejoin="round"
-							className="h-6 w-6"
+							className="h-6 w-6 transition-all duration-700 group-hover:fill-purple-500"
 						>
 							<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
 							<path d="M9 18c-4.51 2-5-2-7-2" />
@@ -70,7 +70,7 @@ const Resume = () => {
 					</a>
 					<a
 						href="https://linkedin.com/in/sea-oreilly"
-						className="flex items-center gap-1 text-white duration-700 hover:text-blue-200 md:text-black md:hover:text-blue-500 dark:text-blue-200 dark:hover:text-white"
+						className="group flex items-center gap-1 text-black duration-700 hover:text-blue-500 dark:text-blue-200 dark:hover:text-blue-500"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const Resume = () => {
 							strokeWidth="2"
 							strokeLinecap="round"
 							strokeLinejoin="round"
-							className="h-6 w-6"
+							className="h-6 w-6 transition-all duration-700"
 						>
 							<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
 							<rect width="4" height="12" x="2" y="9" />
