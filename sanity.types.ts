@@ -68,6 +68,78 @@ export type Geopoint = {
 	alt?: number
 }
 
+export type Code = {
+	_type: 'code'
+	filename?: string
+	language?:
+		| 'javascript'
+		| 'typescript'
+		| 'html'
+		| 'css'
+		| 'python'
+		| 'bash'
+		| 'json'
+	code?: string
+}
+
+export type Post = {
+	_id: string
+	_type: 'post'
+	_createdAt: string
+	_updatedAt: string
+	_rev: string
+	title?: string
+	slug?: Slug
+	publishedAt?: string
+	featuredImage?: {
+		asset?: {
+			_ref: string
+			_type: 'reference'
+			_weak?: boolean
+			[internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+		}
+		hotspot?: SanityImageHotspot
+		crop?: SanityImageCrop
+		_type: 'image'
+	}
+	excerpt?: string
+	content?: Array<
+		| {
+				children?: Array<{
+					marks?: Array<string>
+					text?: string
+					_type: 'span'
+					_key: string
+				}>
+				style?: 'normal' | 'h1' | 'h2' | 'h3' | 'blockquote'
+				listItem?: 'bullet' | 'number'
+				markDefs?: Array<{
+					href?: string
+					_type: 'link'
+					_key: string
+				}>
+				level?: number
+				_type: 'block'
+				_key: string
+		  }
+		| {
+				asset?: {
+					_ref: string
+					_type: 'reference'
+					_weak?: boolean
+					[internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+				}
+				hotspot?: SanityImageHotspot
+				crop?: SanityImageCrop
+				_type: 'image'
+				_key: string
+		  }
+		| ({
+				_key: string
+		  } & Code)
+	>
+}
+
 export type Project = {
 	_id: string
 	_type: 'project'
@@ -198,6 +270,8 @@ export type AllSanitySchemaTypes =
 	| SanityImageDimensions
 	| SanityFileAsset
 	| Geopoint
+	| Code
+	| Post
 	| Project
 	| SanityImageCrop
 	| SanityImageHotspot
@@ -207,9 +281,9 @@ export type AllSanitySchemaTypes =
 	| Slug
 export declare const internalGroqTypeReferenceTo: unique symbol
 // Source: ./sanity/lib/queries.ts
-// Variable: getProjectsQuery
-// Query: *[_type == "project"]{  _id,  _type,  title,  slug,  featuredImage {    asset->{      url,      metadata {        dimensions {          width,          height        }      }    }  },  images[]{    asset->{      url,      metadata {        dimensions {          width,          height        }      }    }  },  liveUrl,  githubUrl,  description}
-export type GetProjectsQueryResult = Array<{
+// Variable: getMostRecentProjectsQuery
+// Query: *[_type == "project"]| order(_updatedAt desc)[0...3]{  _id,  _type,  title,  slug,  featuredImage {    asset->{      url,      metadata {        dimensions {          width,          height        }      }    }  },  images[]{    asset->{      url,      metadata {        dimensions {          width,          height        }      }    }  },  liveUrl,  githubUrl,  description}
+export type GetMostRecentProjectsQueryResult = Array<{
 	_id: string
 	_type: 'project'
 	title: string | null
@@ -265,11 +339,123 @@ export type GetProjectsQueryResult = Array<{
 		_key: string
 	}> | null
 }>
+// Variable: getPostsQuery
+// Query: *[_type == "post"] | order(publishedAt desc){  _id,  title,  slug,  publishedAt,  featuredImage {    asset->{      url,      metadata {        dimensions {          width,          height        }      }    }  },  excerpt,  content}
+export type GetPostsQueryResult = Array<{
+	_id: string
+	title: string | null
+	slug: Slug | null
+	publishedAt: string | null
+	featuredImage: {
+		asset: {
+			url: string | null
+			metadata: {
+				dimensions: {
+					width: number | null
+					height: number | null
+				} | null
+			} | null
+		} | null
+	} | null
+	excerpt: string | null
+	content: Array<
+		| ({
+				_key: string
+		  } & Code)
+		| {
+				children?: Array<{
+					marks?: Array<string>
+					text?: string
+					_type: 'span'
+					_key: string
+				}>
+				style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'normal'
+				listItem?: 'bullet' | 'number'
+				markDefs?: Array<{
+					href?: string
+					_type: 'link'
+					_key: string
+				}>
+				level?: number
+				_type: 'block'
+				_key: string
+		  }
+		| {
+				asset?: {
+					_ref: string
+					_type: 'reference'
+					_weak?: boolean
+					[internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+				}
+				hotspot?: SanityImageHotspot
+				crop?: SanityImageCrop
+				_type: 'image'
+				_key: string
+		  }
+	> | null
+}>
+// Variable: getPostBySlugQuery
+// Query: *[_type == "post" && slug.current == $slug][0]{  _id,  title,  slug,  publishedAt,  featuredImage {    asset->{      url,      metadata {        dimensions {          width,          height        }      }    }  },  excerpt,  content}
+export type GetPostBySlugQueryResult = {
+	_id: string
+	title: string | null
+	slug: Slug | null
+	publishedAt: string | null
+	featuredImage: {
+		asset: {
+			url: string | null
+			metadata: {
+				dimensions: {
+					width: number | null
+					height: number | null
+				} | null
+			} | null
+		} | null
+	} | null
+	excerpt: string | null
+	content: Array<
+		| ({
+				_key: string
+		  } & Code)
+		| {
+				children?: Array<{
+					marks?: Array<string>
+					text?: string
+					_type: 'span'
+					_key: string
+				}>
+				style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'normal'
+				listItem?: 'bullet' | 'number'
+				markDefs?: Array<{
+					href?: string
+					_type: 'link'
+					_key: string
+				}>
+				level?: number
+				_type: 'block'
+				_key: string
+		  }
+		| {
+				asset?: {
+					_ref: string
+					_type: 'reference'
+					_weak?: boolean
+					[internalGroqTypeReferenceTo]?: 'sanity.imageAsset'
+				}
+				hotspot?: SanityImageHotspot
+				crop?: SanityImageCrop
+				_type: 'image'
+				_key: string
+		  }
+	> | null
+} | null
 
 // Query TypeMap
 import '@sanity/client'
 declare module '@sanity/client' {
 	interface SanityQueries {
-		'*[_type == "project"]{\n  _id,\n  _type,\n  title,\n  slug,\n  featuredImage {\n    asset->{\n      url,\n      metadata {\n        dimensions {\n          width,\n          height\n        }\n      }\n    }\n  },\n  images[]{\n    asset->{\n      url,\n      metadata {\n        dimensions {\n          width,\n          height\n        }\n      }\n    }\n  },\n  liveUrl,\n  githubUrl,\n  description\n}': GetProjectsQueryResult
+		'*[_type == "project"]| order(_updatedAt desc)[0...3]{\n  _id,\n  _type,\n  title,\n  slug,\n  featuredImage {\n    asset->{\n      url,\n      metadata {\n        dimensions {\n          width,\n          height\n        }\n      }\n    }\n  },\n  images[]{\n    asset->{\n      url,\n      metadata {\n        dimensions {\n          width,\n          height\n        }\n      }\n    }\n  },\n  liveUrl,\n  githubUrl,\n  description\n}': GetMostRecentProjectsQueryResult
+		'*[_type == "post"] | order(publishedAt desc){\n  _id,\n  title,\n  slug,\n  publishedAt,\n  featuredImage {\n    asset->{\n      url,\n      metadata {\n        dimensions {\n          width,\n          height\n        }\n      }\n    }\n  },\n  excerpt,\n  content\n}': GetPostsQueryResult
+		'*[_type == "post" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  publishedAt,\n  featuredImage {\n    asset->{\n      url,\n      metadata {\n        dimensions {\n          width,\n          height\n        }\n      }\n    }\n  },\n  excerpt,\n  content\n}': GetPostBySlugQueryResult
 	}
 }
