@@ -27,7 +27,7 @@ const Header = () => {
 					/>
 				</Link>
 				<Nav />
-				<ul className="flex items-center gap-4">
+				<div className="flex items-center gap-4">
 					<Link
 						href="/hire-me"
 						className="rounded-md bg-gradient-to-r from-blue-500 via-purple-500 to-purple-500 bg-size-200 bg-pos-0 px-4 py-2 font-mono font-bold text-white transition-all duration-500 ease-linear hover:bg-pos-100"
@@ -36,7 +36,7 @@ const Header = () => {
 					</Link>
 					<ThemeSwitch />
 					<MobileMenuButton />
-				</ul>
+				</div>
 			</div>
 		</header>
 	)
