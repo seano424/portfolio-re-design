@@ -25,7 +25,7 @@ const Resume = () => {
 				{/* Header */}
 				<header className="mb-8 text-center">
 					<h1 className="mb-2 text-5xl font-black text-gray-900 md:text-6xl dark:text-white">
-						SEAN O'REILLY
+						SEAN O&apos;REILLY
 					</h1>
 					<h2 className="mb-1 text-xl font-black text-blue-500 dark:text-purple-500">
 						FRONTEND DEVELOPER
