@@ -8,6 +8,15 @@
 	--cursor-border-color: yellow;
 	--cursor-active-color: yellow;
 	--cursor-blend-mode: color-dodge;
+	--sh-class: #2d5e9d;
+	--sh-identifier: #354150;
+	--sh-sign: #8996a3;
+	--sh-property: #0550ae;
+	--sh-entity: #249a97;
+	--sh-jsxliterals: #6266d1;
+	--sh-string: #00a99a;
+	--sh-keyword: #f47067;
+	--sh-comment: #a19595;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,4 +46,115 @@ body {
 @page {
 	/* margin: 20mm; */
 	margin: 10px 40px;
+}
+
+code {
+	font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+	font-size: 14px;
+	padding: 0.2em 0.4em;
+	border-radius: 0.3em;
+	background-color: var(--color-gray-100);
+}
+
+::view-transition-old(lee) {
+	animation: fade-out 0.8s ease-in-out;
+}
+
+::view-transition-new(lee) {
+	animation: fade-in-up 0.4s ease-in-out;
+}
+
+@keyframes fade-out {
+	0% {
+		transform: translateY(0) translateX(-0.2px);
+		opacity: 1;
+		font-weight: 500;
+	}
+
+	20% {
+		transform: translateY(24px) translateX(-0.2px);
+		opacity: 0.5;
+	}
+
+	40% {
+		transform: translateY(24px) translateX(-0.2px);
+		opacity: 0.3;
+	}
+
+	60% {
+		transform: translateY(24px) translateX(-0.2px);
+		opacity: 0.2;
+	}
+
+	100% {
+		transform: translateY(24px) translateX(-0.2px);
+		opacity: 0;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	40% {
+		opacity: 0.6;
+	}
+
+	60% {
+		opacity: 0.8;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in-up {
+	0% {
+		transform: translateY(24px) translateX(-0.2px);
+		opacity: 0;
+	}
+
+	20% {
+		transform: translateY(24px) translateX(-0.2px);
+		opacity: 0.5;
+	}
+
+	80% {
+		transform: translateY(0) translateX(-0.2px);
+		opacity: 0.7;
+	}
+
+	100% {
+		transform: translateY(0) translateX(-0.2px);
+		opacity: 1;
+	}
+}
+
+@supports (view-transition-name: none) {
+	.fade-in {
+		animation: fade-in 0.8s ease-in-out forwards;
+		opacity: 0;
+	}
+}
+
+code {
+	font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+	font-size: 14px;
+	padding: 0;
+	border-radius: 0.3em;
+	background-color: var(--color-gray-100);
+}
+
+pre code {
+	counter-reset: sh-line-number;
+}
+
+.sh__line::before {
+	counter-increment: sh-line-number 1;
+	content: counter(sh-line-number);
+	margin-right: 24px;
+	text-align: right;
+	color: #a4a4a4;
 }
