@@ -16,7 +16,7 @@ const Resume = () => {
 	return (
 		<div className="container mx-auto flex max-w-4xl flex-col items-center justify-center p-8 dark:bg-gray-900 dark:text-white">
 			<button
-				className="cursor-hover mb-5 rounded-md bg-gradient-to-br from-purple-500 to-blue-500 bg-size-200 bg-pos-0 px-4 py-2 font-mono font-bold uppercase text-white transition-all duration-500 ease-linear hover:bg-pos-100"
+				className="cursor-hover mb-5 rounded-md bg-linear-to-br from-purple-500 to-blue-500 bg-size-200 bg-pos-0 px-4 py-2 font-mono font-bold uppercase text-white transition-all duration-500 ease-linear hover:bg-pos-100"
 				onClick={() => reactToPrintFn()}
 			>
 				Download
