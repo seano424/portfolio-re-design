@@ -1,8 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
+
 
 const commonClasses = `dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`
 
@@ -13,11 +15,27 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ name, href, id }) => {
+	const pathname = usePathname()
 	const smoothScroll = useSmoothScroll()
+	const router = useRouter()
 
-	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+	const handleClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
 		e.preventDefault()
 		if (id) {
+			if (pathname !== '/') {
+				router.push('/')
+
+				// Wait for element to exist
+				await new Promise((resolve) => {
+					const checkElement = setInterval(() => {
+						const element = document.getElementById(id)
+						if (element) {
+							clearInterval(checkElement)
+							resolve(true)
+						}
+					}, 100)
+				})
+			}
 			const targetElement = document.getElementById(id)
 			if (targetElement) {
 				const offset = 100
@@ -40,7 +58,7 @@ const NavLink: React.FC<NavLinkProps> = ({ name, href, id }) => {
 	}
 
 	return (
-		<a href={`#${id}`} onClick={handleClick} className={commonClasses}>
+		<a href={`/#${id}`} onClick={handleClick} className={commonClasses}>
 			{name}
 		</a>
 	)
