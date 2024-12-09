@@ -11,23 +11,38 @@ type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>
 
 const components = {
 	h1: (props: HeadingProps) => (
-		<h1 className="fade-in mb-0 pt-12 text-lg font-black" {...props} />
+		<h1
+			className="fade-in mb-0 pt-12 text-lg font-black dark:text-white"
+			{...props}
+		/>
 	),
 	h2: (props: HeadingProps) => (
-		<h2 className="mb-3 mt-8 font-medium text-gray-800" {...props} />
+		<h2
+			className="mt-8 mb-3 font-medium text-gray-800 dark:text-white"
+			{...props}
+		/>
 	),
 	h3: (props: HeadingProps) => (
-		<h3 className="mb-3 mt-8 font-medium text-gray-800" {...props} />
+		<h3
+			className="mt-8 mb-3 font-medium text-gray-800 dark:text-white"
+			{...props}
+		/>
 	),
 	h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
 	p: (props: ParagraphProps) => (
-		<p className="leading-snug text-gray-800" {...props} />
+		<p className="leading-snug text-gray-800 dark:text-white" {...props} />
 	),
 	ol: (props: ListProps) => (
-		<ol className="list-decimal space-y-2 pl-5 text-gray-800" {...props} />
+		<ol
+			className="list-decimal space-y-2 pl-5 text-gray-800 dark:text-white"
+			{...props}
+		/>
 	),
 	ul: (props: ListProps) => (
-		<ul className="list-disc space-y-1 pl-5 text-gray-800" {...props} />
+		<ul
+			className="list-disc space-y-1 pl-5 text-gray-800 dark:text-white"
+			{...props}
+		/>
 	),
 	li: (props: ListItemProps) => <li className="pl-1" {...props} />,
 	em: (props: ComponentPropsWithoutRef<'em'>) => (
@@ -67,7 +82,11 @@ const components = {
 	code: ({ children, ...props }: ComponentPropsWithoutRef<'code'>) => {
 		const codeHTML = highlight(children as string)
 		return (
-			<code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
+			<code
+				className="bg-gray-100 dark:bg-gray-800"
+				dangerouslySetInnerHTML={{ __html: codeHTML }}
+				{...props}
+			/>
 		)
 	},
 	Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
@@ -92,7 +111,7 @@ const components = {
 	),
 	blockquote: (props: BlockquoteProps) => (
 		<blockquote
-			className="border-l-3 ml-[0.075em] border-gray-300 pl-4 text-gray-700"
+			className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700"
 			{...props}
 		/>
 	),
