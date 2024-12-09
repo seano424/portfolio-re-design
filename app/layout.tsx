@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<ViewTransitions>
-			<html lang="en" suppressHydrationWarning>
+			<html lang="en" suppressHydrationWarning className="dark">
 				<body
 					cz-shortcut-listen="true"
 					className={clsx(

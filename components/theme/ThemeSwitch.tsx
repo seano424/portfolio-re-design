@@ -28,7 +28,7 @@ const ThemeSwitch = () => {
 		<div ref={divRef} className="relative">
 			<button
 				{...(mounted && { onClick: () => setIsOpen(!isOpen) })}
-				className="group flex items-center justify-between gap-1 rounded-lg border border-gray-50/0 bg-gray-200 p-2 dark:border-gray-700 dark:bg-gray-800"
+				className="group flex cursor-pointer items-center justify-between gap-1 rounded-lg border border-gray-50/0 bg-gray-200 p-2 dark:border-gray-700 dark:bg-gray-800"
 				disabled={!mounted}
 				aria-label={mounted ? 'Theme switch' : 'Loading theme switch'}
 			>
@@ -55,9 +55,9 @@ const ThemeSwitch = () => {
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 10 }}
 					transition={{ duration: 0.2 }}
-					className="absolute right-0 top-12"
+					className="absolute top-12 right-0"
 				>
-					<div className="flex flex-col items-start gap-2 text-nowrap rounded-lg bg-gray-200 p-5 dark:bg-gray-800">
+					<div className="flex flex-col items-start gap-2 rounded-lg bg-gray-200 p-5 text-nowrap dark:bg-gray-800">
 						<button
 							onClick={() => handleThemeChange('system')}
 							className={clsx(
