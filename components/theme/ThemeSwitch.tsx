@@ -36,7 +36,7 @@ const ThemeSwitch = () => {
 
 	const handleThemeChange = (theme: string) => {
 		setTheme(theme)
-		// setIsOpen(false)
+		setIsOpen(false)
 	}
 
 	return (
@@ -60,7 +60,7 @@ const ThemeSwitch = () => {
 						isOpen && 'rotate-180',
 						theme !== 'dark' && mounted
 							? 'group-hover:text-orange-500 dark:group-hover:text-orange-500'
-							: 'dark:group-hover:scale-150'
+							: ''
 					)}
 				/>
 			</button>
