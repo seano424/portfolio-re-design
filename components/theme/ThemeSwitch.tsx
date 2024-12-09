@@ -75,6 +75,7 @@ const ThemeSwitch = () => {
 					<div className="flex flex-col items-start rounded-lg bg-gray-200 text-xl text-nowrap dark:bg-gray-800">
 						{themeOptions.map((themeOption) => (
 							<button
+								key={themeOption.value}
 								onClick={() =>
 									handleThemeChange(themeOption.value)
 								}
