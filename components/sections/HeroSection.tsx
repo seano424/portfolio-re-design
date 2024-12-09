@@ -7,7 +7,7 @@ import { MoveRight } from 'lucide-react'
 
 const HeroSection = () => {
 	return (
-		<section className="relative mb-40 pt-20 lg:pt-40">
+		<section id="hero" className="relative mb-40 pt-20 lg:pt-40">
 			<div className="container">
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
 					<Subheading text="Sean O'Reilly" />
@@ -30,7 +30,7 @@ const HeroSection = () => {
 							className="cursor-hover group flex items-center gap-1 underline underline-offset-8"
 						>
 							working on
-							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out hover:text-blue-100 group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500" />
+							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 hover:text-blue-100 dark:text-blue-500" />
 						</a>
 					</p>
 					<SocialLinks />

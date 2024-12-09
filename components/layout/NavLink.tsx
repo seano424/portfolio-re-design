@@ -1,20 +1,26 @@
 'use client'
 
+import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 
-
-const commonClasses = `dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100`
-
 interface NavLinkProps {
 	name: string
 	href?: string
 	id?: string
+	reactElement?: React.ReactNode
+	isLogo?: boolean
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ name, href, id }) => {
+const NavLink: React.FC<NavLinkProps> = ({
+	name,
+	href,
+	id,
+	reactElement,
+	isLogo = false,
+}) => {
 	const pathname = usePathname()
 	const smoothScroll = useSmoothScroll()
 	const router = useRouter()
@@ -51,15 +57,28 @@ const NavLink: React.FC<NavLinkProps> = ({ name, href, id }) => {
 
 	if (href) {
 		return (
-			<Link className={commonClasses} href={href}>
-				{name}
+			<Link
+				className={clsx(
+					!isLogo &&
+						'dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100'
+				)}
+				href={href}
+			>
+				{reactElement ? reactElement : name}
 			</Link>
 		)
 	}
 
 	return (
-		<a href={`/#${id}`} onClick={handleClick} className={commonClasses}>
-			{name}
+		<a
+			href={`/#${id}`}
+			onClick={handleClick}
+			className={clsx(
+				!isLogo &&
+					'dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100'
+			)}
+		>
+			{reactElement ? reactElement : name}
 		</a>
 	)
 }
