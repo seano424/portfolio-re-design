@@ -1,0 +1,531 @@
+export const metadata = {
+	title: 'Upgrading to Tailwind v4',
+	description: 'A brief overview on some of the changes in Tailwind v4.',
+	alternates: {
+		canonical: '/n/tw-v4',
+	},
+}
+
+# Upgrading to Tailwind v4
+
+I recently upgraded my project to Tailwind v4. This post highlights some of the changes I had to make.
+
+## Why the upgrade?
+
+Well, for fun right?! Also, I wanted to try out the new v4 features and see what was changed.
+
+## What's new?
+
+There are a lot of changes in Tailwind v4. I'll highlight some of the more significant ones.
+
+## Upgrading
+
+I followed the [upgrade guide](https://tailwindcss.com/docs/v4-beta#getting-started) to upgrade my project, and I used the CLI to upgrade, 
+```
+npm install tailwindcss@next @tailwindcss/cli@next
+```
+
+This does a lot of the heavy lifting for you! It's a good idea to run the upgrade command in a new branch so you can revert if something goes wrong. 
+
+Afer upgrading automatically there are some changes. First off, here is the new `postcss.config.mjs` file.
+
+```js
+/** @type {import('postcss-load-config').Config} */
+const config = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
+
+export default config;
+```
+
+We can see that the `@tailwindcss/postcss` plugin is now the default plugin which is great because it comes out of the box, meaning we don't have to install it separately.
+
+### Migrating the Tailwind config file to the globals.css file
+
+One of the biggest changes is that the `tailwind.config.js` file is no longer used. Instead, the config is now in the `globals.css` file.
+
+This is a very interesting change and it has taken me a little while to wrap my head around it. I'll explain what I've learned so far.
+
+First off let me show what my previous tailwind.config.js file looked like.
+```js
+import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
+
+const config: Config = {
+	darkMode: 'selector',
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./lib/**/*.{js,ts,jsx,tsx,mdx}',
+		'./mdx-components.tsx',
+	],
+	theme: {
+		container: {
+			center: true,
+			padding: '1rem',
+		},
+		extend: {
+			colors: {
+				blue: {
+					100: '#caf0f8',
+					200: '#90e0ef',
+					300: '#40c9ff',
+					400: '#0077b6',
+					500: '#0070f3',
+					600: '#03045e',
+				},
+				fuchsia: {
+					...colors.fuchsia,
+					700: '#e81cff',
+				},
+				gray: {
+					...colors.gray,
+					300: '#F9FAFB',
+					700: '#333333',
+					800: '#0b101e',
+					900: '#0E1217',
+				},
+				white: '#fff',
+				black: '#000',
+				purple: {
+					...colors.purple,
+				},
+			},
+			backgroundSize: {
+				'size-200': '200% 200%',
+			},
+			backgroundPosition: {
+				'pos-0': '0% 0%',
+				'pos-100': '100% 100%',
+			},
+			animation: {
+				gradient: 'gradient 5s ease infinite',
+			},
+			keyframes: {
+				gradient: {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' },
+				},
+			},
+		},
+		debugScreens: {
+			position: ['bottom', 'right'],
+			style: {
+				backgroundColor: '#262626e6',
+				borderRadius: '4px',
+				boxShadow: 'none',
+				color: 'white',
+				padding: '8px',
+				margin: '18px 16px',
+				opacity: '100%',
+			},
+		},
+	},
+	plugins: [require('tailwindcss-debug-screens')],
+}
+export default config
+```
+
+So, there are a few things right away that might seem kind of complicated to do in the globals.css file. But, actually it's not too bad! Before I show the migration, let me show my previous globals.css file.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+	--cursor-border-color: yellow;
+	--cursor-active-color: yellow;
+	--cursor-blend-mode: color-dodge;
+	--sh-class: #2d5e9d;
+	--sh-identifier: #354150;
+	--sh-sign: #8996a3;
+	--sh-property: #0550ae;
+	--sh-entity: #249a97;
+	--sh-jsxliterals: #6266d1;
+	--sh-string: #00a99a;
+	--sh-keyword: #f47067;
+	--sh-comment: #a19595;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+		--cursor-border-color: purple;
+		--cursor-active-color: purple;
+		--cursor-blend-mode: color-dodge;
+	}
+}
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+```
+
+So, as you can see this previous file was super simple. Combining the tailwind config with the globals.css file is a very interesting change. Here is what my new globals.css file looks like.
+
+```css
+@import 'tailwindcss';
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+	--cursor-blend-mode: color-dodge;
+	--color-black: #000;
+	--color-white: #fff;
+
+	--color-gray-100: #f9fafb;
+	--color-gray-200: #e5e7eb;
+	--color-gray-300: #d1d5db;
+	--color-gray-400: #9ca3af;
+	--color-gray-500: #6b7280;
+	--color-gray-600: #4b5563;
+	--color-gray-700: #333333;
+	--color-gray-800: #0b101e;
+	--color-gray-900: #0e1217;
+
+	--color-blue-100: #caf0f8;
+	--color-blue-200: #90e0ef;
+	--color-blue-300: #40c9ff;
+	--color-blue-400: #0077b6;
+	--color-blue-500: #0070f3;
+	--color-blue-600: #03045e;
+
+	--color-fuchsia-700: #e81cff;
+
+	--cursor-border-color: yellow;
+	--cursor-active-color: yellow;
+	--cursor-blend-mode: color-dodge;
+	--sh-class: #2d5e9d;
+	--sh-identifier: #354150;
+	--sh-sign: #8996a3;
+	--sh-property: #0550ae;
+	--sh-entity: #249a97;
+	--sh-jsxliterals: #6266d1;
+	--sh-string: #00a99a;
+	--sh-keyword: #f47067;
+	--sh-comment: #a19595;
+}
+
+@theme {
+	--animation-fade-out: fade-out 0.8s ease-in-out forwards;
+	--animation-fade-in: fade-in 0.8s ease-in-out forwards;
+	--animation-fade-in-up: fade-in-up 0.8s ease-in-out forwards;
+	--animation-gradient: gradient 5s ease infinite;
+
+	@keyframes fade-out {
+		0% {
+			transform: translateY(0) translateX(-0.2px);
+			opacity: 1;
+			font-weight: 500;
+		}
+
+		20% {
+			transform: translateY(24px) translateX(-0.2px);
+			opacity: 0.5;
+		}
+
+		40% {
+			transform: translateY(24px) translateX(-0.2px);
+			opacity: 0.3;
+		}
+
+		60% {
+			transform: translateY(24px) translateX(-0.2px);
+			opacity: 0.2;
+		}
+
+		100% {
+			transform: translateY(24px) translateX(-0.2px);
+			opacity: 0;
+		}
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+
+		40% {
+			opacity: 0.6;
+		}
+
+		60% {
+			opacity: 0.8;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fade-in-up {
+		0% {
+			transform: translateY(24px) translateX(-0.2px);
+			opacity: 0;
+		}
+
+		20% {
+			transform: translateY(24px) translateX(-0.2px);
+			opacity: 0.5;
+		}
+
+		80% {
+			transform: translateY(0) translateX(-0.2px);
+			opacity: 0.7;
+		}
+
+		100% {
+			transform: translateY(0) translateX(-0.2px);
+			opacity: 1;
+		}
+	}
+
+	@keyframes gradient {
+		'0%': {
+			backgroundposition: '0% 50%';
+		}
+		,
+	'50%': {
+			backgroundposition: '100% 50%';
+		}
+		,
+		100% {
+			background-position: '0% 50%';
+		}
+	}
+}
+
+@utility text-balance {
+	text-wrap: balance;
+}
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 1rem;
+}
+
+@utility bg-size-200 {
+	background-size: 200% 200%;
+}
+
+@utility bg-pos-0 {
+	background-position: 0% 0%;
+}
+
+@utility bg-pos-100 {
+	background-position: 100% 100%;
+}
+
+@utility debug-screens {
+	&::before {
+		position: fixed;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 2147483647;
+		background-color: var(--color-gray-100);
+		padding: 0.25rem 0.5rem;
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--color-gray-900);
+		content: 'xs';
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+		border-radius: 0.25rem;
+		border: 1px solid var(--color-gray-300);
+	}
+
+	:where(.dark, .dark *) & {
+		background-color: var(--color-blue-300);
+		color: var(--color-gray-100);
+	}
+
+	@media (width >= theme(--breakpoint-sm)) {
+		&::before {
+			content: 'sm';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-md)) {
+		&::before {
+			content: 'md';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-lg)) {
+		&::before {
+			content: 'lg';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-xl)) {
+		&::before {
+			content: 'xl';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-2xl)) {
+		&::before {
+			content: '2xl';
+		}
+	}
+}
+```
+
+A lot going on here! I'll explain what I've learned so far. So, first off, we are simply importing like `@import 'tailwindcss';` and then we are using the `@variant` directive to add a dark mode class to the body. This was a very interesting change and I'm not sure I fully understand it yet.
+
+Next, we are defining the colors and theme variables, which I really like. TW writes of this: "Tailwind CSS v4.0 takes all of your design tokens and makes them available as CSS variables by default, so you can reference any value you need at run-time using just CSS.
+
+Using the example @theme from earlier, all of these values will be added to your CSS to as regular custom properties:"
+This is awesome because it means we can now use these variables in our CSS.
+
+Also, I am adding the keyframes for the animations inside the `@theme` directive which allows tailwind to remove the unused keyframes from the CSS!
+
+One of the changes I had to wrap my head around was the `@utility` directive. This is used to add utility classes to the project. So, for example, `@utility container` will add a `container` class to the project like so:
+
+```css
+.container {
+	margin-inline: auto;
+	padding-inline: 1rem;
+}
+```
+
+Another example is for these background position utilities:
+
+```css
+@utility bg-size-200 {
+	background-size: 200% 200%;
+}
+
+@utility bg-pos-0 {
+	background-position: 0% 0%;
+}
+
+@utility bg-pos-100 {
+	background-position: 100% 100%;
+}
+```
+
+The reason I am using these bg utilities in the first place is so that I can animate the background position of an element. Specifically, if you hover over my resume button you can see the background position change to manipulate the gradient.
+
+I also want to mention that the `debug-screens` utility is a very useful utility that I use in all of my projects. It adds a little debug screen to the bottom right of the screen that shows you the current screen size. I had been using a plugin for this in the past, but it's not yet compatible with v4. So, I just created my own utility for it like so:
+
+```css
+
+@utility debug-screens {
+	&::before {
+		position: fixed;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 2147483647;
+		background-color: var(--color-gray-100);
+		padding: 0.25rem 0.5rem;
+		font-family: monospace;
+		font-size: 0.75rem;
+		color: var(--color-gray-900);
+		content: 'xs';
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+		border-radius: 0.25rem;
+		border: 1px solid var(--color-gray-300);
+	}
+
+	:where(.dark, .dark *) & {
+		background-color: var(--color-blue-300);
+		color: var(--color-gray-100);
+	}
+
+	@media (width >= theme(--breakpoint-sm)) {
+		&::before {
+			content: 'sm';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-md)) {
+		&::before {
+			content: 'md';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-lg)) {
+		&::before {
+			content: 'lg';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-xl)) {
+		&::before {
+			content: 'xl';
+		}
+	}
+
+	@media (width >= theme(--breakpoint-2xl)) {
+		&::before {
+			content: '2xl';
+		}
+	}
+}
+```
+
+Notice the media queries and how we are using the `theme` directive to get the breakpoints. This is a very useful change and it means we can now use the breakpoints in our CSS. TW writes of this: "For cases where you still need to use the theme() function (like in media queries where CSS variables aren’t supported), you should use the CSS variable name instead of the old dot notation:
+
+```css
+@import "tailwindcss";
+
+/* Before */
+@media (width >= theme(screens.xl)) {
+  /* ... */
+}
+
+/* After */
+@media (width >= theme(--breakpoint-xl)) {
+  /* ... */
+}
+```
+
+So, that kind of covers up the changes I had to make. There's so many more changes in v4, but I think this is a good start. I'm looking forward to seeing how it evolves.
+
+# Cool stuff
+
+There are a lot of cool features in v4. I'll highlight some of the more interesting ones.
+
+# 3D Transforms
+
+Finally, TW has added 3D transforms to the project. This is a very useful feature and it means we can now use 3D transforms in our project and you can even add hover effects to them!
+
+# Radial Gradients!
+
+I think I'm going to try to use this somehow in my project. I have no idea how I'm going to use it yet, but I think it's a very cool feature.
+
+# Color Scheme Utilities
+
+I never really thought about the scroll bar color before, and now that it's brought up I definitely want to use it in my project and other projects. 
+
+# Data Attributes
+
+This is really cool but now you can do stuff like this:
+
+```jsx
+// Before
+<div class="opacity-50 data-[selected]:opacity-100" data-selected>
+  <!-- ... -->
+</div>
+
+// After
+<div class="opacity-50 data-[selected]:opacity-100" data-selected>
+  <!-- ... -->
+</div>
+
+```
+
+# Conclusion
+
+I'm super happy how easy it was to upgrade to v4. There's a lot of interesting changes here and it's going to take me a while to wrap my head around it all. I'm looking forward to seeing how it evolves. Personally, I think I like the idea of getting away from the config file and just having everything in the globals.css file. It's a lot more flexible and it's a lot easier to manage. Also, there are a bunch of great new features in v4 that I'm looking forward to using.
