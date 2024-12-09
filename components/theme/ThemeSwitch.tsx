@@ -50,16 +50,17 @@ const ThemeSwitch = () => {
 				{!mounted ? (
 					<Loader2 className="h-6 w-6 animate-spin" />
 				) : theme === 'dark' ? (
-					<Moon className="h-6 w-6 transition-all duration-200 ease-linear group-hover:text-blue-500" />
+					<Moon className="h-6 w-6" />
 				) : (
 					<Sun className="h-6 w-6 transition-all duration-200 ease-linear group-hover:text-orange-500" />
 				)}
 				<ChevronDown
 					className={clsx(
 						'h-5 w-5 transition-all duration-200 ease-linear',
+						isOpen && 'rotate-180',
 						theme !== 'dark' && mounted
 							? 'group-hover:text-orange-500 dark:group-hover:text-orange-500'
-							: 'group-hover:text-blue-500 dark:group-hover:text-blue-500'
+							: 'dark:group-hover:scale-150'
 					)}
 				/>
 			</button>
