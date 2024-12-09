@@ -71,7 +71,7 @@ const ThemeSwitch = () => {
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 10 }}
 					transition={{ duration: 0.2 }}
-					className="absolute top-12 right-0"
+					className="absolute top-16 right-0"
 				>
 					<div className="flex flex-col items-start rounded-lg bg-gray-200 text-xl text-nowrap dark:bg-gray-800">
 						{themeOptions.map((themeOption) => (
@@ -83,7 +83,7 @@ const ThemeSwitch = () => {
 								className={clsx(
 									'flex items-center gap-2 hover:text-fuchsia-700 dark:hover:text-blue-300',
 									'transition-all duration-200 ease-linear',
-									'w-full cursor-pointer p-4 capitalize',
+									'w-full cursor-pointer px-4 py-3 capitalize',
 									theme === themeOption.value &&
 										'text-fuchsia-700 dark:text-blue-300'
 								)}
