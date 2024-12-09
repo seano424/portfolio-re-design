@@ -10,6 +10,7 @@ import { Inter } from 'next/font/google'
 import { ViewTransitions } from 'next-view-transitions'
 
 const inter = Inter({ subsets: ['latin'] })
+const DEV_MODE = process.env.DEV_MODE === 'true'
 
 const geistMono = localFont({
 	src: './fonts/GeistMonoVF.woff',
@@ -35,7 +36,8 @@ export default function RootLayout({
 					className={clsx(
 						geistMono.variable,
 						inter.className,
-						'debug-screens flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900'
+						'flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900',
+						DEV_MODE && 'debug-screens'
 					)}
 				>
 					<ThemeProvider attribute="class" defaultTheme="dark">
