@@ -3,9 +3,24 @@
 import clsx from 'clsx'
 import { useState, useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
-import { Sun, Moon, ChevronDown, Loader2 } from 'lucide-react'
+import { Sun, Moon, ChevronDown, Loader2, Monitor } from 'lucide-react'
 import { motion } from 'framer-motion'
 import useOutsideClick from '@/hooks/useOutsideClick'
+
+const themeOptions = [
+	{
+		name: 'system',
+		value: 'system',
+	},
+	{
+		name: 'dark mode',
+		value: 'dark',
+	},
+	{
+		name: 'light mode',
+		value: 'light',
+	},
+]
 
 const ThemeSwitch = () => {
 	const [mounted, setMounted] = useState(false)
@@ -21,7 +36,7 @@ const ThemeSwitch = () => {
 
 	const handleThemeChange = (theme: string) => {
 		setTheme(theme)
-		setIsOpen(false)
+		// setIsOpen(false)
 	}
 
 	return (
@@ -57,40 +72,32 @@ const ThemeSwitch = () => {
 					transition={{ duration: 0.2 }}
 					className="absolute top-12 right-0"
 				>
-					<div className="flex flex-col items-start gap-2 rounded-lg bg-gray-200 p-5 text-nowrap dark:bg-gray-800">
-						<button
-							onClick={() => handleThemeChange('system')}
-							className={clsx(
-								'flex items-center gap-2 hover:text-blue-500',
-								'transition-all duration-200 ease-linear',
-								'w-full',
-								theme === 'system' && 'text-blue-500'
-							)}
-						>
-							System
-						</button>
-						<button
-							onClick={() => handleThemeChange('dark')}
-							className={clsx(
-								'flex items-center gap-2 hover:text-blue-500',
-								'transition-all duration-200 ease-linear',
-								'w-full',
-								theme === 'dark' && 'text-blue-500'
-							)}
-						>
-							Dark Mode
-						</button>
-						<button
-							onClick={() => handleThemeChange('light')}
-							className={clsx(
-								'flex items-center gap-2 hover:text-blue-500',
-								'transition-all duration-200 ease-linear',
-								'w-full',
-								theme === 'light' && 'text-blue-500'
-							)}
-						>
-							Light Mode
-						</button>
+					<div className="flex flex-col items-start rounded-lg bg-gray-200 text-xl text-nowrap dark:bg-gray-800">
+						{themeOptions.map((themeOption) => (
+							<button
+								onClick={() =>
+									handleThemeChange(themeOption.value)
+								}
+								className={clsx(
+									'flex items-center gap-2 hover:text-fuchsia-700 dark:hover:text-blue-300',
+									'transition-all duration-200 ease-linear',
+									'w-full cursor-pointer p-4 capitalize',
+									theme === themeOption.value &&
+										'text-fuchsia-700 dark:text-blue-300'
+								)}
+							>
+								{themeOption.value === 'system' && (
+									<Monitor className="h-5 w-5" />
+								)}
+								{themeOption.value === 'dark' && (
+									<Moon className="h-5 w-5" />
+								)}
+								{themeOption.value === 'light' && (
+									<Sun className="h-5 w-5" />
+								)}
+								{themeOption.name}
+							</button>
+						))}
 					</div>
 				</motion.div>
 			)}
