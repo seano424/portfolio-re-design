@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function ContactPage() {
 	return (
-		<div className="mx-auto mt-32 flex max-w-5xl items-center justify-center gap-20 text-gray-800 dark:text-gray-100">
+		<div className="mx-auto flex max-w-5xl flex-col items-center justify-center py-10 text-gray-800 md:flex-row md:gap-20 md:pt-32 dark:text-gray-100">
 			<div className="relative aspect-square h-[450px]">
 				<a href="mailto:soreilly424@gmail.com">
 					<Image

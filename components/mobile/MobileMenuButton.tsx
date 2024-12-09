@@ -1,17 +1,22 @@
 'use client'
 
 import clsx from 'clsx'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import useOutsideClick from '@/hooks/useOutsideClick'
 import { AnimatePresence, motion } from 'framer-motion'
 import navLinks from '@/lib/navLinks'
 import NavLink from '@/components/layout/NavLink'
+import { usePathname } from 'next/navigation'
 
 export default function MobileMenuButton() {
 	const [isOpen, setIsOpen] = useState(false)
 	const menuRef = useRef<HTMLDivElement>(null)
-
+	const pathname = usePathname()
 	useOutsideClick(menuRef, () => setIsOpen(false))
+
+	useEffect(() => {
+		setIsOpen(false)
+	}, [pathname])
 
 	return (
 		<div ref={menuRef} className="flex items-center xl:hidden">
@@ -19,7 +24,7 @@ export default function MobileMenuButton() {
 				onClick={() => setIsOpen(!isOpen)}
 				className={clsx(
 					'relative -left-2.5 -mr-2.5 bg-transparent p-0',
-					'transition-all duration-500 scale-90 ease-linear hover:scale-100',
+					'scale-90 transition-all duration-500 ease-linear hover:scale-100',
 					isOpen && 'active'
 				)}
 				aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
