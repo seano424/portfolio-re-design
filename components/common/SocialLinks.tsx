@@ -1,4 +1,4 @@
-import socialLinks from '@/lib/socialLinks'
+import { socialLinks } from '@/lib/socialLinks'
 
 const SocialLinks = () => {
 	return (
@@ -9,9 +9,9 @@ const SocialLinks = () => {
 					target="_blank"
 					key={name}
 					href={href}
-					className={`${className} flex items-center justify-center gap-2 text-lg transition-colors ease-linear`}
+					className={`${className} flex items-center justify-center gap-2 text-xl transition-colors ease-linear`}
 				>
-					<Icon className="h-8 w-8" />
+					<Icon className="h-6 w-6" />
 					{name}
 				</a>
 			))}
