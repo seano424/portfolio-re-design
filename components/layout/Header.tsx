@@ -9,7 +9,7 @@ const Header = () => {
 	return (
 		<header className="fixed top-0 right-0 left-0 z-50 h-20 bg-gray-50/30 py-4 text-gray-900 filter backdrop-blur-sm dark:bg-gray-900/30 dark:text-white">
 			<div className="container flex h-full items-center justify-between">
-				<NavLink isLogo id="hero" name="logo" reactElement={<Logo />} />
+				<NavLink isLogo id="home" name="logo" reactElement={<Logo />} />
 				<Nav />
 				<div className="flex items-center gap-4">
 					<Link

@@ -7,7 +7,7 @@ import { MoveRight } from 'lucide-react'
 
 const HeroSection = () => {
 	return (
-		<section id="hero" className="relative mb-40 pt-20 lg:pt-40">
+		<section id="home" className="relative mb-40 pt-20 lg:pt-40">
 			<div className="container">
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
 					<Subheading text="Sean O'Reilly" />

@@ -3,9 +3,9 @@
 import clsx from 'clsx'
 import { useState, useRef } from 'react'
 import useOutsideClick from '@/hooks/useOutsideClick'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import navLinks from '@/lib/navLinks'
-import Link from 'next/link'
+import NavLink from '@/components/layout/NavLink'
 
 export default function MobileMenuButton() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -14,12 +14,12 @@ export default function MobileMenuButton() {
 	useOutsideClick(menuRef, () => setIsOpen(false))
 
 	return (
-		<div ref={menuRef} className="relative flex items-center xl:hidden">
+		<div ref={menuRef} className="flex items-center xl:hidden">
 			<button
 				onClick={() => setIsOpen(!isOpen)}
 				className={clsx(
 					'relative -left-2.5 -mr-2.5 bg-transparent p-0',
-					'transition-all duration-500 ease-linear hover:scale-105',
+					'transition-all duration-500 scale-90 ease-linear hover:scale-100',
 					isOpen && 'active'
 				)}
 				aria-label={isOpen ? 'Close Menu' : 'Open Menu'}
@@ -80,33 +80,28 @@ export default function MobileMenuButton() {
 				</svg>
 			</button>
 
-			{isOpen && (
-				<motion.ul
-					key="mobile-menu"
-					className="absolute -right-4 top-16 flex flex-col items-end gap-4 text-nowrap rounded-lg bg-gray-50 px-10 py-4 shadow-lg dark:bg-gray-900"
-					initial={{ opacity: 0, y: 10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.2 }}
-					exit={{ opacity: 0, y: 10 }}
-				>
-					{navLinks.map(({ name, href }, index) => (
-						<li key={index}>
-							{href ? (
-								<Link
-									className="hover:text-blue-500 dark:hover:text-blue-400"
-									href={href}
-								>
-									{name}
-								</Link>
-							) : (
-								<button className="hover:text-purple-500 dark:hover:text-purple-400">
-									{name}
-								</button>
-							)}
-						</li>
-					))}
-				</motion.ul>
-			)}
+			<AnimatePresence>
+				{isOpen && (
+					<motion.ul
+						key="mobile-menu"
+						className="absolute top-20 right-3 flex flex-col items-end rounded-lg bg-gray-50/50 px-10 py-4 text-nowrap shadow-lg filter backdrop-blur-xl dark:bg-gray-900/10"
+						initial={{ opacity: 0, x: 20 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 0.7 }}
+						exit={{ opacity: 0, x: 20 }}
+					>
+						<NavLink id="home" name="Home" />
+						{navLinks.map(({ name, href, id }, index) => (
+							<NavLink
+								key={index}
+								id={id}
+								name={name}
+								href={href}
+							/>
+						))}
+					</motion.ul>
+				)}
+			</AnimatePresence>
 		</div>
 	)
 }
