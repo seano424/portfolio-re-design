@@ -3,5 +3,9 @@ export default function PostsLayout({
 }: {
 	children: React.ReactNode
 }) {
-	return <section className="container">{children}</section>
+	return (
+		<section className="mx-auto flex max-w-2xl flex-col gap-4">
+			{children}
+		</section>
+	)
 }
