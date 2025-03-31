@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { Mail } from 'lucide-react'
+import { Mail, GitHub, LinkedIn } from './icons'
 import { useReactToPrint } from 'react-to-print'
 
 const Resume = () => {
@@ -16,78 +16,49 @@ const Resume = () => {
 	return (
 		<div className="container mx-auto flex max-w-4xl flex-col items-center justify-center p-8 dark:bg-gray-900 dark:text-white">
 			<button
-				className="cursor-hover mb-5 rounded-md bg-linear-to-br from-purple-500 to-blue-500 bg-size-200 bg-pos-0 px-4 py-2 font-mono font-bold uppercase text-white transition-all duration-500 ease-linear hover:bg-pos-100"
+				className="cursor-hover bg-size-200 bg-pos-0 hover:bg-pos-100 mb-5 rounded-md bg-linear-to-br from-purple-500 to-blue-500 px-4 py-2 font-mono font-bold text-white uppercase transition-all duration-500 ease-linear"
 				onClick={() => reactToPrintFn()}
 			>
 				Download
 			</button>
-			<div ref={contentRef}>
+			<div className="flex flex-col gap-2" ref={contentRef}>
 				{/* Header */}
-				<header className="mb-8 text-center">
-					<h1 className="mb-2 text-5xl font-black text-gray-900 md:text-6xl dark:text-white">
+				<header className="flex flex-col gap-2 text-center">
+					<h1 className="text-5xl font-black text-gray-900 md:text-6xl dark:text-white">
 						SEAN O&apos;REILLY
 					</h1>
-					<h2 className="mb-1 text-xl font-black text-blue-500 dark:text-purple-500">
+					<h2 className="text-xl font-black text-blue-500 dark:text-purple-500">
 						FRONTEND DEVELOPER
 					</h2>
 					<a
 						href="https://seanoreilly.me"
-						className="text-gray-600 dark:text-gray-400"
+						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
 						SEANOREILLY.ME
 					</a>
 				</header>
 
 				{/* Contact Info */}
-				<div className="mb-8 flex justify-center gap-6">
+				<div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-6">
 					<a
 						href="mailto:soreilly424@gmail.com"
-						className="cursor-hover flex items-center justify-center gap-1 text-lg text-blue-500 transition-colors duration-200 ease-linear hover:text-blue-700 dark:text-blue-300 dark:hover:text-blue-200"
+						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
-						<Mail className="h-6 w-6" />
+						<Mail />
 						soreilly424@gmail.com
 					</a>
 					<a
 						href="https://github.com/seano424"
-						className="hover:text-fuchsia-700-100 group flex items-center gap-1 text-emerald-500 duration-300 hover:text-purple-500 dark:text-emerald-300 dark:hover:text-emerald-200"
+						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							className="h-6 w-6 transition-all duration-700 group-hover:fill-purple-500"
-						>
-							<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-							<path d="M9 18c-4.51 2-5-2-7-2" />
-						</svg>
+						<GitHub />
 						@seano424
 					</a>
 					<a
 						href="https://linkedin.com/in/sea-oreilly"
-						className="group flex items-center gap-1 text-black duration-700 hover:text-blue-500 dark:text-blue-200 dark:hover:text-blue-500"
+						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							className="h-6 w-6 transition-all duration-700"
-						>
-							<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-							<rect width="4" height="12" x="2" y="9" />
-							<circle cx="4" cy="4" r="2" />
-						</svg>
+						<LinkedIn />
 						@sea-oreilly
 					</a>
 				</div>
