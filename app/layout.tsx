@@ -8,6 +8,8 @@ import Cursor from '@/components/common/Cursor'
 import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 import { ViewTransitions } from 'next-view-transitions'
+import { MobileMenuProvider } from '@/contexts/MobileMenuContext'
+import MobileMenu from '@/components/mobile/MobileMenu'
 
 const inter = Inter({ subsets: ['latin'] })
 const DEV_MODE = process.env.DEV_MODE === 'true'
@@ -53,9 +55,12 @@ export default function RootLayout({
 					)}
 				>
 					<ThemeProvider attribute="class" defaultTheme="dark">
-						<Header />
-						<Cursor />
-						<main className="flex-1 py-20">{children}</main>
+						<MobileMenuProvider>
+							<MobileMenu />
+							<Header />
+							<Cursor />
+							<main className="flex-1 py-20">{children}</main>
+						</MobileMenuProvider>
 					</ThemeProvider>
 				</body>
 			</html>

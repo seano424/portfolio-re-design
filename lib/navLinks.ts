@@ -10,17 +10,17 @@ export const navLinks: NavLinkProps[] = [
 		id: 'showcase',
 	},
 	{
-		name: 'About',
+		name: 'About Me',
 		id: 'about',
 	},
-	{
-		name: 'Blog',
-		href: '/posts',
-	},
-	{
-		name: 'Media',
-		href: '/media',
-	},
+	// {
+	// 	name: 'Blog',
+	// 	href: '/posts',
+	// },
+	// {
+	// 	name: 'Media',
+	// 	href: '/media',
+	// },
 	{
 		name: 'Contact',
 		href: '/contact',
