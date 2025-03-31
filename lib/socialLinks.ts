@@ -1,5 +1,4 @@
-import { Twitter, GitHub, LinkedIn, Bluesky } from '@/components/icons'
-import { Phone } from 'lucide-react'
+import { LinkedIn, Bluesky } from '@/components/icons'
 import { ComponentProps } from 'react'
 import { LucideIcon } from 'lucide-react'
 
@@ -18,13 +17,6 @@ export const socialLinks: SocialLinkProps[] = [
 	// 	href: 'https://twitter.com/sea_oreilly',
 	// 	Icon: Twitter,
 	// },
-	{
-		name: 'GitHub',
-		className:
-			'text-emerald-500 hover:text-fuchsia-700 dark:text-emerald-200 dark:hover:text-blue-300 duration-300',
-		href: 'https://github.com/seano424',
-		Icon: GitHub,
-	},
 	// {
 	// 	name: 'By Phone',
 	// 	className:

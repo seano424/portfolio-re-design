@@ -1,13 +1,11 @@
 'use client'
 
-import Link from 'next/link'
 import navLinks from '@/lib/navLinks'
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence } from 'framer-motion'
 import NavLink from '@/components/layout/NavLink'
-import useOutsideClick from '@/hooks/useOutsideClick'
 import { useMobileMenu } from '@/contexts/MobileMenuContext'
 
 export default function MobileMenu() {
@@ -17,7 +15,7 @@ export default function MobileMenu() {
 
 	useEffect(() => {
 		setIsOpen(false)
-	}, [pathname])
+	}, [pathname, setIsOpen])
 
 	return (
 		<AnimatePresence>

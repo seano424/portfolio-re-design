@@ -1,7 +1,7 @@
 import './globals.css'
 
 import clsx from 'clsx'
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Header from '@/components/layout/Header'
 import Cursor from '@/components/common/Cursor'
