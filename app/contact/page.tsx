@@ -26,7 +26,7 @@ export default function ContactPage() {
 				</a>
 
 				<div className="flex gap-5">
-					{socialLinks.map(({ name, href }) => (
+					{socialLinks.map(({ name, href, Icon }) => (
 						<a
 							key={name}
 							href={href}
@@ -35,6 +35,7 @@ export default function ContactPage() {
 							className="flex items-center gap-2 font-mono text-gray-900 uppercase hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-300"
 						>
 							{name}
+							<Icon />
 						</a>
 					))}
 				</div>
