@@ -1,7 +1,7 @@
 import './globals.css'
 
 import clsx from 'clsx'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import Header from '@/components/layout/Header'
 import Cursor from '@/components/common/Cursor'
@@ -20,7 +20,19 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
 	title: "Sean O'Reilly | Frontend developer, designer",
-	description: 'Frontend developer, optimist, and designer',
+	description: 'Frontend developer',
+	alternates: {
+		canonical: '/',
+		languages: {
+			'en-US': '/en-US',
+			'es-ES': '/es-ES',
+		},
+	},
+	icons: {
+		icon: [{ url: '/favicon.ico', sizes: 'any' }],
+		shortcut: '/favicon.ico',
+		apple: '/favicon.ico',
+	},
 }
 
 export default function RootLayout({
