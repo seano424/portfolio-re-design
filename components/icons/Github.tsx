@@ -9,7 +9,7 @@ const GitHub = (props: SVGProps<SVGSVGElement>) => (
 		height="24"
 		width="24"
 		{...props}
-		className="text-gray-900 dark:text-green-500"
+		className="text-emerald-500 dark:text-green-500"
 	>
 		<desc>Github Logo 1 Streamline Icon: https://streamlinehq.com</desc>
 		<path

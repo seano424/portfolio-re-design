@@ -1,4 +1,4 @@
-import { LinkedIn, Bluesky } from '@/components/icons'
+import { LinkedIn, Bluesky, GitHub } from '@/components/icons'
 import { ComponentProps } from 'react'
 import { LucideIcon } from 'lucide-react'
 
@@ -37,6 +37,13 @@ export const socialLinks: SocialLinkProps[] = [
 			'text-black hover:text-blue-500 dark:text-blue-200 dark:hover:text-white duration-700',
 		href: 'https://bsky.app/profile/sea-oreilly.bsky.social',
 		Icon: Bluesky,
+	},
+	{
+		name: 'GitHub',
+		className:
+			'text-black hover:text-blue-500 dark:text-blue-200 dark:hover:text-white duration-700',
+		href: 'https://github.com/seano424',
+		Icon: GitHub,
 	},
 ]
 
