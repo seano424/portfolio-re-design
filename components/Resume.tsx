@@ -31,10 +31,10 @@ const Resume = () => {
 						FRONTEND DEVELOPER
 					</h2>
 					<a
-						href="https://seanoreilly.me"
+						href="https://sean-oreilly-portfolio.vercel.app/"
 						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
-						SEANOREILLY.ME
+						sean-oreilly-portfolio.vercel.app
 					</a>
 				</header>
 
