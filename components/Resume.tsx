@@ -11,6 +11,16 @@ const Resume = () => {
 		documentTitle: "Sean O'Reilly's Resume",
 		onPrintError: (error) => console.error(error),
 		onAfterPrint: () => console.log('Printed!'),
+		pageStyle: `
+			@page {
+				margin: 0.5in;
+			}
+			@media print {
+				body {
+					padding: 1rem;
+				}
+			}
+		`,
 	})
 
 	return (
