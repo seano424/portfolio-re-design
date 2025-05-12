@@ -12,6 +12,7 @@ interface NavLinkProps {
 	id?: string
 	reactElement?: React.ReactNode
 	isLogo?: boolean
+	onClick?: () => void
 }
 
 const NavLink: React.FC<NavLinkProps> = ({
@@ -20,6 +21,7 @@ const NavLink: React.FC<NavLinkProps> = ({
 	id,
 	reactElement,
 	isLogo = false,
+	onClick,
 }) => {
 	const pathname = usePathname()
 	const smoothScroll = useSmoothScroll()
@@ -53,6 +55,7 @@ const NavLink: React.FC<NavLinkProps> = ({
 				window.history.pushState(null, '', `#${id}`)
 			}
 		}
+		onClick?.()
 	}
 
 	if (href) {
@@ -63,6 +66,7 @@ const NavLink: React.FC<NavLinkProps> = ({
 						'dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100'
 				)}
 				href={href}
+				onClick={onClick}
 			>
 				{reactElement ? reactElement : name}
 			</Link>
