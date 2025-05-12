@@ -22,12 +22,14 @@ const HeroSection = () => {
 	}, [])
 
 	return (
-		<section id="home" className="relative mb-40 pt-20 lg:pt-40">
+		<section id="home" className="relative mb-40 pt-10 sm:pt-20 lg:pt-40">
 			<div className="container">
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
-					<Subheading text="Sean O'Reilly" />
+					<div className="hidden sm:block">
+						<Subheading text="Sean O'Reilly" />
+					</div>
 					<h1
-						className={`flex flex-col text-5xl font-black md:text-6xl md:text-gray-900 dark:text-white`}
+						className={`flex flex-col text-4xl font-black md:text-5xl md:text-gray-900 dark:text-white`}
 					>
 						<span className="block">Front-end developer.</span>
 
