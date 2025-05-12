@@ -15,7 +15,9 @@ export default async function Home() {
 			<div className="flex flex-col gap-20 lg:gap-40">
 				<ImageGrid projects={projects} />
 				<AboutSection />
-				<ShowcaseSection />
+				<div className="p-2">
+					<ShowcaseSection />
+				</div>
 			</div>
 		</>
 	)
