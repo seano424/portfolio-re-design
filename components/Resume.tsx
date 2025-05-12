@@ -19,6 +19,31 @@ const Resume = () => {
 				body {
 					padding: 1rem;
 				}
+				@page {
+					size: auto;
+					margin: 0.5in;
+				}
+				@page :first {
+					margin-top: 0.5in;
+				}
+				@page :left {
+					margin-left: 0.5in;
+				}
+				@page :right {
+					margin-right: 0.5in;
+				}
+				@page :top {
+					margin-top: 0.5in;
+				}
+				@page :bottom {
+					margin-bottom: 0.5in;
+				}
+				@page :header {
+					display: none;
+				}
+				@page :footer {
+					display: none;
+				}
 			}
 		`,
 	})
