@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
 import type { Project } from '@/sanity.types'
