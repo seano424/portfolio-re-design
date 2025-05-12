@@ -70,7 +70,9 @@ const Resume = () => {
 						3 years of experience crafting blazing-fast, accessible
 						web applications. Specialized in React and Next.js
 						development with a strong foundation in TypeScript and
-						modern JavaScript. Adept at contributing to highly
+						modern JavaScript. Experienced in building full-stack
+						applications with Supabase, React Query, and modern data
+						fetching patterns. Adept at contributing to highly
 						collaborative environments while independently
 						architecting solutions and writing clean, reusable code.
 						Committed to creating intuitive user experiences through
@@ -103,11 +105,17 @@ const Resume = () => {
 						<ul className="ml-5 list-disc space-y-2 text-gray-700 dark:text-gray-300">
 							<li>
 								Design and develop modern web applications using
-								Next.js, TypeScript, and Tailwind CSS
+								Next.js App Router, TypeScript, and Tailwind CSS
 							</li>
 							<li>
-								Implement headless CMS solutions with Sanity for
-								efficient content management
+								Build full-stack applications with Supabase for
+								backend services, authentication, and real-time
+								database functionality
+							</li>
+							<li>
+								Implement efficient data fetching and state
+								management with React Query for optimized API
+								integration and caching
 							</li>
 							<li>
 								Create responsive, accessible interfaces with a
@@ -195,8 +203,19 @@ const Resume = () => {
 								Frontend Development
 							</h3>
 							<p className="text-gray-700 dark:text-gray-300">
-								Next.js, React, TypeScript, JavaScript, Tailwind
-								CSS, CSS/Sass
+								Astro, Next.js (App Router and Pages Router),
+								React, TypeScript, JavaScript, Tailwind CSS,
+								CSS/Sass, HTML, Alpine.js
+							</p>
+						</div>
+						<div>
+							<h3 className="mb-2 font-bold">
+								Backend & Data Services
+							</h3>
+							<p className="text-gray-700 dark:text-gray-300">
+								Supabase, PostgreSQL, React Query, REST APIs,
+								Authentication with Clerk, Firebase, Next Auth,
+								and Supabase Auth
 							</p>
 						</div>
 						<div>
@@ -204,7 +223,8 @@ const Resume = () => {
 								Content Management
 							</h3>
 							<p className="text-gray-700 dark:text-gray-300">
-								Sanity CMS, Craft CMS, Headless Architecture
+								Sanity CMS, Craft CMS, Headless Architecture,
+								WordPress
 							</p>
 						</div>
 						<div>
