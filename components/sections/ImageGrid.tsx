@@ -7,7 +7,6 @@ interface Props {
 }
 
 const ImageGrid = ({ projects }: Props) => {
-	console.log(projects, 'projects')
 	return (
 		<section className="container">
 			<h2 className={clsx('mb-8 text-5xl font-black dark:text-white')}>
