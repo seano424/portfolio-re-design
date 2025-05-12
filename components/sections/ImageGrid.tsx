@@ -9,8 +9,12 @@ interface Props {
 const ImageGrid = ({ projects }: Props) => {
 	return (
 		<section className="container">
-			<h2 className={clsx('mb-8 text-5xl font-black dark:text-white')}>
-				Here’s a few things I’m involved in right now:
+			<h2
+				className={clsx(
+					'mb-8 text-3xl font-black sm:text-4xl dark:text-white'
+				)}
+			>
+				Some things I’m involved in right now...
 			</h2>
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				{projects &&

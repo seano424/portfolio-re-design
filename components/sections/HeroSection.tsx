@@ -22,7 +22,10 @@ const HeroSection = () => {
 	}, [])
 
 	return (
-		<section id="home" className="relative mb-40 pt-10 sm:pt-20 lg:pt-40">
+		<section
+			id="home"
+			className="relative mb-10 pt-10 sm:mb-40 sm:pt-20 lg:pt-40"
+		>
 			<div className="container">
 				<div className="flex flex-col gap-6 lg:max-w-3xl 2xl:max-w-4xl">
 					<div className="hidden sm:block">
