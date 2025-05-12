@@ -23,14 +23,14 @@ const HeroSection = () => {
 						</span>
 					</h1>
 
-					<p className="flex items-center gap-1 text-xl text-gray-400 dark:text-white">
+					<p className="flex flex-wrap items-center gap-1 text-xl text-gray-400 dark:text-white">
 						Come and see what I&apos;m currently{' '}
 						<a
 							href="#showcase"
 							className="cursor-hover group flex items-center gap-1 underline underline-offset-8"
 						>
 							working on
-							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:hover:text-blue-100 dark:text-blue-500" />
+							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
 						</a>
 					</p>
 					<SocialLinks />
