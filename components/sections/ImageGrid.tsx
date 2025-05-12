@@ -14,7 +14,7 @@ const ImageGrid = ({ projects }: Props) => {
 					'mb-8 text-3xl font-black sm:text-4xl dark:text-white'
 				)}
 			>
-				Some things I’m involved in right now...
+				Currently working on these projects...
 			</h2>
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				{projects &&
