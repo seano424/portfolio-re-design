@@ -9,9 +9,12 @@ export default function ImageLink({ project }: { project: Project }) {
 	}
 
 	return (
-		<Link
-			href={`/project-gallery/${project.slug?.current}`}
+		<a
+			// href={`/project-gallery/${project.slug?.current}`}
+			href={project.liveUrl || ''}
 			className="relative h-[400px] w-full lg:aspect-square"
+			target="_blank"
+			rel="noopener noreferrer"
 		>
 			<Image
 				fill
@@ -21,6 +24,6 @@ export default function ImageLink({ project }: { project: Project }) {
 				className="rounded-2xl object-cover object-top"
 				sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 			/>
-		</Link>
+		</a>
 	)
 }
