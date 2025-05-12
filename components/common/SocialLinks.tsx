@@ -9,9 +9,9 @@ const SocialLinks = () => {
 					target="_blank"
 					key={name}
 					href={href}
-					className={`${className} flex items-center justify-center gap-2 text-xl font-black transition-colors ease-linear`}
+					className={`${className} flex items-center justify-center gap-2 text-sm font-black transition-colors ease-linear sm:text-xl`}
 				>
-					<Icon className="h-5 w-5" />
+					<Icon className="h-4 w-4 sm:h-5 sm:w-5" />
 					{name}
 				</a>
 			))}
