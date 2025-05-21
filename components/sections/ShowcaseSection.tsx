@@ -2,8 +2,11 @@ import Image from 'next/image'
 
 const ShowcaseSection = () => {
 	return (
-		<section
+		<a
 			id="showcase"
+			target="_blank"
+			rel="noopener noreferrer"
+			href="https://voyage-away.vercel.app/"
 			className="relative container flex min-h-[500px] items-center justify-center rounded-2xl border-8 bg-fuchsia-700"
 		>
 			<Image
@@ -18,7 +21,7 @@ const ShowcaseSection = () => {
 					Currently Working On
 				</h1>
 			</div>
-		</section>
+		</a>
 	)
 }
 

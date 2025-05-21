@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 
 const colorPairs = [
-	['#a3a1ff', '#3a86ff'],
+	['#4d2dff', '#0051ff'],
 	['#ff9a8b', '#ff6a88'],
-	['#8ed1fc', '#7d5fff'],
-	['#40c9ff', '#90e0ef'],
-	['#e81cff', '#12fdc3cf'],
-	['#03045e', '#4ecdc4'],
+	['#e81cff', '#7d5fff'],
+	// ['#40c9ff', '#90e0ef'],
 ]
 
 export default function useColorChange() {
