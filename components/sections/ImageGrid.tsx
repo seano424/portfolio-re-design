@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import type { Project } from '@/sanity.types'
 import ImageLink from './ImageLink'
 

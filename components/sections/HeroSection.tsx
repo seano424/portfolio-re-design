@@ -1,12 +1,10 @@
 'use client'
 
-import clsx from 'clsx'
 import Image from 'next/image'
-import Subheading from '@/components/ui/Subheading'
+import { useEffect } from 'react'
+import { MoveRight } from 'lucide-react'
 import SocialLinks from '@/components/common/SocialLinks'
 import ColorChangingText from '@/components/ui/ColorChangingText'
-import { MoveRight } from 'lucide-react'
-import { useEffect } from 'react'
 
 const HeroSection = () => {
 	useEffect(() => {
