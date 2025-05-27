@@ -93,9 +93,14 @@ const experiences = [
 export default function ExperienceSection() {
 	return (
 		<section id="experience" className="container">
-			<h2 className="mb-8 text-center text-3xl font-black sm:text-6xl dark:text-white">
-				Experience
-			</h2>
+			<div className="mb-8 flex flex-col gap-2">
+				<h2 className="text-center text-3xl font-black sm:text-6xl dark:text-white">
+					Experience
+				</h2>
+				<h5 className="text-center text-gray-500 dark:text-gray-400">
+					Here are some of the companies I have worked for.
+				</h5>
+			</div>
 
 			<div className="flex flex-col gap-6">
 				{experiences.map((experience) => (
