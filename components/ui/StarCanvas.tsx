@@ -67,7 +67,7 @@ const StarCanvas = ({ visible }: { visible: boolean }) => {
 
 			// Random angle between 30 and 60 degrees (in radians)
 			// For meteors coming from top
-			let angle = startFromTop
+			const angle = startFromTop
 				? (Math.random() * 30 + 30) *
 					(Math.PI / 180) *
 					(Math.random() > 0.5 ? 1 : -1)
@@ -76,12 +76,12 @@ const StarCanvas = ({ visible }: { visible: boolean }) => {
 					(Math.random() > 0.5 ? 1 : -1)
 
 			// Start position
-			let x = startFromTop
+			const x = startFromTop
 				? Math.random() * canvas.width
 				: angle > 0
 					? -50
 					: canvas.width + 50
-			let y = startFromTop ? -50 : Math.random() * (canvas.height / 2)
+			const y = startFromTop ? -50 : Math.random() * (canvas.height / 2)
 
 			// Random color scheme (different color sequences for different meteors)
 			const colorSchemes = [
@@ -383,8 +383,6 @@ const StarCanvas = ({ visible }: { visible: boolean }) => {
 						// Draw the trail with varying opacity based on position
 						for (let j = 0; j < meteor.trail.length; j++) {
 							const point = meteor.trail[j]
-							const normalizedPos = j / meteor.trail.length
-
 							// Draw a line to each point with decreasing thickness
 							ctx.lineTo(point.x, point.y)
 						}
