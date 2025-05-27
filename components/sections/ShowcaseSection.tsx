@@ -8,7 +8,7 @@ interface Props {
 
 const ShowcaseSection = ({ projects }: Props) => {
 	return (
-		<section id="showcase" className="flex flex-col gap-8">
+		<section id="showcase" className="flex flex-col gap-8 container">
 			<ImageGrid projects={projects} />
 			<div className="container">
 				<a

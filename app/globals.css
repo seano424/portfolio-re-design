@@ -6,6 +6,7 @@
 	--cursor-blend-mode: color-dodge;
 	--color-black: #000;
 	--color-white: #fff;
+	--color-dark: #020111;
 
 	--color-gray-100: #f9fafb;
 	--color-gray-200: #e5e7eb;
@@ -148,6 +149,10 @@
 
 @utility bg-pos-100 {
 	background-position: 100% 100%;
+}
+
+@utility bg-dark {
+	background-color: var(--color-dark);
 }
 
 @utility debug-screens {

@@ -23,7 +23,7 @@ const HeroSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-screen items-center justify-center pb-20"
+			className="relative flex min-h-screen items-center justify-center"
 		>
 			<StarCanvas visible={true} />
 			<div className="container grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
