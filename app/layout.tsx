@@ -50,7 +50,7 @@ export default function RootLayout({
 					className={clsx(
 						geistMono.variable,
 						inter.className,
-						'flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased dark:bg-gray-900',
+						'dark:bg-dark flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased',
 						DEV_MODE && 'debug-screens'
 					)}
 				>
@@ -59,7 +59,7 @@ export default function RootLayout({
 							<MobileMenu />
 							<Header />
 							<Cursor />
-							<main className="flex-1 py-20">{children}</main>
+							<main className="flex-1">{children}</main>
 						</MobileMenuProvider>
 					</ThemeProvider>
 				</body>
