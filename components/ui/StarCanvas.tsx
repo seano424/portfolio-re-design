@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // Interface for meteor objects
 interface Meteor {
@@ -21,9 +21,31 @@ interface Meteor {
 
 const StarCanvas = ({ visible }: { visible: boolean }) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
+	const [isDarkMode, setIsDarkMode] = useState(false)
 
 	useEffect(() => {
-		if (!visible || !canvasRef.current) return
+		// Check initial theme
+		setIsDarkMode(document.documentElement.classList.contains('dark'))
+
+		// Listen for theme changes
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.attributeName === 'class') {
+					setIsDarkMode(document.documentElement.classList.contains('dark'))
+				}
+			})
+		})
+
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class'],
+		})
+
+		return () => observer.disconnect()
+	}, [])
+
+	useEffect(() => {
+		if (!visible || !canvasRef.current || !isDarkMode) return
 
 		const canvas = canvasRef.current
 		const ctx = canvas.getContext('2d')
@@ -434,7 +456,7 @@ const StarCanvas = ({ visible }: { visible: boolean }) => {
 			cancelAnimationFrame(animationFrame)
 			window.removeEventListener('resize', resize)
 		}
-	}, [visible])
+	}, [visible, isDarkMode])
 
 	if (!visible) return null
 
