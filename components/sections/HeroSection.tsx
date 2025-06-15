@@ -23,8 +23,17 @@ const HeroSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-screen items-center justify-center"
+			className="relative flex min-h-screen items-center justify-center bg-white/60"
 		>
+			<div className="absolute inset-0 -z-10 h-full w-full">
+				<Image
+					src="/images/bg-water.png"
+					alt="Hero Background"
+					fill
+					className="object-cover"
+				/>
+			</div>
+
 			<StarCanvas visible={true} />
 			<div className="container grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
 				<div className="flex flex-col gap-6">
@@ -43,7 +52,7 @@ const HeroSection = () => {
 						</span>
 					</h1>
 
-					<p className="flex flex-wrap items-center gap-1 text-xl text-gray-400 dark:text-white">
+					<p className="flex flex-wrap items-center gap-1 text-xl text-gray-900 dark:text-white">
 						Come and see what I&apos;m currently{' '}
 						<a
 							href="#showcase"
