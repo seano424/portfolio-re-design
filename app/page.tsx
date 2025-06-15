@@ -14,9 +14,9 @@ export default async function Home() {
 		<>
 			<div className="flex flex-col gap-20 pb-20">
 				<HeroSection />
-				<SkillsetSection />
-				<ExperienceSection />
+				{/* <ExperienceSection /> */}
 				<ShowcaseSection projects={projects} />
+				<SkillsetSection />
 				<AboutSection />
 			</div>
 		</>

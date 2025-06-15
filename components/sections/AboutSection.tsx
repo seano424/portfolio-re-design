@@ -7,10 +7,13 @@ const AboutSection = () => {
 		<section id="about" className="container">
 			<div className="flex flex-col-reverse gap-10 lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-2 lg:gap-6">
 				<div className="flex flex-col items-center justify-center gap-6 leading-relaxed text-gray-900 lg:items-start dark:text-white">
-					<Subheading
+					{/* <Subheading
 						className="dark:text-blue-300"
 						text="About Me / My Story"
-					/>
+					/> */}
+					<h2 className="text-center text-3xl font-black sm:text-6xl dark:text-white">
+						About Me
+					</h2>
 					<p>
 						Hey there! I&apos;m Sean, a passionate front-end
 						developer with a knack for React, JavaScript, and
