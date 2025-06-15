@@ -23,7 +23,7 @@ const HeroSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-screen items-center justify-center bg-white/60"
+			className="relative flex min-h-screen items-center justify-center bg-white/60 dark:bg-gray-900/0"
 		>
 			<div className="absolute inset-0 -z-10 h-full w-full">
 				<Image
