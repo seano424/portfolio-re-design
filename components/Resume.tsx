@@ -1,62 +1,21 @@
 'use client'
 
-import { useRef } from 'react'
 import { Mail, GitHub, LinkedIn } from './icons'
-import { useReactToPrint } from 'react-to-print'
 
 const Resume = () => {
-	const contentRef = useRef<HTMLDivElement>(null)
-	const reactToPrintFn = useReactToPrint({
-		contentRef,
-		documentTitle: "Sean O'Reilly's Resume",
-		onPrintError: (error) => console.error(error),
-		onAfterPrint: () => console.log('Printed!'),
-		pageStyle: `
-			@page {
-				margin: 0.5in;
-			}
-			@media print {
-				body {
-					padding: 1rem;
-				}
-				@page {
-					size: auto;
-					margin: 0.5in;
-				}
-				@page :first {
-					margin-top: 0.5in;
-				}
-				@page :left {
-					margin-left: 0.5in;
-				}
-				@page :right {
-					margin-right: 0.5in;
-				}
-				@page :top {
-					margin-top: 0.5in;
-				}
-				@page :bottom {
-					margin-bottom: 0.5in;
-				}
-				@page :header {
-					display: none;
-				}
-				@page :footer {
-					display: none;
-				}
-			}
-		`,
-	})
+	const handleDownload = () => {
+		window.open('/sean-oreilly-resume.pdf', '_blank')
+	}
 
 	return (
 		<div className="container mx-auto flex max-w-4xl flex-col items-center justify-center p-8 dark:bg-gray-900 dark:text-white">
 			<button
 				className="cursor-hover bg-size-200 bg-pos-0 hover:bg-pos-100 mb-5 rounded-md bg-linear-to-br from-purple-500 to-blue-500 px-4 py-2 font-mono font-bold text-white uppercase transition-all duration-500 ease-linear"
-				onClick={() => reactToPrintFn()}
+				onClick={() => handleDownload()}
 			>
 				Download
 			</button>
-			<div className="flex flex-col gap-2" ref={contentRef}>
+			<div className="flex flex-col gap-2">
 				{/* Header */}
 				<header className="flex flex-col gap-2 text-center">
 					<h1 className="text-5xl font-black text-gray-900 md:text-6xl dark:text-white">
@@ -121,6 +80,43 @@ const Resume = () => {
 					<h2 className="mb-4 border-b pb-2 text-xl font-bold">
 						PROFESSIONAL EXPERIENCE
 					</h2>
+
+					<div className="mb-6">
+						<div className="mb-2 flex justify-between">
+							<h3 className="font-bold">
+								Lead Frontend Developer
+							</h3>
+							<p className="text-gray-600 dark:text-gray-400">
+								April 2025 - Present
+							</p>
+						</div>
+						<p className="mb-2 text-gray-600 dark:text-gray-400">
+							LIFO Data | Netherlands (Remote)
+						</p>
+						<ul className="ml-5 list-disc space-y-2 text-gray-700 dark:text-gray-300">
+							<li>
+								Architected frontend infrastructure for
+								AI-powered inventory management platform using
+								Next.js and TypeScript
+							</li>
+							<li>
+								Built real-time image recognition dashboard with
+								React Query for optimized API integration and
+								caching
+							</li>
+							<li>
+								Optimized React Query implementation, reducing
+								API calls by 70% and significantly improving
+								dashboard performance
+							</li>
+							<li>
+								Collaborated with international team across
+								multiple time zones, coordinating with backend
+								engineers and product designers to deliver MVP
+								features within 3-month timeline
+							</li>
+						</ul>
+					</div>
 
 					<div className="mb-6">
 						<div className="mb-2 flex justify-between">
