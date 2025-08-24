@@ -38,12 +38,20 @@ const HeroSection = () => {
 			<StarCanvas visible={true} />
 			<div className="container grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
 				<div className="flex flex-col gap-6 text-left md:text-center lg:text-left">
-					<Typography
-						className="tracking-widest text-blue-50 uppercase"
-						variant="small"
-					>
-						Sean O&apos;Reilly
-					</Typography>
+					<div className="flex flex-col gap-0">
+						<Typography
+							className="tracking-widest text-blue-50 uppercase"
+							variant="small"
+						>
+							Sean O&apos;Reilly
+						</Typography>
+						<Typography
+							className="tracking-widest text-blue-50 uppercase dark:text-blue-50/50"
+							variant="small"
+						>
+							Frontend Dev
+						</Typography>
+					</div>
 					<Typography variant="h1">
 						Turning Ideas Into{' '}
 						<ColorChangingText text="Beautiful, High Performance" />{' '}
@@ -54,12 +62,12 @@ const HeroSection = () => {
 						variant="p"
 						className="flex flex-wrap items-center gap-1 text-xl text-gray-900 md:justify-center lg:justify-start dark:text-white"
 					>
-						Come and see what I&apos;m currently{' '}
+						Explore my{' '}
 						<a
 							href="#showcase"
 							className="cursor-hover group flex items-center gap-1 underline underline-offset-8"
 						>
-							working on
+							latest projects
 							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
 						</a>
 					</Typography>

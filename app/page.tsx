@@ -4,7 +4,6 @@ import HeroSection from '@/components/sections/HeroSection'
 import AboutSection from '@/components/sections/AboutSection'
 import ShowcaseSection from '@/components/sections/ShowcaseSection'
 import { getMostRecentProjectsQuery } from '@/sanity/lib/queries'
-import ExperienceSection from '@/components/sections/ExperienceSection'
 import SkillsetSection from '@/components/sections/SkillsetSection'
 
 export default async function Home() {
