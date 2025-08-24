@@ -12,7 +12,7 @@ export default async function Home() {
 
 	return (
 		<>
-			<div className="flex flex-col gap-20 pb-20">
+			<div className="flex flex-col gap-20">
 				<HeroSection />
 				{/* <ExperienceSection /> */}
 				<ShowcaseSection projects={projects} />

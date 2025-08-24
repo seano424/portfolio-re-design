@@ -2,7 +2,7 @@ import { socialLinks } from '@/lib/socialLinks'
 
 const SocialLinks = () => {
 	return (
-		<div className="flex flex-wrap items-center gap-4 lg:gap-8">
+		<div className="flex flex-wrap items-center gap-4 md:justify-center lg:justify-start lg:gap-8">
 			{socialLinks.map(({ name, className, href, Icon }) => (
 				<a
 					rel="noopener noreferrer"

@@ -59,7 +59,7 @@ export default function RootLayout({
 							<MobileMenu />
 							<Header />
 							<Cursor />
-							<main className="flex-1">{children}</main>
+							<main className="flex-1 py-20">{children}</main>
 						</MobileMenuProvider>
 					</ThemeProvider>
 				</body>

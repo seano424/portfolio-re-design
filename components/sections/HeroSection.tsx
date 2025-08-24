@@ -5,7 +5,8 @@ import { useEffect } from 'react'
 import { MoveRight } from 'lucide-react'
 import SocialLinks from '@/components/common/SocialLinks'
 import ColorChangingText from '@/components/ui/ColorChangingText'
-import StarCanvas from '../ui/StarCanvas'
+import StarCanvas from '@/components/ui/StarCanvas'
+import Typography from '@/components/ui/Typography'
 
 const HeroSection = () => {
 	useEffect(() => {
@@ -23,7 +24,7 @@ const HeroSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-screen items-center justify-center bg-white/60 dark:bg-gray-900/0"
+			className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 pb-40 lg:pb-0 dark:bg-gray-900/0"
 		>
 			<div className="absolute inset-0 -z-10 h-full w-full">
 				<Image
@@ -36,23 +37,23 @@ const HeroSection = () => {
 
 			<StarCanvas visible={true} />
 			<div className="container grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
-				<div className="flex flex-col gap-6">
-					<h1
-						className={`flex flex-col text-6xl font-black md:text-gray-900 dark:text-white`}
+				<div className="flex flex-col gap-6 text-left md:text-center lg:text-left">
+					<Typography
+						className="tracking-widest text-blue-50 uppercase"
+						variant="small"
 					>
-						<span className="block">Hi, I&apos;m Sean 👋</span>
-					</h1>
-					<h1
-						className={`flex flex-col text-6xl font-black md:text-gray-900 dark:text-white`}
-					>
-						<span className="block">
-							Building{' '}
-							<ColorChangingText text="beautiful websites" /> with
-							JavaScript, React, and Next.js!
-						</span>
-					</h1>
+						Sean O&apos;Reilly
+					</Typography>
+					<Typography variant="h1">
+						Turning Ideas Into{' '}
+						<ColorChangingText text="Beautiful, High Performance" />{' '}
+						Web Applications
+					</Typography>
 
-					<p className="flex flex-wrap items-center gap-1 text-xl text-gray-900 dark:text-white">
+					<Typography
+						variant="p"
+						className="flex flex-wrap items-center gap-1 text-xl text-gray-900 md:justify-center lg:justify-start dark:text-white"
+					>
 						Come and see what I&apos;m currently{' '}
 						<a
 							href="#showcase"
@@ -61,7 +62,7 @@ const HeroSection = () => {
 							working on
 							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
 						</a>
-					</p>
+					</Typography>
 					<SocialLinks />
 				</div>
 
