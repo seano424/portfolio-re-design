@@ -55,13 +55,17 @@ export default function useCursor() {
 		document.addEventListener('mouseleave', mLeave)
 
 		// Initial attachment of hover listeners
-		const cleanupHoverListeners = attachHoverListeners()
+		let cleanupHoverListeners = attachHoverListeners()
 
-		// Create a MutationObserver to watch for DOM changes
+		// Create a MutationObserver to watch for DOM changes with throttling
+		let mutationTimeout: NodeJS.Timeout
 		const observer = new MutationObserver(() => {
-			// Clean up old listeners and reattach to catch any new elements
-			cleanupHoverListeners()
-			attachHoverListeners()
+			// Throttle the reattachment to prevent performance issues
+			clearTimeout(mutationTimeout)
+			mutationTimeout = setTimeout(() => {
+				cleanupHoverListeners()
+				cleanupHoverListeners = attachHoverListeners()
+			}, 100)
 		})
 
 		// Start observing the document with the configured parameters
@@ -74,6 +78,7 @@ export default function useCursor() {
 			if (frame) {
 				cancelAnimationFrame(frame)
 			}
+			clearTimeout(mutationTimeout)
 			document.removeEventListener('mousemove', mMove)
 			document.removeEventListener('mouseenter', mEnter)
 			document.removeEventListener('mouseleave', mLeave)

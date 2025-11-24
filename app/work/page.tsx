@@ -92,8 +92,11 @@ const tools = [
 
 export default function WorkPage() {
 	return (
-		<div className="container flex max-w-2xl flex-col divide-y divide-gray-200">
+		<div className="container flex max-w-4xl flex-col divide-y divide-gray-200 pb-20">
 			<div className="flex flex-col gap-2 py-8">
+				<h2 className="text-3xl font-black sm:text-6xl dark:text-white">
+					Work
+				</h2>
 				<Typography variant="p" className="text-gray-400 italic">
 					Professional Journey
 				</Typography>
@@ -109,19 +112,19 @@ export default function WorkPage() {
 				<WorkExperience workExperiences={workExperiences} />
 			</div>
 
-			<div className="flex flex-col gap-4 py-8">
+			<div className="flex flex-col items-center gap-4 py-8">
 				<Typography
 					variant="small"
 					className="text-sm tracking-widest text-gray-400 uppercase dark:text-gray-100"
 				>
 					Tools & Technologies
 				</Typography>
-				<div className="flex flex-wrap gap-4">
+				<div className="flex flex-wrap gap-6 py-4 lg:gap-8">
 					{tools.map((tool) => (
 						<div
 							key={tool.name}
 							title={tool.name}
-							className="relative h-8 w-8 flex-shrink-0 overflow-hidden lg:h-10 lg:w-10 dark:rounded dark:bg-white"
+							className="relative h-9 w-9 flex-shrink-0 overflow-hidden dark:rounded dark:bg-white"
 						>
 							<Image
 								src={tool.imageUrl}

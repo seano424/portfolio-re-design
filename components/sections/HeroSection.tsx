@@ -24,7 +24,7 @@ const HeroSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 pb-40 lg:pb-0 dark:bg-gray-900/0"
+			className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 dark:bg-gray-900/0"
 		>
 			<div className="absolute inset-0 -z-10 h-full w-full">
 				<Image
@@ -57,13 +57,19 @@ const HeroSection = () => {
 						className="flex flex-wrap items-center gap-1 text-xl text-gray-900 md:justify-center lg:justify-start dark:text-white"
 					>
 						Explore my{' '}
-						<a
-							href="#showcase"
+						<button
+							onClick={(e) => {
+								e.preventDefault()
+								document.getElementById('showcase')?.scrollIntoView({
+									behavior: 'smooth',
+									block: 'start',
+								})
+							}}
 							className="cursor-hover group flex items-center gap-1 underline underline-offset-8"
 						>
 							latest projects
 							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
-						</a>
+						</button>
 					</Typography>
 					<SocialLinks />
 				</div>
