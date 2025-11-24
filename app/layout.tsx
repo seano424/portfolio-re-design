@@ -50,7 +50,7 @@ export default function RootLayout({
 					className={clsx(
 						geistMono.variable,
 						inter.className,
-						'dark:bg-dark flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased',
+						'dark:bg-dark flex min-h-screen flex-col scroll-smooth bg-white antialiased',
 						DEV_MODE && 'debug-screens'
 					)}
 				>

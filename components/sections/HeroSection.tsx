@@ -47,9 +47,9 @@ const HeroSection = () => {
 						</Typography>
 					</div>
 					<Typography variant="h1">
-						Turning ideas into{' '}
-						<ColorChangingText text="beautiful" />{' '}
-						<ColorChangingText text=" applications" />
+						Transforming ideas into{' '}
+						<ColorChangingText text="apps" />{' '}
+						<ColorChangingText text="people love" />
 					</Typography>
 
 					<Typography

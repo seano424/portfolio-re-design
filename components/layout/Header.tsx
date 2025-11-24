@@ -18,8 +18,10 @@ const Header = () => {
 				>
 					Resume
 				</Link>
-				<ThemeSwitch />
-				<MobileMenuButton />
+				<div className="flex items-center gap-4">
+					<ThemeSwitch />
+					<MobileMenuButton />
+				</div>
 			</div>
 		</header>
 	)
