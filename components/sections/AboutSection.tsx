@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-import Subheading from '@/components/ui/Subheading'
-
 const AboutSection = () => {
 	return (
 		<section id="about" className="container">

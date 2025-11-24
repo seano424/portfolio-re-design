@@ -19,7 +19,7 @@ type TypographyProps = {
 }
 
 const variantStyles: Record<TypographyVariant, string> = {
-	h1: 'text-4xl font-black sm:text-6xl',
+	h1: 'text-4xl font-black sm:text-7xl',
 	h2: 'text-3xl font-bold md:text-4xl',
 	h3: 'text-2xl font-semibold md:text-3xl',
 	h4: 'text-xl font-semibold md:text-2xl',

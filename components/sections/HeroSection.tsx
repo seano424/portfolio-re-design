@@ -36,26 +36,20 @@ const HeroSection = () => {
 			</div>
 
 			<StarCanvas visible={true} />
-			<div className="container grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
+			<div className="container flex flex-col gap-10 lg:flex-row lg:gap-0">
 				<div className="flex flex-col gap-6 text-left md:text-center lg:text-left">
 					<div className="flex flex-col gap-0">
 						<Typography
-							className="tracking-widest text-blue-50 uppercase"
 							variant="small"
+							className="text-xs tracking-widest uppercase dark:text-gray-100"
 						>
-							Sean O&apos;Reilly
-						</Typography>
-						<Typography
-							className="tracking-widest text-blue-50 uppercase dark:text-blue-50/50"
-							variant="small"
-						>
-							Frontend Dev
+							Software Developer
 						</Typography>
 					</div>
 					<Typography variant="h1">
-						Turning Ideas Into{' '}
-						<ColorChangingText text="Beautiful, High Performance" />{' '}
-						Web Applications
+						Turning ideas into{' '}
+						<ColorChangingText text="beautiful" />{' '}
+						<ColorChangingText text=" applications" />
 					</Typography>
 
 					<Typography
@@ -74,7 +68,7 @@ const HeroSection = () => {
 					<SocialLinks />
 				</div>
 
-				<div className="my-10 hidden items-center justify-center lg:my-0 lg:flex">
+				<div className="container my-10 hidden items-center justify-end lg:my-0 lg:flex">
 					<div className="relative h-[400px] w-[400px]">
 						<div className="blob absolute -top-10 -right-10 -bottom-10 -left-10 overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500"></div>
 						<Image

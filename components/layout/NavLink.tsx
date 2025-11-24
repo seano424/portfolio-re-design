@@ -63,7 +63,7 @@ const NavLink: React.FC<NavLinkProps> = ({
 			<Link
 				className={clsx(
 					!isLogo &&
-						'dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100'
+						'dark:text-light transform rounded-full px-5 py-4 font-mono uppercase transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100'
 				)}
 				href={href}
 				onClick={onClick}
@@ -79,7 +79,7 @@ const NavLink: React.FC<NavLinkProps> = ({
 			onClick={handleClick}
 			className={clsx(
 				!isLogo &&
-					'dark:text-light transform rounded-full px-5 py-4 text-3xl font-black tracking-tighter transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100'
+					'dark:text-light transform rounded-full px-5 py-4 font-mono uppercase transition-all duration-700 ease-linear hover:bg-gray-200/60 dark:hover:scale-110 dark:hover:bg-gray-900/50 dark:hover:text-gray-100'
 			)}
 		>
 			{reactElement ? reactElement : name}
