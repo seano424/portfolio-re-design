@@ -9,7 +9,6 @@ export default function ImageLink({ project }: { project: Project }) {
 
 	return (
 		<a
-			// href={`/project-gallery/${project.slug?.current}`}
 			href={project.liveUrl || ''}
 			className="relative h-[400px] w-full lg:aspect-square"
 			target="_blank"
@@ -20,7 +19,7 @@ export default function ImageLink({ project }: { project: Project }) {
 				priority
 				src={urlFor(project.featuredImage).url()}
 				alt={project.title}
-				className="rounded-2xl object-cover object-top"
+				className="rounded-2xl object-contain object-top"
 				sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 			/>
 		</a>
