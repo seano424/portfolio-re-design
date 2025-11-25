@@ -24,7 +24,7 @@ const HeroSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 pb-40 lg:pb-0 dark:bg-gray-900/0"
+			className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 pb-36 lg:pb-0 dark:bg-gray-900/0"
 		>
 			<div className="absolute inset-0 -z-10 h-full w-full">
 				<Image
@@ -36,45 +36,57 @@ const HeroSection = () => {
 			</div>
 
 			<StarCanvas visible={true} />
-			<div className="container grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
+			<div className="container flex flex-col gap-10 lg:flex-row lg:gap-0">
 				<div className="flex flex-col gap-6 text-left md:text-center lg:text-left">
 					<div className="flex flex-col gap-0">
 						<Typography
-							className="tracking-widest text-blue-50 uppercase"
 							variant="small"
+							className="font-mono text-sm tracking-widest text-blue-50 uppercase"
 						>
-							Sean O&apos;Reilly
+							Sean O'Reilly
 						</Typography>
 						<Typography
-							className="tracking-widest text-blue-50 uppercase dark:text-blue-50/50"
 							variant="small"
+							className="font-mono text-sm tracking-widest text-blue-50 uppercase dark:text-blue-50/50"
 						>
 							Frontend Dev
 						</Typography>
 					</div>
-					<Typography variant="h1">
-						Turning Ideas Into{' '}
-						<ColorChangingText text="Beautiful, High Performance" />{' '}
-						Web Applications
+					<Typography variant="h1" className="capitalize">
+						Turning ideas into{' '}
+						<ColorChangingText text="beautiful, high" />{' '}
+						<ColorChangingText text="performance" /> web
+						applications
 					</Typography>
 
 					<Typography
 						variant="p"
 						className="flex flex-wrap items-center gap-1 text-xl text-gray-900 md:justify-center lg:justify-start dark:text-white"
 					>
-						Explore my{' '}
-						<a
-							href="#showcase"
-							className="cursor-hover group flex items-center gap-1 underline underline-offset-8"
+						<button
+							onClick={(e) => {
+								e.preventDefault()
+								document
+									.getElementById('showcase')
+									?.scrollIntoView({
+										behavior: 'smooth',
+										block: 'start',
+									})
+							}}
+							className="group flex cursor-pointer items-center gap-2"
 						>
-							latest projects
-							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
-						</a>
+							Explore my{' '}
+							<span className="underline underline-offset-8">
+								latest projects
+							</span>
+							<MoveRight className="lucide lucide-move-right h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
+						</button>
 					</Typography>
+
 					<SocialLinks />
 				</div>
 
-				<div className="my-10 hidden items-center justify-center lg:my-0 lg:flex">
+				<div className="container my-10 hidden items-center justify-end lg:my-0 lg:flex">
 					<div className="relative h-[400px] w-[400px]">
 						<div className="blob absolute -top-10 -right-10 -bottom-10 -left-10 overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500"></div>
 						<Image

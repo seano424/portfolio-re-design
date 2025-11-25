@@ -4,11 +4,11 @@ import { Mail, GitHub, LinkedIn } from './icons'
 
 const Resume = () => {
 	const handleDownload = () => {
-		window.open('/sean-oreilly-resume.pdf', '_blank')
+		window.open('/sean-oreilly-cv.pdf', '_blank')
 	}
 
 	return (
-		<div className="container mx-auto flex max-w-4xl flex-col items-center justify-center p-8 dark:bg-gray-900 dark:text-white">
+		<div className="container mx-auto flex max-w-4xl flex-col items-center justify-center dark:bg-gray-900 dark:text-white">
 			<button
 				className="cursor-hover bg-size-200 bg-pos-0 hover:bg-pos-100 mb-5 rounded-md bg-linear-to-br from-purple-500 to-blue-500 px-4 py-2 font-mono font-bold text-white uppercase transition-all duration-500 ease-linear"
 				onClick={() => handleDownload()}
@@ -24,54 +24,42 @@ const Resume = () => {
 					<h2 className="text-xl font-black text-blue-500 dark:text-purple-500">
 						FRONTEND DEVELOPER
 					</h2>
-					<a
-						href="https://sean-oreilly-portfolio.vercel.app/"
-						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
-					>
-						sean-oreilly-portfolio.vercel.app
-					</a>
 				</header>
 
 				{/* Contact Info */}
-				<div className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-6">
+				<div className="mb-5 flex items-center justify-center gap-2">
 					<a
 						href="mailto:soreilly424@gmail.com"
 						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
 						<Mail />
-						soreilly424@gmail.com
 					</a>
 					<a
 						href="https://github.com/seano424"
 						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
 						<GitHub />
-						@seano424
 					</a>
 					<a
 						href="https://linkedin.com/in/sea-oreilly"
 						className="cursor-hover flex items-center justify-center gap-1 text-gray-600 uppercase dark:text-gray-400"
 					>
 						<LinkedIn />
-						@sea-oreilly
 					</a>
 				</div>
 
 				{/* Summary */}
 				<section className="mb-8">
 					<p className="leading-relaxed text-gray-700 dark:text-gray-300">
-						A passionate and pragmatic Frontend Developer with over
-						3 years of experience crafting blazing-fast, accessible
-						web applications. Specialized in React and Next.js
-						development with a strong foundation in TypeScript and
-						modern JavaScript. Experienced in building full-stack
-						applications with Supabase, React Query, and modern data
-						fetching patterns. Adept at contributing to highly
-						collaborative environments while independently
-						architecting solutions and writing clean, reusable code.
-						Committed to creating intuitive user experiences through
-						thoughtful design implementation and careful attention
-						to web accessibility standards.
+						Frontend Developer with 4–5 years of experience
+						delivering high-performance web applications using
+						React, Next.js, and TypeScript. Strong background in
+						modern client–server data flows, Supabase, and React
+						Query. Experienced in architecting component libraries,
+						optimizing rendering performance, and building
+						maintainable, scalable interfaces. Collaborative
+						problem-solver who prioritizes accessibility,
+						reliability, and clean engineering practices.
 					</p>
 				</section>
 

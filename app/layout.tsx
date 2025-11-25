@@ -10,6 +10,7 @@ import { Inter } from 'next/font/google'
 import { ViewTransitions } from 'next-view-transitions'
 import { MobileMenuProvider } from '@/contexts/MobileMenuContext'
 import MobileMenu from '@/components/mobile/MobileMenu'
+import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const DEV_MODE = process.env.DEV_MODE === 'true'
@@ -50,7 +51,7 @@ export default function RootLayout({
 					className={clsx(
 						geistMono.variable,
 						inter.className,
-						'dark:bg-dark flex min-h-screen flex-col scroll-smooth bg-gray-50 antialiased',
+						'dark:bg-dark flex min-h-screen flex-col scroll-smooth bg-white antialiased',
 						DEV_MODE && 'debug-screens'
 					)}
 				>
@@ -59,7 +60,8 @@ export default function RootLayout({
 							<MobileMenu />
 							<Header />
 							<Cursor />
-							<main className="flex-1 py-20">{children}</main>
+							<main className="flex-1 pt-20">{children}</main>
+							<Footer />
 						</MobileMenuProvider>
 					</ThemeProvider>
 				</body>

@@ -7,7 +7,7 @@ interface Props {
 
 const ImageGrid = ({ projects }: Props) => {
 	return (
-		<section className="container flex flex-col gap-8">
+		<section className="flex flex-col gap-8">
 			<div className="flex flex-col gap-2">
 				<h2 className="text-center text-3xl font-black sm:text-6xl dark:text-white">
 					Projects

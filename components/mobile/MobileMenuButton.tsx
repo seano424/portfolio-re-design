@@ -1,10 +1,19 @@
 'use client'
 
 import clsx from 'clsx'
+import { useState, useEffect } from 'react'
 import { useMobileMenu } from '@/contexts/MobileMenuContext'
+import { useTheme } from 'next-themes'
 
 export default function MobileMenuButton() {
 	const { isOpen, setIsOpen } = useMobileMenu()
+	const { resolvedTheme } = useTheme()
+	const [mounted, setMounted] = useState(false)
+	const isDark = mounted ? resolvedTheme === 'dark' : false
+
+	useEffect(() => {
+		setMounted(true)
+	}, [])
 
 	return (
 		<button
@@ -12,7 +21,7 @@ export default function MobileMenuButton() {
 				setIsOpen(!isOpen)
 			}}
 			className={clsx(
-				'relative -left-2.5 -mr-2.5 bg-transparent p-0',
+				'relative -left-2.5 -mr-2.5 bg-transparent p-0 lg:hidden',
 				'scale-90 transition-all duration-500 ease-linear hover:scale-100',
 				isOpen && 'active'
 			)}
@@ -22,7 +31,7 @@ export default function MobileMenuButton() {
 				{isOpen ? 'Close Menu' : 'Open Menu'}
 			</span>
 			<svg
-				className={`h-[50px] w-[50px] cursor-pointer duration-300 ${
+				className={`cursor-pointer duration-300 h-[40px] w-[40px] ${
 					isOpen ? 'rotate-45' : ''
 				}`}
 				viewBox="0 00 100 100"
@@ -36,12 +45,18 @@ export default function MobileMenuButton() {
 						x2="70"
 						y2="50"
 					>
-						<stop offset="0%" stopColor="#3B82F6" />{' '}
-						{/* blue-500 */}
-						<stop offset="50%" stopColor="#A855F7" />{' '}
-						{/* purple-500 */}
-						<stop offset="100%" stopColor="#A855F7" />{' '}
-						{/* purple-500 */}
+						<stop
+							offset="0%"
+							stopColor={isDark ? '#4d2dff' : 'black'}
+						/>
+						<stop
+							offset="50%"
+							stopColor={isDark ? '#4d2dff' : 'black'}
+						/>
+						<stop
+							offset="100%"
+							stopColor={isDark ? '#0051ff' : 'black'}
+						/>
 					</linearGradient>
 				</defs>
 				<path

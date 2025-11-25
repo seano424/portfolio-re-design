@@ -4,8 +4,6 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 
-import { useSmoothScroll } from '@/hooks/useSmoothScroll'
-
 interface NavLinkProps {
 	name: string
 	href?: string
@@ -24,7 +22,6 @@ const NavLink: React.FC<NavLinkProps> = ({
 	onClick,
 }) => {
 	const pathname = usePathname()
-	const smoothScroll = useSmoothScroll()
 	const router = useRouter()
 
 	const handleClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -46,12 +43,10 @@ const NavLink: React.FC<NavLinkProps> = ({
 			}
 			const targetElement = document.getElementById(id)
 			if (targetElement) {
-				const offset = 100
-				const targetPosition =
-					targetElement.getBoundingClientRect().top +
-					window.scrollY -
-					offset
-				smoothScroll(targetPosition, 1000) // 1000ms = 1 second duration
+				targetElement.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+				})
 				window.history.pushState(null, '', `#${id}`)
 			}
 		}

@@ -1,16 +1,19 @@
 import Nav from './Nav'
 import Link from 'next/link'
-import NavLink from './NavLink'
 import Logo from '@/components/ui/Logo'
 import ThemeSwitch from '@/components/theme/ThemeSwitch'
 import MobileMenuButton from '../mobile/MobileMenuButton'
 
 const Header = () => {
 	return (
-		<header className="fixed top-0 right-0 left-0 z-50 h-20 bg-gray-50/30 py-4 text-gray-900 filter backdrop-blur-sm dark:bg-gray-900/0 dark:text-white">
+		<header className="fixed top-0 right-0 left-0 z-50 h-20 bg-white/90 py-4 text-gray-900 filter backdrop-blur-sm dark:bg-gray-900/10 dark:text-white">
 			<div className="container flex h-full items-center justify-between">
-				<NavLink isLogo id="home" name="logo" reactElement={<Logo />} />
-				<Nav />
+				<Link href="/">
+					<Logo />
+				</Link>
+				<div className="flex items-center">
+					<Nav />
+				</div>
 				<div className="flex items-center gap-4">
 					<Link
 						href="/hire-me"

@@ -22,7 +22,7 @@ export default function MobileMenu() {
 			{isOpen && (
 				<motion.div
 					key="mobile-menu"
-					className="fixed top-20 right-3 bottom-3 left-3 z-50 flex flex-col items-center justify-center gap-1 rounded-3xl border-8 bg-gray-50/30 px-10 py-4 text-nowrap shadow-lg filter backdrop-blur-sm dark:bg-gray-900/10"
+					className="fixed top-20 right-3 bottom-3 left-3 z-50 flex flex-col items-center justify-center gap-1 rounded-3xl border-8 bg-gray-50/30 px-10 py-4 text-nowrap shadow-lg filter backdrop-blur-2xl dark:bg-gray-900/10"
 					initial={{ opacity: 0, x: 20 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.7 }}
