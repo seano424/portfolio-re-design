@@ -10,6 +10,7 @@ import { Inter } from 'next/font/google'
 import { ViewTransitions } from 'next-view-transitions'
 import { MobileMenuProvider } from '@/contexts/MobileMenuContext'
 import MobileMenu from '@/components/mobile/MobileMenu'
+import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const DEV_MODE = process.env.DEV_MODE === 'true'
@@ -60,6 +61,7 @@ export default function RootLayout({
 							<Header />
 							<Cursor />
 							<main className="flex-1 pt-20">{children}</main>
+							<Footer />
 						</MobileMenuProvider>
 					</ThemeProvider>
 				</body>
