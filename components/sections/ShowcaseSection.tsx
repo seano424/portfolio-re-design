@@ -36,9 +36,9 @@ const ShowcaseSection = () => {
 			<StarCanvas visible={true} />
 			<section
 				id="showcase"
-				className="container flex min-h-[calc(100vh-5rem)] scroll-mt-20 flex-col divide-y divide-purple-100"
+				className="container flex min-h-[calc(100vh-5rem)] scroll-mt-20 flex-col divide-y divide-purple-100 dark:divide-amber-100/0"
 			>
-				<div className="flex flex-col py-12">
+				<div className="flex flex-col py-12 dark:pb-0">
 					<Typography variant="h1" className="italic">
 						Latest Projects
 					</Typography>
@@ -46,13 +46,13 @@ const ShowcaseSection = () => {
 						Here&apos;s a few things I&apos;m involved in right now
 					</Typography>
 				</div>
-				<div className="flex flex-col divide-y divide-purple-100">
+				<div className="flex flex-col divide-y divide-purple-100 dark:divide-amber-100/0">
 					<Link
 						href="https://lifo-app.com/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<div className="flex flex-col gap-4 py-12 lg:grid lg:grid-cols-2">
+						<div className="flex flex-col gap-4 py-12 lg:grid lg:grid-cols-2 dark:pb-0">
 							<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-4 dark:border-fuchsia-400">
 								<Image
 									fill

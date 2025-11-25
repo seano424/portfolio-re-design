@@ -55,9 +55,9 @@ export default function SkillsetSection() {
 	return (
 		<section
 			id="toolkit"
-			className="container flex scroll-mt-20 flex-col divide-y divide-purple-100"
+			className="container flex scroll-mt-20 flex-col divide-y divide-purple-100 dark:divide-amber-100/0"
 		>
-			<div className="flex flex-col py-12">
+			<div className="flex flex-col pt-12 pb-6">
 				<Typography variant="h1" className="italic">
 					Toolkit
 				</Typography>
@@ -66,11 +66,11 @@ export default function SkillsetSection() {
 				</Typography>
 			</div>
 
-			<div className="grid grid-cols-1 gap-6 py-12 lg:grid-cols-2">
+			<div className="grid grid-cols-1 gap-6 pt-6 pb-12 lg:grid-cols-2 dark:pt-0">
 				{skillsets.map((skillset) => (
 					<div
 						key={skillset.category}
-						className="flex flex-col gap-4 rounded-2xl bg-white p-10 shadow-xl transition-all hover:shadow-md dark:bg-black/0"
+						className="flex flex-col gap-4 rounded-2xl bg-white p-10 shadow-xl transition-all hover:shadow-md dark:bg-black/0 dark:px-0 dark:py-4"
 					>
 						<Typography
 							variant="h4"

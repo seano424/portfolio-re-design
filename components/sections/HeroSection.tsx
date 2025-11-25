@@ -24,7 +24,7 @@ const HeroSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 dark:bg-gray-900/0"
+			className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 pb-36 lg:pb-0 dark:bg-gray-900/0"
 		>
 			<div className="absolute inset-0 -z-10 h-full w-full">
 				<Image
@@ -41,18 +41,23 @@ const HeroSection = () => {
 					<div className="flex flex-col gap-0">
 						<Typography
 							variant="small"
-							className="text-xs tracking-widest uppercase dark:text-gray-100"
+							className="font-mono text-sm tracking-widest text-blue-50 uppercase"
 						>
-							Software Developer
+							Sean O'Reilly
+						</Typography>
+						<Typography
+							variant="small"
+							className="font-mono text-sm tracking-widest text-blue-50 uppercase dark:text-blue-50/50"
+						>
+							Frontend Dev
 						</Typography>
 					</div>
-					<Typography variant="h1">
-						Transforming ideas into{' '}
-						<ColorChangingText text="apps" />{' '}
-						<ColorChangingText text="people love" />
+					<Typography variant="h1" className="capitalize">
+						Turning ideas into{' '}
+						<ColorChangingText text="beautiful, high" />{' '}
+						<ColorChangingText text="performance" /> web
+						applications
 					</Typography>
-
-					<SocialLinks />
 
 					<Typography
 						variant="p"
@@ -70,10 +75,15 @@ const HeroSection = () => {
 							}}
 							className="group flex cursor-pointer items-center gap-2"
 						>
-							Explore my latest projects
-							<MoveRight className="h-8 w-8 rounded-full border bg-fuchsia-100/20 p-1 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:bg-fuchsia-600 dark:text-blue-100 dark:hover:text-blue-100" />
+							Explore my{' '}
+							<span className="underline underline-offset-8">
+								latest projects
+							</span>
+							<MoveRight className="lucide lucide-move-right h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
 						</button>
 					</Typography>
+
+					<SocialLinks />
 				</div>
 
 				<div className="container my-10 hidden items-center justify-end lg:my-0 lg:flex">

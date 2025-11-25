@@ -31,7 +31,7 @@ export default function MobileMenuButton() {
 				{isOpen ? 'Close Menu' : 'Open Menu'}
 			</span>
 			<svg
-				className={`h-[40px] w-[40px] cursor-pointer duration-300 ${
+				className={`cursor-pointer duration-300 h-[40px] w-[40px] ${
 					isOpen ? 'rotate-45' : ''
 				}`}
 				viewBox="0 00 100 100"
@@ -47,15 +47,15 @@ export default function MobileMenuButton() {
 					>
 						<stop
 							offset="0%"
-							stopColor={isDark ? 'white' : 'black'}
+							stopColor={isDark ? '#4d2dff' : 'black'}
 						/>
 						<stop
 							offset="50%"
-							stopColor={isDark ? 'white' : 'black'}
+							stopColor={isDark ? '#4d2dff' : 'black'}
 						/>
 						<stop
 							offset="100%"
-							stopColor={isDark ? 'white' : 'black'}
+							stopColor={isDark ? '#0051ff' : 'black'}
 						/>
 					</linearGradient>
 				</defs>
