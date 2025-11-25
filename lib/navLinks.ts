@@ -5,20 +5,20 @@ type NavLinkProps = {
 }
 
 export const navLinks: NavLinkProps[] = [
-	// {
-	// 	name: 'Media',
-	// 	id: 'media',
-	// },
-	// {
-	// 	name: 'Blog',
-	// 	id: 'blog',
-	// },
+	{
+		name: 'Projects',
+		id: 'showcase',
+	},
+	{
+		name: 'Toolkit',
+		id: 'toolkit',
+	},
 	{
 		name: 'Work',
 		href: '/work',
 	},
 	{
-		name: 'About Me',
+		name: 'About',
 		href: '/about-me',
 	},
 	{
