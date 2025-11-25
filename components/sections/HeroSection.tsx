@@ -52,26 +52,28 @@ const HeroSection = () => {
 						<ColorChangingText text="people love" />
 					</Typography>
 
+					<SocialLinks />
+
 					<Typography
 						variant="p"
 						className="flex flex-wrap items-center gap-1 text-xl text-gray-900 md:justify-center lg:justify-start dark:text-white"
 					>
-						Explore my{' '}
 						<button
 							onClick={(e) => {
 								e.preventDefault()
-								document.getElementById('showcase')?.scrollIntoView({
-									behavior: 'smooth',
-									block: 'start',
-								})
+								document
+									.getElementById('showcase')
+									?.scrollIntoView({
+										behavior: 'smooth',
+										block: 'start',
+									})
 							}}
-							className="cursor-hover group flex items-center gap-1 underline underline-offset-8"
+							className="group flex cursor-pointer items-center gap-2"
 						>
-							latest projects
-							<MoveRight className="h-5 w-5 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:text-blue-500 dark:hover:text-blue-100" />
+							Explore my latest projects
+							<MoveRight className="h-8 w-8 rounded-full border bg-fuchsia-100/20 p-1 text-purple-500 transition-all duration-500 ease-in-out group-hover:translate-x-1 group-hover:scale-125 dark:bg-fuchsia-600 dark:text-blue-100 dark:hover:text-blue-100" />
 						</button>
 					</Typography>
-					<SocialLinks />
 				</div>
 
 				<div className="container my-10 hidden items-center justify-end lg:my-0 lg:flex">

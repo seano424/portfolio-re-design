@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function ContactPage() {
 	return (
-		<div className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center text-gray-800 md:flex-row md:gap-20 dark:text-gray-100">
+		<div className="mx-auto flex max-w-5xl flex-col items-center justify-center py-5 text-gray-800 md:flex-row md:gap-20 lg:py-20 dark:text-gray-100">
 			<div className="relative aspect-square h-[450px]">
 				<a href="mailto:soreilly424@gmail.com">
 					<Image
@@ -25,7 +25,7 @@ export default function ContactPage() {
 					soreilly424@gmail.com
 				</a>
 
-				<div className="flex gap-5">
+				<div className="hidden gap-5 lg:flex">
 					{socialLinks.map(({ name, href, Icon }) => (
 						<a
 							key={name}
