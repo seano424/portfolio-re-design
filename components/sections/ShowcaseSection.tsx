@@ -3,6 +3,7 @@ import WorkExperience from '@/components/ui/WorkExperience'
 import { formatDuration } from '@/lib/dateUtils'
 import Image from 'next/image'
 import Link from 'next/link'
+import StarCanvas from '@/components/ui/StarCanvas'
 
 const lifoWorkExperiences = [
 	{
@@ -31,65 +32,82 @@ const VoyageAwayWorkExperiences = [
 
 const ShowcaseSection = () => {
 	return (
-		<section
-			id="showcase"
-			className="container flex min-h-[calc(100vh-5rem)] scroll-mt-20 flex-col divide-y divide-purple-100"
-		>
-			<div className="flex flex-col py-12">
-				<Typography variant="h1" className="italic">
-					Latest Projects
-				</Typography>
-				<Typography variant="p" className="text-gray-400 italic">
-					Here&apos;s a few things I&apos;m involved in right now
-				</Typography>
-			</div>
-			<div className="flex flex-col divide-y divide-purple-100">
-				<Link
-					href="https://lifo-app.com/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<div className="flex flex-col gap-4 py-12 lg:grid lg:grid-cols-2">
-						<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-0">
-							<Image
-								fill
-								priority
-								src="/images/projects/lifo/lifo-dashboard.png"
-								alt="Image"
-								className="rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105"
-							/>
+		<div className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 dark:bg-gray-900/0">
+			<StarCanvas visible={true} />
+			<section
+				id="showcase"
+				className="container flex min-h-[calc(100vh-5rem)] scroll-mt-20 flex-col divide-y divide-purple-100"
+			>
+				<div className="flex flex-col py-12">
+					<Typography variant="h1" className="italic">
+						Latest Projects
+					</Typography>
+					<Typography variant="p" className="text-gray-400 italic">
+						Here&apos;s a few things I&apos;m involved in right now
+					</Typography>
+				</div>
+				<div className="flex flex-col divide-y divide-purple-100">
+					<Link
+						href="https://lifo-app.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div className="flex flex-col gap-4 py-12 lg:grid lg:grid-cols-2">
+							<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-4 dark:border-fuchsia-400">
+								<Image
+									fill
+									priority
+									src="/images/projects/lifo/lifo-dashboard.png"
+									alt="Image"
+									className="rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:hidden"
+								/>
+								<Image
+									fill
+									priority
+									src="/images/projects/lifo/lifo-dark.jpeg"
+									alt="Image"
+									className="hidden rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:block"
+								/>
+							</div>
+							<div className="px-8">
+								<WorkExperience
+									workExperiences={lifoWorkExperiences}
+								/>
+							</div>
 						</div>
-						<div className="px-8">
-							<WorkExperience
-								workExperiences={lifoWorkExperiences}
-							/>
+					</Link>
+					<Link
+						href="https://voyage-away.vercel.app/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div className="flex flex-col-reverse gap-4 py-12 lg:grid lg:grid-cols-2">
+							<div className="px-8">
+								<WorkExperience
+									workExperiences={VoyageAwayWorkExperiences}
+								/>
+							</div>
+							<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-4 dark:border-purple-500">
+								<Image
+									fill
+									priority
+									src="/images/projects/voyage/voyage-away-hero.png"
+									alt="Image"
+									className="rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:hidden"
+								/>
+								<Image
+									fill
+									priority
+									src="/images/projects/voyage/voyage-away-dark.jpeg"
+									alt="Image"
+									className="hidden rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:block"
+								/>
+							</div>
 						</div>
-					</div>
-				</Link>
-				<Link
-					href="https://voyage-away.vercel.app/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<div className="flex flex-col-reverse gap-4 py-12 lg:grid lg:grid-cols-2">
-						<div className="px-8">
-							<WorkExperience
-								workExperiences={VoyageAwayWorkExperiences}
-							/>
-						</div>
-						<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-0">
-							<Image
-								fill
-								priority
-								src="/images/projects/voyage/voyage-away-hero.png"
-								alt="Image"
-								className="rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105"
-							/>
-						</div>
-					</div>
-				</Link>
-			</div>
-		</section>
+					</Link>
+				</div>
+			</section>
+		</div>
 	)
 }
 
