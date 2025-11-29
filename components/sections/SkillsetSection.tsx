@@ -1,4 +1,5 @@
 import Typography from '../ui/Typography'
+import StarCanvas from '../ui/StarCanvas'
 
 const skillsets = [
 	{
@@ -55,49 +56,52 @@ export default function SkillsetSection() {
 	return (
 		<section
 			id="toolkit"
-			className="container flex scroll-mt-20 flex-col divide-y divide-purple-100 dark:divide-amber-100/0"
+			className="relative flex scroll-mt-20 flex-col divide-y divide-purple-100 dark:divide-amber-100/0"
 		>
-			<div className="flex flex-col pt-12 pb-6">
-				<Typography variant="h1" className="italic">
-					Toolkit
-				</Typography>
-				<Typography variant="p" className="text-gray-400 italic">
-					Technologies and tools I use often
-				</Typography>
-			</div>
+			<div className="container">
+				<div className="flex flex-col pt-12 pb-6">
+					<Typography variant="h1" className="italic">
+						Toolkit
+					</Typography>
+					<Typography variant="p" className="text-gray-400 italic">
+						Technologies and tools I use often
+					</Typography>
+				</div>
 
-			<div className="grid grid-cols-1 gap-6 pt-6 pb-12 lg:grid-cols-2 dark:pt-0">
-				{skillsets.map((skillset) => (
-					<div
-						key={skillset.category}
-						className="flex flex-col gap-4 rounded-2xl bg-white p-10 shadow-xl transition-all hover:shadow-md dark:bg-black/0 dark:px-0 dark:py-4"
-					>
-						<Typography
-							variant="h4"
-							className="flex items-center gap-1 font-mono"
+				<div className="grid grid-cols-1 gap-6 pt-6 pb-12 lg:grid-cols-2 dark:pt-0">
+					{skillsets.map((skillset) => (
+						<div
+							key={skillset.category}
+							className="flex flex-col gap-4 rounded-2xl bg-white p-10 shadow-xl transition-all hover:shadow-md dark:bg-black/0 dark:px-0 dark:py-4"
 						>
-							{skillset.category}
-						</Typography>
+							<Typography
+								variant="h4"
+								className="flex items-center gap-1 font-mono"
+							>
+								{skillset.category}
+							</Typography>
 
-						{/* Description */}
-						<p className="text-gray-600 dark:text-white">
-							{skillset.description}
-						</p>
+							{/* Description */}
+							<p className="text-gray-600 dark:text-white">
+								{skillset.description}
+							</p>
 
-						{/* Skills List */}
-						<div className="flex flex-wrap gap-2">
-							{skillset.skills.split(', ').map((skill) => (
-								<span
-									key={skill}
-									className="cursor-hover rounded-full bg-sky-50 px-3 py-1 font-mono text-sm dark:bg-blue-500 dark:text-white"
-								>
-									{skill}
-								</span>
-							))}
+							{/* Skills List */}
+							<div className="flex flex-wrap gap-2">
+								{skillset.skills.split(', ').map((skill) => (
+									<span
+										key={skill}
+										className="cursor-hover rounded-full bg-sky-50 px-3 py-1 font-mono text-sm dark:bg-blue-500 dark:text-white"
+									>
+										{skill}
+									</span>
+								))}
+							</div>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
+			<StarCanvas visible={true} />
 		</section>
 	)
 }
