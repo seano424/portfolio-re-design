@@ -4,7 +4,7 @@ import { Mail, GitHub, LinkedIn } from './icons'
 
 const Resume = () => {
 	const handleDownload = () => {
-		window.open('/sean-oreilly-cv.pdf', '_blank')
+		window.open('/resume.pdf', '_blank')
 	}
 
 	return (
