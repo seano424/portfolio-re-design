@@ -59,6 +59,7 @@ const ShowcaseSection = () => {
 									priority
 									src="/images/projects/lifo/lifo-dashboard.png"
 									alt="Image"
+									sizes="(max-width: 1024px) 100vw, 50vw"
 									className="rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:hidden"
 								/>
 								<Image
@@ -66,6 +67,7 @@ const ShowcaseSection = () => {
 									priority
 									src="/images/projects/lifo/lifo-dark.jpeg"
 									alt="Image"
+									sizes="(max-width: 1024px) 100vw, 50vw"
 									className="hidden rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:block"
 								/>
 							</div>
@@ -93,6 +95,7 @@ const ShowcaseSection = () => {
 									priority
 									src="/images/projects/voyage/voyage-away-hero.png"
 									alt="Image"
+									sizes="(max-width: 1024px) 100vw, 50vw"
 									className="rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:hidden"
 								/>
 								<Image
@@ -100,6 +103,7 @@ const ShowcaseSection = () => {
 									priority
 									src="/images/projects/voyage/voyage-away-dark.jpeg"
 									alt="Image"
+									sizes="(max-width: 1024px) 100vw, 50vw"
 									className="hidden rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105 dark:block"
 								/>
 							</div>
