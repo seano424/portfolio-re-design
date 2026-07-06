@@ -15,7 +15,7 @@ const HeroSection = () => {
 			<ConsoleGreeting />
 			<div className="absolute inset-0 -z-10 h-full w-full">
 				<Image
-					src="/images/bg-water.png"
+					src="/images/bg-water.webp"
 					alt="Hero Background"
 					fill
 					priority
@@ -70,7 +70,7 @@ const HeroSection = () => {
 							fill
 							priority
 							className="blob object-cover"
-							src="/images/me.png"
+							src="/images/me.webp"
 							alt="Personal Photo"
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
 						/>
