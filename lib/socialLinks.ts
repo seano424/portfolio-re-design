@@ -1,5 +1,5 @@
 import { LinkedIn, Bluesky, GitHub } from '@/components/icons'
-import { ComponentProps } from 'react'
+import { ComponentProps, type JSX } from 'react';
 import { LucideIcon } from 'lucide-react'
 
 type SocialLinkProps = {
