@@ -9,7 +9,7 @@ export default function ContactPage() {
 					<Image
 						fill
 						className="cursor-hover rounded-4xl object-cover grayscale"
-						src="/images/me.png"
+						src="/images/me.webp"
 						alt="Personal Photo"
 					/>
 				</a>

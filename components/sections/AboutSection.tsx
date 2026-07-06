@@ -45,7 +45,7 @@ const AboutSection = () => {
 						<Image
 							fill
 							className="rounded-2xl object-cover"
-							src="/images/me.png"
+							src="/images/me.webp"
 							alt="Personal Photo"
 							sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
