@@ -16,7 +16,7 @@ export default function ImageLink({ project }: { project: Project }) {
 		>
 			<Image
 				fill
-				priority
+				preload
 				src={urlFor(project.featuredImage).url()}
 				alt={project.title}
 				className="rounded-2xl object-contain object-top"

@@ -2,24 +2,26 @@ import './globals.css'
 
 import clsx from 'clsx'
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
 import Header from '@/components/layout/Header'
 import Cursor from '@/components/common/Cursor'
 import { ThemeProvider } from 'next-themes'
-import { Inter } from 'next/font/google'
+import { Inter, Londrina_Solid, Roboto_Mono } from 'next/font/google'
 import { ViewTransitions } from 'next-view-transitions'
 import { MobileMenuProvider } from '@/contexts/MobileMenuContext'
 import MobileMenu from '@/components/mobile/MobileMenu'
 import Footer from '@/components/layout/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-const DEV_MODE = process.env.DEV_MODE === 'true'
-
-const geistMono = localFont({
-	src: './fonts/GeistMonoVF.woff',
-	variable: '--font-geist-mono',
-	weight: '100 900',
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const londrina = Londrina_Solid({
+	subsets: ['latin'],
+	weight: ['100', '300', '400', '900'],
+	variable: '--font-londrina',
 })
+const robotoMono = Roboto_Mono({
+	subsets: ['latin'],
+	variable: '--font-roboto-mono',
+})
+const DEV_MODE = process.env.DEV_MODE === 'true'
 
 export const metadata: Metadata = {
 	title: "Sean O'Reilly | Frontend developer, designer",
@@ -49,9 +51,10 @@ export default function RootLayout({
 				<body
 					cz-shortcut-listen="true"
 					className={clsx(
-						geistMono.variable,
-						inter.className,
-						'dark:bg-dark flex min-h-screen flex-col scroll-smooth bg-white antialiased',
+						inter.variable,
+						londrina.variable,
+						robotoMono.variable,
+						'dark:bg-dark font-inter flex min-h-screen flex-col scroll-smooth bg-white antialiased',
 						DEV_MODE && 'debug-screens'
 					)}
 				>
@@ -60,7 +63,9 @@ export default function RootLayout({
 							<MobileMenu />
 							<Header />
 							<Cursor />
-							<main className="flex-1 pt-20">{children}</main>
+							<main className="container lg:mx-auto lg:max-w-2xl pb-20 flex-1 pt-32">
+								{children}
+							</main>
 							<Footer />
 						</MobileMenuProvider>
 					</ThemeProvider>

@@ -9,7 +9,7 @@ export default function Logo() {
 				className="object-cover object-center dark:hidden"
 				src="/logos/light-2.png"
 				alt="Sean O'Reilly"
-				priority
+				preload
 			/>
 			<Image
 				fill
@@ -17,7 +17,7 @@ export default function Logo() {
 				className="hidden object-cover object-center dark:block"
 				src="/logos/dark-2.png"
 				alt="Sean O'Reilly"
-				priority
+				preload
 			/>
 		</div>
 	)
