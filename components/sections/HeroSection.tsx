@@ -18,7 +18,7 @@ const HeroSection = () => {
 					src="/images/bg-water.webp"
 					alt="Hero Background"
 					fill
-					priority
+					preload
 					sizes="100vw"
 					className="object-cover"
 				/>
@@ -68,7 +68,7 @@ const HeroSection = () => {
 						<div className="blob absolute -top-10 -right-10 -bottom-10 -left-10 overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500"></div>
 						<Image
 							fill
-							priority
+							preload
 							className="blob object-cover"
 							src="/images/me.webp"
 							alt="Personal Photo"

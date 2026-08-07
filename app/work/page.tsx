@@ -48,49 +48,6 @@ const workExperiences = [
 	},
 ]
 
-const tools = [
-	{
-		name: 'Claude',
-		imageUrl: '/images/tools/claude.svg',
-	},
-	{
-		name: 'OpenAI',
-		imageUrl: '/images/tools/openai.svg',
-	},
-	{
-		name: 'Cursor',
-		imageUrl: '/images/tools/cursor.svg',
-	},
-	{
-		name: 'Docker',
-		imageUrl: '/images/tools/docker.svg',
-	},
-	{
-		name: 'TypeScript',
-		imageUrl: '/images/tools/ts.svg',
-	},
-	{
-		name: 'Next.js',
-		imageUrl: '/images/tools/nextjs.svg',
-	},
-	{
-		name: 'React',
-		imageUrl: '/images/tools/react.svg',
-	},
-	{
-		name: 'Tailwind CSS',
-		imageUrl: '/images/tools/tailwind.svg',
-	},
-	{
-		name: 'Supabase',
-		imageUrl: '/images/tools/supabase.svg',
-	},
-	{
-		name: 'GitHub',
-		imageUrl: '/images/tools/github.svg',
-	},
-]
-
 export default function WorkPage() {
 	return (
 		<div className="flex flex-col gap-12">

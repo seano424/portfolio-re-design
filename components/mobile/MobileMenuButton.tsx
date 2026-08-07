@@ -1,19 +1,15 @@
 'use client'
 
 import clsx from 'clsx'
-import { useState, useEffect } from 'react'
 import { useMobileMenu } from '@/contexts/MobileMenuContext'
 import { useTheme } from 'next-themes'
+import useMounted from '@/hooks/useMounted'
 
 export default function MobileMenuButton() {
 	const { isOpen, setIsOpen } = useMobileMenu()
 	const { resolvedTheme } = useTheme()
-	const [mounted, setMounted] = useState(false)
+	const mounted = useMounted()
 	const isDark = mounted ? resolvedTheme === 'dark' : false
-
-	useEffect(() => {
-		setMounted(true)
-	}, [])
 
 	return (
 		<button

@@ -15,7 +15,7 @@ export default defineConfig([
 			'react/prop-types': 'off',
 			'react/jsx-key': 'warn',
 			'no-console': 'off',
-			'no-unused-vars': 'warn',
+			'no-unused-vars': 'off',
 		},
 	},
 ])

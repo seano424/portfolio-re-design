@@ -1,11 +1,12 @@
 'use client'
 
 import clsx from 'clsx'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { Sun, Moon, Loader2, Monitor } from 'lucide-react'
 import { motion } from 'framer-motion'
 import useOutsideClick from '@/hooks/useOutsideClick'
+import useMounted from '@/hooks/useMounted'
 
 const themeOptions = [
 	{
@@ -23,16 +24,12 @@ const themeOptions = [
 ]
 
 const ThemeSwitch = () => {
-	const [mounted, setMounted] = useState(false)
+	const mounted = useMounted()
 	const { theme, setTheme } = useTheme()
 	const [isOpen, setIsOpen] = useState(false)
 	const divRef = useRef<HTMLDivElement>(null)
 
 	useOutsideClick(divRef, () => setIsOpen(false))
-
-	useEffect(() => {
-		setMounted(true)
-	}, [])
 
 	const handleThemeChange = (theme: string) => {
 		setTheme(theme)

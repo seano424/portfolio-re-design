@@ -14,7 +14,7 @@ const AboutSection = () => {
 					<div className="blob absolute -top-4 -right-4 -bottom-4 -left-4 overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500"></div>
 					<Image
 						fill
-						priority
+						preload
 						className="blob object-cover"
 						src="/images/me.webp"
 						alt="Personal Photo"
