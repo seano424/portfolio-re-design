@@ -49,9 +49,12 @@ export default function Now() {
 
 			<Typography variant="h5">Away from the screen</Typography>
 			<p>
-				Scuba diving, mostly, and hiking when there&apos;s no water
-				nearby. VoyageAway started as a way to keep track of my own
-				dives and sightings before it turned into something bigger. If
+				I&apos;m usually outside exploring somewhere new. Since moving
+				to Austin, I&apos;ve been discovering the trails and parks
+				around Texas and planning the next adventure. VoyageAway started
+				as a personal project to combine my interest in wildlife with my
+				love of building things. It&apos;s still a work in progress, but
+				it&apos;s been one of my favorite projects to build. If
 				you&apos;d like to collaborate, discuss an idea, or simply say
 				hello, you can find me on{' '}
 				<a
