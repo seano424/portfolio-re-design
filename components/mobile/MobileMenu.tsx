@@ -32,7 +32,12 @@ export default function MobileMenu() {
 					{navLinks.map(({ name, href, id }, index) => (
 						<NavLink key={index} id={id} name={name} href={href} onClick={() => setIsOpen(false)} />
 					))}
-					<NavLink id="hire-me" name="Resume" href="/hire-me" onClick={() => setIsOpen(false)} />
+					<NavLink
+						name="Resume"
+						href="/Sean_OReilly_Resume.pdf"
+						target="_blank"
+						onClick={() => setIsOpen(false)}
+					/>
 					{/* <Link
 						href="/hire-me"
 						className="bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-md bg-linear-to-r from-blue-500 via-purple-500 to-purple-500 px-4 py-2 font-mono font-bold text-white uppercase transition-all duration-500 ease-linear"

@@ -1,7 +1,8 @@
 import Typography from '@/components/ui/Typography'
 import WorkExperience from '@/components/ui/WorkExperience'
 import { formatDuration } from '@/lib/dateUtils'
-import Image from 'next/image'
+import ShowCaseSection from '@/components/sections/ShowcaseSection'
+import SkillsetSection from '@/components/sections/SkillsetSection'
 
 const workExperiences = [
 	{
@@ -47,98 +48,22 @@ const workExperiences = [
 	},
 ]
 
-const tools = [
-	{
-		name: 'Claude',
-		imageUrl: '/images/tools/claude.svg',
-	},
-	{
-		name: 'OpenAI',
-		imageUrl: '/images/tools/openai.svg',
-	},
-	{
-		name: 'Cursor',
-		imageUrl: '/images/tools/cursor.svg',
-	},
-	{
-		name: 'Docker',
-		imageUrl: '/images/tools/docker.svg',
-	},
-	{
-		name: 'TypeScript',
-		imageUrl: '/images/tools/ts.svg',
-	},
-	{
-		name: 'Next.js',
-		imageUrl: '/images/tools/nextjs.svg',
-	},
-	{
-		name: 'React',
-		imageUrl: '/images/tools/react.svg',
-	},
-	{
-		name: 'Tailwind CSS',
-		imageUrl: '/images/tools/tailwind.svg',
-	},
-	{
-		name: 'Supabase',
-		imageUrl: '/images/tools/supabase.svg',
-	},
-	{
-		name: 'GitHub',
-		imageUrl: '/images/tools/github.svg',
-	},
-]
-
 export default function WorkPage() {
 	return (
-		<div className="container">
-			<div className="flex flex-col divide-y divide-gray-200 pb-20">
-				<div className="flex flex-col gap-2 py-8">
-					<h2 className="text-3xl font-black sm:text-6xl dark:text-white">
-						Work
-					</h2>
-					<Typography variant="p" className="text-gray-400 italic">
-						Professional Journey
-					</Typography>
-				</div>
+		<div className="flex flex-col gap-12">
+			<div className="flex flex-col">
+				<Typography
+					variant="h2"
+					className="italic text-blue-700 dark:text-blue-100"
+				>
+					Professional Journey
+				</Typography>
 
-				<div className="py-8">
-					<Typography
-						variant="small"
-						className="text-sm tracking-widest text-gray-400 uppercase dark:text-gray-100"
-					>
-						Experience
-					</Typography>
-					<WorkExperience workExperiences={workExperiences} />
-				</div>
-
-				<div className="flex flex-col items-center gap-4 py-8">
-					<Typography
-						variant="small"
-						className="text-sm tracking-widest text-gray-400 uppercase dark:text-gray-100"
-					>
-						Tools & Technologies
-					</Typography>
-					<div className="flex flex-wrap gap-6 py-4 lg:gap-8">
-						{tools.map((tool) => (
-							<div
-								key={tool.name}
-								title={tool.name}
-								className="relative h-9 w-9 flex-shrink-0 overflow-hidden dark:rounded dark:bg-white"
-							>
-								<Image
-									src={tool.imageUrl}
-									alt={tool.name}
-									fill
-									sizes="100px"
-									className="object-contain dark:p-1"
-								/>
-							</div>
-						))}
-					</div>
-				</div>
+				<WorkExperience workExperiences={workExperiences} />
 			</div>
+			<ShowCaseSection />
+
+			<SkillsetSection />
 		</div>
 	)
 }

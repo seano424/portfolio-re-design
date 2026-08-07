@@ -34,29 +34,25 @@ const ShowcaseSection = () => {
 	return (
 		<div className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center bg-white/60 dark:bg-gray-900/0">
 			<StarCanvas visible={true} />
-			<section
-				id="showcase"
-				className="container flex min-h-[calc(100vh-5rem)] scroll-mt-20 flex-col divide-y divide-purple-100 dark:divide-amber-100/0"
-			>
-				<div className="flex flex-col py-12 dark:pb-0">
-					<Typography variant="h1" className="italic">
-						Latest Projects
-					</Typography>
-					<Typography variant="p" className="text-gray-400 italic">
-						Here&apos;s a few things I&apos;m involved in right now
-					</Typography>
-				</div>
-				<div className="flex flex-col divide-y divide-purple-100 dark:divide-amber-100/0">
+			<section id="showcase" className="flex flex-col ">
+				<Typography
+					variant="h2"
+					className="italic text-blue-700 dark:text-blue-100"
+				>
+					Latest Projects
+				</Typography>
+
+				<div className="flex flex-col ">
 					<Link
 						href="https://lifo-app.com/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<div className="flex flex-col gap-4 py-12 lg:grid lg:grid-cols-2 dark:pb-0">
+						<div className="flex flex-col gap-4 py-12">
 							<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-4 dark:border-fuchsia-400">
 								<Image
 									fill
-									priority
+									preload
 									src="/images/projects/lifo/lifo-dashboard.png"
 									alt="Image"
 									sizes="(max-width: 1024px) 100vw, 50vw"
@@ -64,7 +60,7 @@ const ShowcaseSection = () => {
 								/>
 								<Image
 									fill
-									priority
+									preload
 									src="/images/projects/lifo/lifo-dark.jpeg"
 									alt="Image"
 									sizes="(max-width: 1024px) 100vw, 50vw"
@@ -83,7 +79,7 @@ const ShowcaseSection = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<div className="flex flex-col-reverse gap-4 py-12 lg:grid lg:grid-cols-2">
+						<div className="flex flex-col-reverse gap-4 py-12">
 							<div className="px-8">
 								<WorkExperience
 									workExperiences={VoyageAwayWorkExperiences}
@@ -92,7 +88,7 @@ const ShowcaseSection = () => {
 							<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-4 dark:border-purple-500">
 								<Image
 									fill
-									priority
+									preload
 									src="/images/projects/voyage/voyage-away-hero.png"
 									alt="Image"
 									sizes="(max-width: 1024px) 100vw, 50vw"
@@ -100,7 +96,7 @@ const ShowcaseSection = () => {
 								/>
 								<Image
 									fill
-									priority
+									preload
 									src="/images/projects/voyage/voyage-away-dark.jpeg"
 									alt="Image"
 									sizes="(max-width: 1024px) 100vw, 50vw"

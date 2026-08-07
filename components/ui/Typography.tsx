@@ -1,15 +1,7 @@
 import { ReactNode } from 'react'
 
 type TypographyVariant =
-	| 'h1'
-	| 'h2'
-	| 'h3'
-	| 'h4'
-	| 'h5'
-	| 'h6'
-	| 'p'
-	| 'span'
-	| 'small'
+	'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'small'
 
 type TypographyProps = {
 	variant?: TypographyVariant
@@ -19,13 +11,13 @@ type TypographyProps = {
 }
 
 const variantStyles: Record<TypographyVariant, string> = {
-	h1: 'text-4xl font-black sm:text-6xl lg:text-7xl',
-	h2: 'text-3xl font-bold md:text-4xl',
-	h3: 'text-2xl font-semibold md:text-3xl',
-	h4: 'text-xl font-semibold md:text-2xl',
-	h5: 'text-lg font-medium md:text-xl',
-	h6: 'text-base font-medium md:text-lg',
-	p: 'text-lg sm:text-xl',
+	h1: 'text-4xl font-black sm:text-6xl lg:text-7xl font-londrina',
+	h2: 'text-3xl font-black md:text-4xl font-londrina',
+	h3: 'text-2xl font-semibold md:text-3xl font-londrina',
+	h4: 'text-xl font-semibold md:text-2xl font-londrina',
+	h5: 'text-lg font-medium md:text-xl font-londrina',
+	h6: 'text-base font-medium md:text-lg font-londrina',
+	p: 'text-base font-inter',
 	span: 'text-base',
 	small: 'text-sm font-mono',
 }
