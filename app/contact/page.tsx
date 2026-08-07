@@ -5,17 +5,23 @@ import Typography from '@/components/ui/Typography'
 export default function ContactPage() {
 	return (
 		<div className="mx-auto flex max-w-5xl items-center justify-center text-gray-800 sm:gap-10 dark:text-gray-100 py-20 flex-col sm:flex-row">
-			<div className="relative aspect-square h-32 sm:h-64">
-				<a href="mailto:soreilly424@gmail.com">
-					<Image
-						fill
-						preload
-						sizes="(max-width: 1024px) 100vw, 50vw"
-						className="cursor-hover rounded-4xl object-cover grayscale"
-						src="/images/monkeyandme.png"
-						alt="Personal Photo"
-					/>
-				</a>
+			<div>
+				<div className="relative aspect-square h-32 sm:h-64">
+					<a href="mailto:soreilly424@gmail.com">
+						<Image
+							fill
+							preload
+							sizes="(max-width: 1024px) 100vw, 50vw"
+							className="cursor-hover rounded-4xl object-cover grayscale"
+							src="/images/monkeyandme.png"
+							alt="Personal Photo"
+						/>
+					</a>
+				</div>
+				{/* Caption */}
+				<Typography variant="p" className="font-mono text-xs p-2">
+					Monkeying around in Costa Rica
+				</Typography>
 			</div>
 			<div className="flex flex-col gap-2">
 				<Typography variant="h2" className="mt-10">
