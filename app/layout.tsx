@@ -63,7 +63,7 @@ export default function RootLayout({
 							<MobileMenu />
 							<Header />
 							<Cursor />
-							<main className="container lg:mx-auto lg:max-w-2xl pb-20 flex-1 pt-32">
+							<main className="container lg:mx-auto lg:max-w-2xl pb-20 flex-1 pt-24 lg:pt-32">
 								{children}
 							</main>
 							<Footer />
