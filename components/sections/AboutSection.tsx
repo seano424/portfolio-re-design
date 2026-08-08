@@ -64,9 +64,10 @@ const AboutSection = () => {
 				breaking down complex problems.
 			</p>
 			<p>
-				Outside of coding, I&apos;m usually outdoors, hiking, and going
-				on adventures. If you&apos;d like to collaborate, discuss an
-				idea, or simply say hello, you can find me on{' '}
+				Outside of coding, I love going outdoors, hiking, going on
+				adventures, and watching movies. If you&apos;d like to
+				collaborate, discuss an idea, or simply say hello, you can find
+				me on{' '}
 				<a
 					className="underline-wavy inline-flex items-center gap-1"
 					href="https://www.instagram.com/sea.oreilly/"
