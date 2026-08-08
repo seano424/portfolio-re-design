@@ -38,19 +38,13 @@ export default function Now() {
 			<div className="flex flex-col gap-2">
 				<Typography variant="h5">Shipping</Typography>
 				<p>
-					On the side there&apos;s VoyageAway, a travel platform for
-					wildlife-rich trips that puts part of every subscription
-					toward conservation. Species, destinations, and community
-					sightings, with the iNaturalist API underneath for real
-					observation data.
-				</p>
-				<p>
-					I&apos;m building it solo, which a few years ago would have
-					been an unreasonable thing to attempt. Working alongside
-					Claude Code and Cursor is a genuinely different way to work
-					than what I trained on, and I&apos;m still forming opinions
-					about where it helps and where it quietly makes things
-					worse.
+					On the side there&apos;s VoyageAway, a living map of the
+					natural world. It connects wildlife, the places they live,
+					the ways to see them, and the organizations protecting
+					them. Start with an animal and it shows you where it lives,
+					when to go, and who&apos;s working to keep it wild.
+					It&apos;s built on Next.js and Supabase with iNaturalist
+					data underneath, plus community sightings on top.
 				</p>
 			</div>
 
