@@ -18,6 +18,18 @@ const lifoWorkExperiences = [
 	},
 ]
 
+const voyageAwayLabsWorkExperiences = [
+	{
+		company: 'VoyageAway Labs',
+		role: 'Prototype',
+		location: 'Remote',
+		date: '2026',
+		duration: formatDuration('2026-01-01'),
+		description:
+			'An animated 3D globe of whale shark movement built with the ArcGIS Maps SDK for JavaScript, from GBIF occurrence data. The interesting part was not the rendering. The 12,000 records turned out to be satellite telemetry from 183 tagged individuals, not sightings, so rendered raw the map would have shown tagging-program funding rather than species distribution. I encoded distinct individuals per cell instead of record counts, derived a track-segmentation threshold from the actual gap distribution rather than guessing at one, and styled acoustic detections differently from satellite paths, since receiver stations tell you presence, not a route.',
+	},
+]
+
 const VoyageAwayWorkExperiences = [
 	{
 		company: 'VoyageAway',
@@ -43,6 +55,30 @@ const ShowcaseSection = () => {
 				</Typography>
 
 				<div className="flex flex-col ">
+					<Link
+						href="https://voyage-away.vercel.app/labs/whale-shark"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<div className="flex flex-col-reverse gap-4 py-12">
+							<div className="px-8">
+								<WorkExperience
+									workExperiences={
+										voyageAwayLabsWorkExperiences
+									}
+								/>
+							</div>
+							<div className="relative aspect-video w-full overflow-hidden rounded-4xl border border-gray-100 shadow-lg dark:border-4 dark:border-blue-300">
+								<Image
+									fill
+									src="/images/voyageaway-labs.png"
+									alt="Animated 3D globe of whale shark movement"
+									sizes="(max-width: 1024px) 100vw, 50vw"
+									className="rounded-4xl object-cover object-top p-1 transition-all duration-1000 ease-in-out hover:scale-105"
+								/>
+							</div>
+						</div>
+					</Link>
 					<Link
 						href="https://lifo-app.com/"
 						target="_blank"

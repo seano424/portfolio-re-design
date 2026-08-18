@@ -14,6 +14,10 @@ export const navLinks: NavLinkProps[] = [
 		href: '/work',
 	},
 	{
+		name: 'Projects',
+		href: '/projects',
+	},
+	{
 		name: 'Contact',
 		href: '/contact',
 	},
