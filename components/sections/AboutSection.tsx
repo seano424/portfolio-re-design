@@ -23,8 +23,11 @@ const AboutSection = () => {
 				</div>
 				<div className="flex flex-col gap-2">
 					<Typography variant="h2">Sean O'Reilly</Typography>
-					<Typography variant="p" className="text-gray-500">
-						Frontend / Full-Stack Engineer
+					<Typography
+						variant="p"
+						className="text-gray-500 dark:text-fuchsia-300 font-medium"
+					>
+						Frontend Engineer
 					</Typography>
 					<div className="order-1 flex items-center gap-4 md:order-2">
 						{socialLinks.map(({ name, href, Icon, className }) => (
